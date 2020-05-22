@@ -1,0 +1,32 @@
+port: 3000
+baseurl: ""
+
+collections:
+  pages: #_pages
+    output: true
+    permalink: /:path/ #url
+
+  projects: #_projects
+    output: true
+    permalink: /:path/ #url
+
+defaults:
+  - scope:
+      type: pages #refers to : _pages
+    values:
+      layout: default #refers to : _layouts > default.html
+
+  - scope:
+      type: projects #refers to : _pages
+    values:
+      layout: projects #refers to : _layouts > project.html
+
+exclude: [
+".git",
+".gitignore",
+"node_modules",
+"gulpfile.js",
+"package.json",
+".DS_Store",
+"README.md",
+]

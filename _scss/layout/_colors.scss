@@ -1,0 +1,33 @@
+.bg-primary { background: $primary; }
+.text-primary { color: $primary; }
+
+.bg-secondary { background: $secondary; }
+.text-secondary { color: $secondary; }
+
+.bg-gray { background: $gray-200; }
+.text-gray { color: $gray-200; }
+
+.bg-black { background: $black; }
+.text-black { color: $black; }
+
+.bg-white { background: $white; }
+.text-white { color: $white; }
+
+.bg-gradient-primary {
+    background-image: radial-gradient( circle at top center, #ffffff, #a3eaff 55%); //#bad9ff
+}
+.bg-gradient-secondary {
+    background-image: radial-gradient(circle at bottom center, #717171, $secondary 55%);
+}
+
+
+.showcase::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-bottom: 50px solid #ffffff;
+    margin-top: -50px;
+}

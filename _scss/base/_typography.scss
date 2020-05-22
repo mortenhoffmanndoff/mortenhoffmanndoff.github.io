@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Aleo:300,400,700');
+
+html {
+    font-size: 10px;
+}
+
+a {
+    border-bottom: 3px solid $primary;
+    padding-bottom: 0.5rem;
+
+    &.no-border { border: none; }
+}
+
+.bg-primary a {
+    color: $white;
+    border-bottom: 3px solid $white;
+}
+
+.bg-secondary a {
+    border-bottom: 3px solid $primary;
+}
+
+.eyebrow { font-size: $font-size-base * 0.8; }
+
+
+.section-header {
+    padding-bottom: 6rem;
+}

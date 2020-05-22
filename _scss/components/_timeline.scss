@@ -1,0 +1,66 @@
+.timeline {
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 60px;
+    }
+
+    .item {
+        @include make-row();
+        position: relative;
+        padding-bottom: 30px;
+
+        &::after {
+            content: '';
+            border-radius: 100%;
+            border: 3px solid $primary;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 10px;
+            left: 7px;
+            background: $white;
+        }
+        &::before {
+            content: '';
+            width: 2px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 14px;
+            background: $primary;
+        }
+
+        @include media-breakpoint-up(lg) {
+            &::after {
+                content: '';
+                top: 13px;
+                left: calc(25% - 7px);
+            }
+            &::before {
+                content: '';
+                top: 0;
+                left: 25%;
+            }
+        }
+    }
+    .year {
+        @include make-col-ready();
+
+        @include media-breakpoint-up(lg) {
+            @include make-col(3);
+        }
+    }
+
+    .text {
+        @include make-col-ready();
+
+        @include media-breakpoint-up(lg) {
+            @include make-col(9);
+        }
+
+
+    }
+
+    a {
+        border: none;
+    }
+}

@@ -1,0 +1,60 @@
+frontpage:
+  articles:
+    - image:        audileasing
+      text:         Audi Leasing
+      link:         audileasing
+      effect:       fade-left
+
+    - image:        news-concept
+      text:         News Concept
+      link:         news-concept
+      effect:       fade-left
+
+    - image:        porschedk
+      text:         Porsche.dk
+      link:         porschedk
+      effect:       fade-left
+
+    - image:        seatdk
+      text:         Seat.dk
+      link:         seatdk
+      effect:       fade-left
+
+    - image:        volkswagen-go
+      text:         Volkswagen GO
+      link:         volkswagen-go
+      effect:       fade-left
+
+    - image:        milene-maria
+      text:         Milene Maria
+      link:         milene-maria
+      effect:       fade-left
+
+    # - image:        audiapprovedplus
+    #   text:         Audi Approved Plus
+    #   link:         audiapprovedplus
+
+  explained:
+    - header:       HTML
+      text:         I am making an effort thinking mark-up being clean og readable. I keep using the same structur so every project has an easy recognizability.
+      effect:       zoom-in
+
+    - header:       SCSS
+      text:         I use mixins, variables and nesting to make styling much easier. <a href="https://sass-lang.com/" target="_blank">SCSS</a> is my default CSS language but I have no trouble using LESS.
+      effect:       zoom-in
+
+    - header:       jQuery
+      text:         I use <a href="https://jquery.com/" target="_blank">jQuery</a> to trigger animations and make components behave the way I want them to behave. By the way! I'm busy learning <a href="#">Vue.js</a>
+      effect:       zoom-in
+
+    - header:       Gulp
+      text:         I use <a href="https://gulpjs.com/" target="_blank">Gulp</a> to compile and minify SCSS with prefixes, minifying JS and compress images. I also use Gulp to setup a localhost to run it all and browsersync to refresh when chages are made.
+      effect:       zoom-in
+
+    - header:       Jekyll
+      text:         I use <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with YML/JSON and Liquid to generate smarter templates using collections and layout. This allows me to have my components in one place only, so I don’t have to repeat a footer or navigation on every page for example.
+      effect:       zoom-in
+
+    - header:       Bootstrap
+      text:         I am a super user in both <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> v.3.* and v.4*. I am tweaking their variables to fit my needs, and I like to use their mixins to make my own components with my naming.
+      effect:       zoom-in
