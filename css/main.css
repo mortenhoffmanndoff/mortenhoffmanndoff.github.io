@@ -167,7 +167,7 @@ p.leader, li.leader, a.leader { font-size: calc(var(--font-size-default) + 4px);
 
 .boxed-layout-wrapper a { color: var(--color-white); font-weight: bold; }
 
-.headline-section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.headline-section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; }
 
 .sub-headline { display: inline-block; font-size: 1.4rem; font-family: var(--font-family-primary); font-weight: 600; line-height: 2; letter-spacing: 1px; text-transform: uppercase; }
 
