@@ -275,7 +275,7 @@ nav[role="navigation"] .nav.active { opacity: 1; height: 100%; z-index: 9999; }
 
 @media (min-width: 1200px) { nav[role="navigation"] .nav { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; background: rgba(38, 43, 57, 0.85); height: unset; opacity: unset; z-index: 1234; padding: 0 6rem; } }
 
-nav[role="navigation"] .nav a { color: var(--color-white); padding: 1.5rem 2.5rem; font-size: 2.4rem; }
+nav[role="navigation"] .nav a { color: var(--color-white); padding: 1.5rem 2.5rem; font-size: 2.4rem; cursor: pointer; }
 
 @media (min-width: 1200px) { nav[role="navigation"] .nav a { font-size: 1.8rem; padding: 1.8rem 2.5rem; }
   nav[role="navigation"] .nav a.close-burger { display: none; } }
