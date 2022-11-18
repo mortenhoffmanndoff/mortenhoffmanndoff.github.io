@@ -6,7 +6,6 @@
 // Resources-file: (only SASS variabels, mixins, functions)
 @import "resources/variables-sass.scss";
 
-// <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 // // Setup: 
 @import "setup/variables-native-css";
 @import "setup/settings";
@@ -14,36 +13,3 @@
 @import "setup/font-face";
 @import "setup/typography";
 
-// Layout
-@import "layouts/grid";
-
-// Components
-@import "components/logo";
-@import "components/media";
-@import "components/media-text-overlay";
-@import "components/article";
-@import "components/boxed-layout";
-@import "components/headline-section";
-@import "components/sub-headline";
-@import "components/list";
-@import "components/profile";
-@import "components/cases";
-@import "components/parallax";
-@import "components/divider";
-@import "components/recommendations";
-@import "components/co-workers";
-
-// Elements
-@import "elements/sections";
-@import "elements/footer";
-@import "elements/navigation";
-@import "elements/container";
-@import "elements/buttons";
-@import "elements/backgrounds";
-@import "elements/icons";
-
-// Utilities
-@import "utilities/spacing";
-@import "utilities/alignment";
-
-@import "https://unpkg.com/aos@2.3.1/dist/aos.css";

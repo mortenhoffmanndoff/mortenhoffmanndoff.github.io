@@ -7,9 +7,8 @@
 
 html {
 	height: 100%;
-	font-size: var(--font-size-html);
-	font-weight: var(--font-weight-light);
-	background-color: var(--body-bg);
+	font-size: 16px;
+	font-weight: 600;
 	word-spacing: 1px;
 	line-height: 1.5;
 	-ms-text-size-adjust: 100%;
@@ -31,30 +30,6 @@ html {
 }
 
 body {
-	// max-width: 1920px;
 	height: 100%;
 	margin: 0 auto;
-}
-
-.layout-default {
-	background: var(--color-white);
-}
-
-main {
-	overflow: hidden;
-}
-
-[role="button"] {
-	cursor: pointer;
-}
-
-a {
-	position: relative;
-	display: inline;
-	text-decoration: none;
-	color: var(--color-primary);
-}
-
-.highlight {
-	color: var(--color-secondary);
 }
