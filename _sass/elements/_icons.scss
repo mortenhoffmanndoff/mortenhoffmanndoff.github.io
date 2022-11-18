@@ -1,0 +1,14 @@
+.icon {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon-mail::before {
+    content: url(../../images/mail.svg);
+    margin-right: 1rem;
+}
+
+.icon-phone::before {
+    content: url(../../images/phone.svg);
+    margin-right: 1rem;
+}

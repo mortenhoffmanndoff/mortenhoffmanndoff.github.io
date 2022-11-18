@@ -1,0 +1,19 @@
+.parallax-image {
+	img {
+		width: 100%;
+
+		@media (min-width: $breakpoint-md) {
+			// display: none;
+		}
+	}
+
+	// @media (min-width: $breakpoint-md) {
+	// 	/* Set a specific height */
+	// 	min-height: 110vh;
+	// 	/* Create the parallax scrolling effect */
+	// 	background-attachment: fixed;
+	// 	background-position: center;
+	// 	background-repeat: no-repeat;
+	// 	background-size: cover;
+	// }
+}

@@ -1,0 +1,72 @@
+$control-spacing:
+	"0" 0,
+	"050" 0.5rem,
+	"100" 1.0rem,
+	"150" 1.5rem,
+	"200" 2rem,
+	"250" 2.5rem,
+	"300" 3rem,
+	"350" 3.5rem,
+	"400" 4rem,
+	"450" 4.5rem,
+	"500" 5rem,
+	"550" 5.5rem,
+	"600" 6rem,
+	"650" 6.5rem,
+	"700" 7rem,
+	"750" 7.5rem,
+	"800" 8rem,
+	"850" 8.5rem,
+	"900" 9rem,
+	"950" 9.5rem,
+	"1000" 10rem;
+
+@each $name, $size in $control-spacing {
+	.py-#{$name} {
+		padding-top: calc(#{$size} * 1) !important;
+		padding-bottom: calc(#{$size} * 1) !important;
+    }
+	.pt-#{$name}  {
+			padding-top: calc(#{$size} * 1) !important;
+    }
+    .pb-#{$name}  {
+        padding-bottom: calc(#{$size} * 1) !important;
+    }
+
+    .px-#{$name} {
+		padding-right: calc(#{$size} * 1) !important;
+		padding-left: calc(#{$size} * 1) !important;
+    }
+
+    .pr-#{$name}  {
+        padding-right: calc(#{$size} * 1) !important;
+    }
+
+    .pl-#{$name}  {
+        padding-left: calc(#{$size} * 1) !important;
+    }
+}
+
+@each $name, $size in $control-spacing {
+	.my-#{$name} {
+		margin-top: calc(#{$size} * 1) !important;
+		margin-bottom: calc(#{$size} * 1) !important;
+    }
+    .mt-#{$name} {
+        margin-top: calc(#{$size} * 1) !important;
+    }
+    .mb-#{$name} {
+        margin-bottom: calc(#{$size} * 1) !important;
+    }
+
+    .mx-#{$name} {
+		margin-right: calc(#{$size} * 1) !important;
+		margin-left: calc(#{$size} * 1) !important;
+    }
+    .mr-#{$name} {
+        margin-right: calc(#{$size} * 1) !important;
+    }
+    .ml-#{$name} {
+        margin-left: calc(#{$size} * 1) !important;
+    }
+}

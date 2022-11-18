@@ -1,0 +1,36 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -$grid-gutter-width / 2;
+    margin-left: -$grid-gutter-width / 2;
+}
+
+.col {
+    position: relative;
+    width: 100%;
+
+    .row > & {
+        padding-right: $grid-gutter-width / 2;
+        padding-left: $grid-gutter-width / 2;
+    }
+
+    @media (min-width: $breakpoint-md) {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+@for $i from 1 through $grid-size {
+    .col-#{$i} {
+        @extend .col;
+
+        @media (min-width: $breakpoint-md) {
+            flex: 0 0 percentage($i/$grid-size);
+            max-width: percentage($i/$grid-size);
+        }
+    }
+}

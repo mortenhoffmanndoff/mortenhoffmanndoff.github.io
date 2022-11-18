@@ -1,0 +1,63 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	display: block;
+	font-family: var(--font-family-secondary);
+	font-weight: var(--font-weight-black);
+	line-height: 1.2;
+
+	* {
+		font-family: var(--font-family-secondary);
+	}
+}
+
+h1 {
+	font-size: var(--font-size-h1);
+}
+
+h2 {
+	font-size: var(--font-size-h2);
+}
+
+h3 {
+	font-size: var(--font-size-h3);
+}
+
+h4 {
+	font-size: var(--font-size-h4);
+}
+
+h5 {
+	font-size: var(--font-size-h5);
+}
+
+h6 {
+	font-size: var(--font-size-h6);
+}
+
+p, li, a {
+    font-size: calc(var(--font-size-default) - 4px);
+
+    @media (min-width: $breakpoint-sm) {
+        font-size: var(--font-size-default);
+    }
+    
+	&.lead {
+		font-size: calc(var(--font-size-default));
+
+		// let's give it a nutch when it's not a mobile device
+		@media (min-width: $breakpoint-sm) {
+			font-size: calc(var(--font-size-default) + 4px);
+		}
+    }
+    
+	&.leader {
+        font-size: calc(var(--font-size-default) + 4px);
+        @media (min-width: $breakpoint-sm) {
+			font-size: calc(var(--font-size-default) + 8px);
+		}
+	}
+}
