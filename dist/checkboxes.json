@@ -1,0 +1,47 @@
+{
+  "carImage": {
+    "label": "Er der et billede af bilen?",
+    "checked": false,
+    "selectedRadio": "",
+    "radios": [
+      { "label": "Repræsenterer billedet en gruppe af biler", "value": "Vist med ekstraudstyr.", "selected" : "radio1" },
+      { "label": "Repræsenterer billedet en specifik bil med stelnummer", "value": "", "selected" : "radio2" }
+    ]
+  },
+
+  "carType": {
+    "label": "Vælg biltype",
+    "checked": false,
+    "selectedRadio": "",
+    "radios": [
+      { "label": "Benzin/diesel", "value": "Forbrug v/bl. kørsel: X-X km/l. CO₂: X-X g/km. [ENERGIMÆRKE].", "selected" : "radio1" },
+      { "label": "Elbil", "value": "Forbrug: 15,4-15,8 kWh/100km. Rækkevidde*: 430-591 km. Opladningstid under optimale forhold: Normalopladning, 0-100%: 6 t 30 min-8 t 30 min v. maks. ladeeffekt: (11 kW). Hurtig-/lynopladning, 10-80%: 24 min-28 min v. maks. ladeeffekt: (165-185 kW). *Forbrug og rækkevidde påvirkes bl.a. af kørestil, vejrforhold og tilvalg af udstyr, hvor især høj hastighed og lave temperaturer reducerer rækkevidden.", "selected" : "radio2" },
+      { "label": "Hybrid", "value": "Forbrug v/bl. kørsel: 15,2-18,5 km/l. CO₂: 122-149 g/km.  Rækkevidde*: 430-591 km. Opladningstid under optimale forhold: Normalopladning, 0-100%: 6 t 30 min-8 t 30 min v. maks. ladeeffekt: (11 kW). *Forbrug og rækkevidde påvirkes bl.a. af kørestil, vejrforhold og tilvalg af udstyr, hvor især høj hastighed og lave temperaturer reducerer rækkevidden.", "selected" : "radio3" }
+    ]
+  },
+
+  "carLeasing":{
+    "label": "Er det en bil der skal leases?",
+    "disclaimerText": "Mdl. ydelse fra X kr. Førstegangsydelse X kr. Km. pr. år X km. Leasingperiode: X mdr. Samlet pris i leasingperioden fra: X kr. Mindstepris i bindingsperioden (12 mdr.) fra X kr. Den viste pris er inkl. moms, service- og reparationsaftale og lånebil ved service, men ekskl. dæk, forsikring, brændstof, CO₂-ejerafgift og overkørte kilometer. Positiv kreditgodkendelse, køb af kaskoforsikring og BS-betaling forudsættes. Afleveringsgebyr: 600 kr. Privatleasing via Volkswagen Semler Finans Danmark A/S.<br>",
+    "checked": false
+  },
+
+  "carBTO":{
+    "label": "Er det en BTO bil?",
+    "disclaimerText": "Forventet levering Q[1,2,3,4] [ÅR].<br>",
+    "checked": false
+  },
+
+  "carFinancing":{
+    "label": "Skal bilen financieres?",
+    "disclaimerText": "Pris fra X kr. Finansiering fra X kr./md. Mdl. ydelse (inkl. moms og lev.) med en udbet: X kr. Saml. kreditbeløb: X kr. Løbetid: X mdr. Rente: X %. Debitorrente (variabel): X %. Saml. kreditomk.: X kr. Saml. tilbagebet.: X kr. ÅOP: X %. Finansiering via VWSF A/S. Fortrydelsesret på finansiering. Læs mere på <a href='www.vwsf.dk/finansiering.'>www.vwsf.dk/finansiering.</a>",
+    "checked": false
+  },
+
+  "carInsurance":{
+    "label": "Er der noget med forsikring?",
+    "disclaimerText": "<br><br>Forsikring: Inkl. kasko- og ansvarsforsikring hos [BRAND] Forsikring. Fortrydelsesret på forsikring. Læs mere på <a href='www.vwsf.dk/privat/bilforsikring'>www.vwsf.dk/privat/bilforsikring</a>. Alle priser er inklusive moms, miljøbidrag og skadeforsikringsafgift, indeks 2024. Forsikringens løbetid følger kundens leasingsaftale. Priser indeksreguleres årligt. Selvrisiko er fast. [BRAND] Forsikring tilbydes af VWSF A/S i samarbejde med Alm. Brand Forsikring A/S, der er underlagt tilsyn af Finanstilsynet og som er medlem af Garantifonden for Skadeforsikring. Du kan vælge at opsige din bilforsikring den løbende måned + 30 dage. Hvis du ønsker at opsige forsikringen, fordi du skifter til et andet selskab, skal de sende os en skriftlig opsigelse på vegne af dig. Du kan fortryde din forsikring med 14 dages fortrydelsesret ved at sende en mail til <a href='mailto:kundeservice@vwsf.dk'>kundeservice@vwsf.dk</a>",
+    "checked": false
+  }
+
+}
