@@ -14,9 +14,9 @@
     "checked": false,
     "selectedRadio": "",
     "radios": [
-      { "label": "Benzin/diesel", "value": "Forbrug v/bl. kørsel: X-X km/l. CO₂: X-X g/km. [ENERGIMÆRKE].", "selected" : "radio1" },
-      { "label": "Elbil", "value": "Forbrug: 15,4-15,8 kWh/100km. Rækkevidde*: 430-591 km. Opladningstid under optimale forhold: Normalopladning, 0-100%: 6 t 30 min-8 t 30 min v. maks. ladeeffekt: (11 kW). Hurtig-/lynopladning, 10-80%: 24 min-28 min v. maks. ladeeffekt: (165-185 kW). *Forbrug og rækkevidde påvirkes bl.a. af kørestil, vejrforhold og tilvalg af udstyr, hvor især høj hastighed og lave temperaturer reducerer rækkevidden.", "selected" : "radio2" },
-      { "label": "Hybrid", "value": "Forbrug v/bl. kørsel: 15,2-18,5 km/l. CO₂: 122-149 g/km.  Rækkevidde*: 430-591 km. Opladningstid under optimale forhold: Normalopladning, 0-100%: 6 t 30 min-8 t 30 min v. maks. ladeeffekt: (11 kW). *Forbrug og rækkevidde påvirkes bl.a. af kørestil, vejrforhold og tilvalg af udstyr, hvor især høj hastighed og lave temperaturer reducerer rækkevidden.", "selected" : "radio3" }
+      { "label": "Benzin/diesel", "value": "Forbrug v/bl. kørsel: X-X km/l. CO₂: X-X g/km. [ENERGIMÆRKE]. Halvårlig CO₂-ejerafgift. X kr.", "selected" : "radio1" },
+      { "label": "Elbil", "value": "Forbrug: 15,4-15,8 kWh/100km. Rækkevidde*: 430-591 km. Opladningstid under optimale forhold: Normalopladning, 0-100%: 6 t 30 min-8 t 30 min v. maks. ladeeffekt: (11 kW). Hurtig-/lynopladning, 10-80%: 24 min-28 min v. maks. ladeeffekt: (165-185 kW). Halvårlig CO₂-ejerafgift. X kr. *Forbrug og rækkevidde påvirkes bl.a. af kørestil, vejrforhold og tilvalg af udstyr, hvor især høj hastighed og lave temperaturer reducerer rækkevidden.", "selected" : "radio2" },
+      { "label": "Hybrid", "value": "Forbrug v/bl. kørsel: 15,2-18,5 km/l. CO₂: 122-149 g/km.  Rækkevidde*: 430-591 km. Opladningstid under optimale forhold: Normalopladning, 0-100%: 6 t 30 min-8 t 30 min v. maks. ladeeffekt: (11 kW). Halvårlig CO₂-ejerafgift. X kr. *Forbrug og rækkevidde påvirkes bl.a. af kørestil, vejrforhold og tilvalg af udstyr, hvor især høj hastighed og lave temperaturer reducerer rækkevidden.", "selected" : "radio3" }
     ]
   },
 
