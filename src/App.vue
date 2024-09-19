@@ -90,7 +90,7 @@
   
       onMounted(async () => {
         try {
-          const response = await fetch('../public/checkboxes.json');
+          const response = await fetch('../checkboxes.json');
           const data = await response.json();
 
           carImageCheckbox.value = data.carImage;
