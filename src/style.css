@@ -16,19 +16,40 @@
 body {
   margin: 0;
   display: flex;
-  min-width: 320px;
   min-height: 100vh;
-  font-size: 20px;
-}
-
-#app {
-  padding: 2rem 5rem;
+  font-size: 18px;
 
   @media (min-width: 1400px) {
-    display: grid;
-    grid-template-columns: 1fr minmax(300px, 1fr);
-    width: 100%;
+    font-size: 22px;
   }
+}
+
+.machine {
+  padding: .5rem 2rem;
+  display: grid;
+  
+  @media (min-width: 1400px) {
+    padding: 2rem 5rem;
+    grid-template-columns: 1fr minmax(300px, 1fr);
+    gap: 80px;
+  }
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.render {
+  position: sticky;
+  top: 32px;
+  align-self: flex-start;
+}
+
+input:disabled {
+  display: none;
 }
 
 .generated-text {
@@ -38,16 +59,26 @@ body {
   font-weight: 500;
 }
 
-.group {
+/* .group {
   margin-bottom: 16px;
-}
+} */
 
 input {
   margin-right: 8px;
 }
 
 input[type="radio"] {
-  margin-left: 24px;
+  margin: 0;
+  cursor: pointer;
+
+  @media (min-width: 1400px) {
+    padding-left: 24px;
+  }
+
+  + label {
+    padding-left: 8px;
+    cursor: pointer;
+  }
 }
 
 .indent {

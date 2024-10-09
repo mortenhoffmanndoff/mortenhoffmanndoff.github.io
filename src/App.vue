@@ -1,69 +1,187 @@
 <template>
-    <div>
-      <h1>Pligttekster</h1>
-      <div v-if="carImageCheckbox">
-        <input id="carImage" type="checkbox" v-model="carImageCheckbox.checked" />
-        <label for="carImage">{{ carImageCheckbox.label }}</label>
+  <div class="machine">
+    <div class="questions">
+      <div class="group">
+        <h1>Pligttekster på cards</h1>
+        <p>
+          Vi har lavet en pligttekst generator der omfavner de nødvendige pligttekster
+          formuleret som Semler ønsker.
+        </p>
+      </div>
+      
+      <!-- carGroup -->
+      <div v-if="carGroupCheckbox">
+        <input id="carGroup" type="checkbox" v-model="carGroupCheckbox.checked" disabled />
+        <label for="carGroup">{{ carGroupCheckbox.label }}</label>
 
         <transition>
-          <div v-if="carImageCheckbox.radios && carImageCheckbox.checked">
-            <div v-for="(radio, radioIndex) in carImageCheckbox.radios" :key="'radio-' + radioIndex">
+          <div v-if="carGroupCheckbox.radios && carGroupCheckbox.checked">
+            <div v-for="(radio, radioIndex) in carGroupCheckbox.radios" :key="'radio-' + radioIndex">
               <input
-                :id="'radio-carImage' + index + '-' + radioIndex"
+                :id="'radio-carGroup' + index + '-' + radioIndex"
                 type="radio"
-                :name="'radio-group-carImage' + index"
+                :name="'radio-group-carGroup' + index"
                 :value="radio.selected"
-                v-model="carImageCheckbox.selectedRadio"
+                v-model="carGroupCheckbox.selectedRadio"
               />
-              <label :for="'radio-carImage' + index + '-' + radioIndex">{{ radio.label }}</label>
+              <label :for="'radio-carGroup' + index + '-' + radioIndex">{{ radio.label }}</label>
             </div>
           </div>
         </transition>
       </div>
 
-      <div v-if="carTypeCheckbox">
-        <input id="carType" type="checkbox" v-model="carTypeCheckbox.checked" />
-        <label for="carType">{{ carTypeCheckbox.label }}</label>
+      <!-- carImageGroup -->
+      <div v-if="carGroupCheckbox.selectedRadio === 'group'">
+        <input id="carImageGroup" type="checkbox" v-model="carImageGroupCheckbox.checked" disabled />
+        <label for="carImageGroup">{{ carImageGroupCheckbox.label }}</label>
 
         <transition>
-          <div v-if="carTypeCheckbox.radios && carTypeCheckbox.checked">
-            <div v-for="(radio, radioIndex) in carTypeCheckbox.radios" :key="'radio-' + radioIndex">
+          <div v-if="carImageGroupCheckbox.radios && carImageGroupCheckbox.checked">
+            <div v-for="(radio, radioIndex) in carImageGroupCheckbox.radios" :key="'radio-' + radioIndex">
               <input
-                :id="'radio-carType' + index + '-' + radioIndex"
+                :id="'radio-carImageGroup' + index + '-' + radioIndex"
                 type="radio"
-                :name="'radio-group-carType' + index"
+                :name="'radio-group-carImageGroup' + index"
                 :value="radio.selected"
-                v-model="carTypeCheckbox.selectedRadio"
+                v-model="carImageGroupCheckbox.selectedRadio"
               />
-              <label :for="'radio-carType' + index + '-' + radioIndex">{{ radio.label }}</label>
+              <label :for="'radio-carImageGroup' + index + '-' + radioIndex">{{ radio.label }}</label>
+            </div>
+          </div>
+        </transition>
+      </div>
+      
+      <!-- carImageSpecific -->
+      <div v-if="carGroupCheckbox.selectedRadio === 'specific'">
+        <input id="carImageSpecific" type="checkbox" v-model="carImageSpecificCheckbox.checked" disabled />
+        <label for="carImageSpecific">{{ carImageSpecificCheckbox.label }}</label>
+
+        <transition>
+          <div v-if="carImageSpecificCheckbox.radios && carImageSpecificCheckbox.checked">
+            <div v-for="(radio, radioIndex) in carImageSpecificCheckbox.radios" :key="'radio-' + radioIndex">
+              <input
+                :id="'radio-carImageSpecific' + index + '-' + radioIndex"
+                type="radio"
+                :name="'radio-group-carImageSpecific' + index"
+                :value="radio.selected"
+                v-model="carImageSpecificCheckbox.selectedRadio"
+              />
+              <label :for="'radio-carImageSpecific' + index + '-' + radioIndex">{{ radio.label }}</label>
+            </div>
+          </div>
+        </transition>
+      </div>
+      
+      <!-- carTypeGroup -->
+      <div v-if="carGroupCheckbox.selectedRadio === 'group' && (carImageGroupCheckbox.selectedRadio != '' || carImageSpecificCheckbox.selectedRadio != '')">
+        <input id="carTypeGroup" type="checkbox" v-model="carTypeGroupCheckbox.checked" disabled />
+        <label for="carTypeGroup">{{ carTypeGroupCheckbox.label }}</label>
+
+        <transition>
+          <div v-if="carTypeGroupCheckbox.radios && carTypeGroupCheckbox.checked">
+            <div v-for="(radio, radioIndex) in carTypeGroupCheckbox.radios" :key="'radio-' + radioIndex">
+              <input
+                :id="'radio-carTypeGroup' + index + '-' + radioIndex"
+                type="radio"
+                :name="'radio-group-carTypeGroup' + index"
+                :value="radio.selected"
+                v-model="carTypeGroupCheckbox.selectedRadio"
+              />
+              <label :for="'radio-carTypeGroup' + index + '-' + radioIndex">{{ radio.label }}</label>
             </div>
           </div>
         </transition>
       </div>
 
-      <div v-if="carLeasingCheckbox">
-        <input id="carLeasing" type="checkbox" v-model="carLeasingCheckbox.checked" />
-        <label for="carLeasing">{{ carLeasingCheckbox.label }}</label>
+      <!-- carTypeSpecific -->
+      <div v-if="carGroupCheckbox.selectedRadio === 'specific' && (carImageGroupCheckbox.selectedRadio != '' || carImageSpecificCheckbox.selectedRadio != '')">
+        <input id="carTypeSpecific" type="checkbox" v-model="carTypeSpecificCheckbox.checked" disabled />
+        <label for="carTypeSpecific">{{ carTypeSpecificCheckbox.label }}</label>
+
+        <transition>
+          <div v-if="carTypeSpecificCheckbox.radios && carTypeSpecificCheckbox.checked">
+            <div v-for="(radio, radioIndex) in carTypeSpecificCheckbox.radios" :key="'radio-' + radioIndex">
+              <input
+                :id="'radio-carTypeSpecific' + index + '-' + radioIndex"
+                type="radio"
+                :name="'radio-group-carTypeSpecific' + index"
+                :value="radio.selected"
+                v-model="carTypeSpecificCheckbox.selectedRadio"
+              />
+              <label :for="'radio-carTypeSpecific' + index + '-' + radioIndex">{{ radio.label }}</label>
+            </div>
+          </div>
+        </transition>
       </div>
 
-      <div v-if="carBTOCheckbox">
-        <input id="carBTO" type="checkbox" v-model="carBTOCheckbox.checked" />
-        <label for="carBTO">{{ carBTOCheckbox.label }}</label>
+      <!-- carFormat -->
+      <div v-if="carTypeGroupCheckbox.selectedRadio != '' || carTypeSpecificCheckbox.selectedRadio != ''">
+        <input id="carFormat" type="checkbox" v-model="carFormatCheckbox.checked" disabled />
+        <label for="carFormat">{{ carFormatCheckbox.label }}</label>
+
+        <transition>
+          <div v-if="carFormatCheckbox.radios && carFormatCheckbox.checked">
+            <div v-for="(radio, radioIndex) in carFormatCheckbox.radios" :key="'radio-' + radioIndex">
+              <input
+                :id="'radio-carFormat' + index + '-' + radioIndex"
+                type="radio"
+                :name="'radio-group-carFormat' + index"
+                :value="radio.selected"
+                v-model="carFormatCheckbox.selectedRadio"
+              />
+              <label :for="'radio-carFormat' + index + '-' + radioIndex">{{ radio.label }}</label>
+            </div>
+          </div>
+        </transition>
+      </div>
+      
+      
+      <!-- carStatus -->
+      <div v-if="carFormatCheckbox.selectedRadio != ''">
+        <input id="carStatus" type="checkbox" v-model="carStatusCheckbox.checked" disabled />
+        <label for="carStatus">{{ carStatusCheckbox.label }}</label>
+
+        <transition>
+          <div v-if="carStatusCheckbox.radios && carStatusCheckbox.checked">
+            <div v-for="(radio, radioIndex) in carStatusCheckbox.radios" :key="'radio-' + radioIndex">
+              <input
+                :id="'radio-carStatus' + index + '-' + radioIndex"
+                type="radio"
+                :name="'radio-group-carStatus' + index"
+                :value="radio.selected"
+                v-model="carStatusCheckbox.selectedRadio"
+              />
+              <label :for="'radio-carStatus' + index + '-' + radioIndex">{{ radio.label }}</label>
+            </div>
+          </div>
+        </transition>
       </div>
 
-      <div v-if="carFinancingCheckbox">
-        <input id="carFinancing" type="checkbox" v-model="carFinancingCheckbox.checked" />
-        <label for="carFinancing">{{ carFinancingCheckbox.label }}</label>
-      </div>
-
-      <div v-if="carInsuranceCheckbox">
-        <input id="carInsurance" type="checkbox" v-model="carInsuranceCheckbox.checked" />
+      <!-- carInsurance -->
+      <div v-if="carStatusCheckbox.selectedRadio != ''">
+        <input id="carInsurance" type="checkbox" v-model="carInsuranceCheckbox.checked" disabled />
         <label for="carInsurance">{{ carInsuranceCheckbox.label }}</label>
+
+        <transition>
+          <div v-if="carInsuranceCheckbox.radios && carInsuranceCheckbox.checked">
+            <div v-for="(radio, radioIndex) in carInsuranceCheckbox.radios" :key="'radio-' + radioIndex">
+              <input
+                :id="'radio-carInsurance' + index + '-' + radioIndex"
+                type="radio"
+                :name="'radio-group-carInsurance' + index"
+                :value="radio.selected"
+                v-model="carInsuranceCheckbox.selectedRadio"
+              />
+              <label :for="'radio-carInsurance' + index + '-' + radioIndex">{{ radio.label }}</label>
+            </div>
+          </div>
+        </transition>
       </div>
+
     </div>
 
     <transition appear>
-      <div v-if="combinedText">
+      <div v-if="combinedText" class="render">
         <p><b>Genereret tekst:</b></p>
         <div class="generated-text">
             <transition appear mode="out-in">
@@ -72,7 +190,7 @@
         </div>
       </div>
     </transition>
-      
+  </div>
   </template>
   
   <script>
@@ -81,11 +199,17 @@
   
   export default {
     setup() {
-      const carImageCheckbox = ref({});
-      const carTypeCheckbox = ref({});
-      const carLeasingCheckbox = ref({});
-      const carBTOCheckbox = ref({});
-      const carFinancingCheckbox = ref({});
+      const carGroupCheckbox = ref({});
+      
+      const carImageGroupCheckbox = ref({});
+      const carImageSpecificCheckbox = ref({});
+
+      const carTypeGroupCheckbox = ref({});
+      const carTypeSpecificCheckbox = ref({});
+      
+      const carFormatCheckbox = ref({});
+      const carStatusCheckbox = ref({});
+
       const carInsuranceCheckbox = ref({});
   
       onMounted(async () => {
@@ -93,11 +217,14 @@
           const response = await fetch('../checkboxes.json');
           const data = await response.json();
 
-          carImageCheckbox.value = data.carImage;
-          carTypeCheckbox.value = data.carType;
-          carLeasingCheckbox.value = data.carLeasing;
-          carBTOCheckbox.value = data.carBTO;
-          carFinancingCheckbox.value = data.carFinancing;
+          carGroupCheckbox.value = data.carGroup;
+          carImageGroupCheckbox.value = data.carImageGroup;
+          carImageSpecificCheckbox.value = data.carImageSpecific;
+          carTypeGroupCheckbox.value = data.carTypeGroup;
+          carTypeSpecificCheckbox.value = data.carTypeSpecific;
+          carFormatCheckbox.value = data.carFormat;
+          carStatusCheckbox.value = data.carStatus;
+          
           carInsuranceCheckbox.value = data.carInsurance;
 
         } catch (error) {
@@ -109,41 +236,52 @@
 
         let text = '';
 
-        if (carImageCheckbox.value.checked) {
-          const radio = carImageCheckbox.value.radios.find(radio => radio.selected == carImageCheckbox.value.selectedRadio);
+        if (carImageGroupCheckbox.value.checked) {
+          const radio = carImageGroupCheckbox.value.radios.find(radio => radio.selected == carImageGroupCheckbox.value.selectedRadio);
           if (radio && radio.value) { text += radio.value + ' '; }
         }
 
-        if (carTypeCheckbox.value.checked) {
-          const radio = carTypeCheckbox.value.radios.find(radio => radio.selected == carTypeCheckbox.value.selectedRadio);
+        if (carTypeGroupCheckbox.value.checked) {
+          const radio = carTypeGroupCheckbox.value.radios.find(radio => radio.selected == carTypeGroupCheckbox.value.selectedRadio);
           if (radio) { text += radio.value + ' '; }
         }
 
-        if (carLeasingCheckbox.value.checked) {
-          text += carLeasingCheckbox.value.disclaimerText + ' ';
+        if (carImageSpecificCheckbox.value.checked) {
+          const radio = carImageSpecificCheckbox.value.radios.find(radio => radio.selected == carImageSpecificCheckbox.value.selectedRadio);
+          if (radio && radio.value) { text += radio.value + ' '; }
+        }
+        
+        if (carTypeSpecificCheckbox.value.checked) {
+          const radio = carTypeSpecificCheckbox.value.radios.find(radio => radio.selected == carTypeSpecificCheckbox.value.selectedRadio);
+          if (radio) { text += radio.value + ' '; }
         }
 
-        if (carBTOCheckbox.value.checked) {
-          text += carBTOCheckbox.value.disclaimerText + ' ';
+        if (carFormatCheckbox.value.checked) {
+          const radio = carFormatCheckbox.value.radios.find(radio => radio.selected == carFormatCheckbox.value.selectedRadio);
+          if (radio) { text += radio.value + ' '; }
         }
 
-        if (carFinancingCheckbox.value.checked) {
-          text += carFinancingCheckbox.value.disclaimerText + ' ';
+        if (carStatusCheckbox.value.checked) {
+          const radio = carStatusCheckbox.value.radios.find(radio => radio.selected == carStatusCheckbox.value.selectedRadio);
+          if (radio) { text += radio.value + ' '; }
         }
 
         if (carInsuranceCheckbox.value.checked) {
-          text += carInsuranceCheckbox.value.disclaimerText + ' ';
+          const radio = carInsuranceCheckbox.value.radios.find(radio => radio.selected == carInsuranceCheckbox.value.selectedRadio);
+          if (radio) { text += radio.value + ' '; }
         }
 
         return text;
       });
   
       return {
-        carImageCheckbox,
-        carTypeCheckbox,
-        carLeasingCheckbox,
-        carBTOCheckbox,
-        carFinancingCheckbox,
+        carGroupCheckbox,
+        carImageGroupCheckbox,
+        carImageSpecificCheckbox,
+        carTypeGroupCheckbox,
+        carTypeSpecificCheckbox,
+        carFormatCheckbox,
+        carStatusCheckbox,
         carInsuranceCheckbox,
 
         combinedText,
