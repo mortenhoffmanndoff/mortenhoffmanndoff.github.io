@@ -5,7 +5,8 @@
         <h1>Pligttekster på cards</h1>
         <p>
           Vi har lavet en pligttekst generator der omfavner de nødvendige pligttekster
-          formuleret som Semler ønsker.
+          formuleret som Semler ønsker. <br><br>
+          Indeholder card'et dele af pligtteksten, så kan disse oplysninger fjernes fra pligtteksten.
         </p>
       </div>
       
@@ -284,20 +285,15 @@
     setup() {
       const carBrandCheckbox = ref({});
       const carGroupCheckbox = ref({});
-      
       const carImageGroupCheckbox = ref({});
       const carImageSpecificCheckbox = ref({});
-
       const carTypeGroupCheckbox = ref({});
       const carTypeSpecificCheckbox = ref({});
-      
       const carFormatGroupCheckbox = ref({});
       const carFormatGroupAudiCheckbox = ref({});
       const carFormatSpecificCheckbox = ref({});
       const carFormatSpecificAudiCheckbox = ref({});
-
       const carStatusCheckbox = ref({});
-
       const carInsuranceCheckbox = ref({});
   
       onMounted(async () => {
@@ -337,7 +333,7 @@
       carInsuranceCheckbox.value.selectedRadio = '';
     };
 
-    // Watch for changes in carBrandCheckbox or carGroupCheckbox
+    // Watch for changes in carBrandCheckbox and carGroupCheckbox
     watch(
       () => carBrandCheckbox.value.selectedRadio,
       (newValue, oldValue) => {
@@ -411,6 +407,7 @@
           if (radio) { text += radio.value + ' '; }
         }
 
+        // Combine all selected values
         return text;
       });
   

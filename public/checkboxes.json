@@ -17,7 +17,7 @@
     "selectedRadio": "",
     "radios": [
       { "label": "Cardet repræsenterer en gruppe af biler", "value": "", "selected" : "group" },
-      { "label": "Cardet repræsenterer en specifik bil", "value": "", "selected" : "specific" }
+      { "label": "Cardet repræsenterer en specifik bil (stelnummer / konfiguration)", "value": "", "selected" : "specific" }
     ]
   },
 
