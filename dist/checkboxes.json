@@ -1,4 +1,16 @@
 {
+  "carBrand": {
+    "label": "Start med at vælge brand",
+    "checked": true,
+    "selectedRadio": "",
+    "radios": [
+      { "label": "Audi", "value": "", "selected" : "audi" },
+      { "label": "Volkswagen", "value": "", "selected" : "volkswagen" },
+      { "label": "CUPRA", "value": "", "selected" : "cupra" },
+      { "label": "SEAT", "value": "", "selected" : "seat" },
+      { "label": "ŠKODA", "value": "", "selected" : "skoda" }
+    ]
+  },
   "carGroup": {
     "label": "Hvad repræsenterer 'cardet'?",
     "checked": true,
@@ -51,7 +63,7 @@
     ]
   },
 
-  "carFormat": {
+  "carFormatGroup": {
     "label": "Vælg hvilket format 'cardet' skal anvendes til",
     "checked": true,
     "selectedRadio": "",
@@ -59,8 +71,43 @@
       { "label": "Leasing", "value": "Mdl. ydelse fra X kr. Førstegangsydelse X kr. Km. pr. år X km. Leasingperiode: X mdr. Samlet pris i leasingperioden fra: X kr. Mindstepris i bindingsperioden (12 mdr.) fra X kr. Den viste pris er inkl. moms, service- og reparationsaftale og lånebil ved service, men ekskl. dæk, forsikring, brændstof, CO₂-ejerafgift og overkørte kilometer. Positiv kreditgodkendelse, køb af kaskoforsikring og BS-betaling forudsættes. Afleveringsgebyr: 600 kr. Privatleasing via Volkswagen Semler Finans Danmark A/S.", "selected" : "radio1" },
       { "label": "Køb", "value": "Vejledende kontantpris.", "selected" : "radio2" },
       { "label": "Finansiering", "value": "Pris fra X kr. Finansiering fra X kr./md. Mdl. ydelse (inkl. moms og lev.) med en udbet: X kr. Saml. kreditbeløb: X kr. Løbetid: X mdr. Rente: X %. Debitorrente (variabel): X %. Saml. kreditomk.: X kr. Saml. tilbagebet.: X kr. ÅOP: X %. Finansiering via VWSF A/S. Fortrydelsesret på finansiering. Læs mere på <a href='www.vwsf.dk/finansiering'>www.vwsf.dk/finansiering</a>.", "selected" : "radio3" },
-      { "label": "Køb og finansiering", "value": "Vejledende kontantpris. Pris fra X kr. Finansiering fra X kr./md. Mdl. ydelse (inkl. moms og lev.) med en udbet: X kr. Saml. kreditbeløb: X kr. Løbetid: X mdr. Rente: X %. Debitorrente (variabel): X %. Saml. kreditomk.: X kr. Saml. tilbagebet.: X kr. ÅOP: X %. Finansiering via VWSF A/S. Fortrydelsesret på finansiering. Læs mere på <a href='www.vwsf.dk/finansiering'>www.vwsf.dk/finansiering</a>", "selected" : "radio4" },
-      { "label": "Køb, finansiering og leasing", "value": "???", "selected" : "radio5" }
+      { "label": "Køb og finansiering", "value": "Vejledende kontantpris. Pris fra X kr. Finansiering fra X kr./md. Mdl. ydelse (inkl. moms og lev.) med en udbet: X kr. Saml. kreditbeløb: X kr. Løbetid: X mdr. Rente: X %. Debitorrente (variabel): X %. Saml. kreditomk.: X kr. Saml. tilbagebet.: X kr. ÅOP: X %. Finansiering via VWSF A/S. Fortrydelsesret på finansiering. Læs mere på <a href='www.vwsf.dk/finansiering'>www.vwsf.dk/finansiering</a>", "selected" : "radio4" }
+    ]
+  },
+
+  "carFormatGroupAudi": {
+    "label": "Vælg hvilket format 'cardet' skal anvendes til",
+    "checked": true,
+    "selectedRadio": "",
+    "radios": [
+      { "label": "Leasing", "value": "Mdl. ydelse fra X kr. Førstegangsydelse X kr. Km. pr. år X km. Leasingperiode: X mdr. Samlet pris i leasingperioden fra: X kr. Mindstepris i bindingsperioden (12 mdr.) fra X kr. Den viste pris er inkl. moms, service- og reparationsaftale og lånebil ved service, men ekskl. dæk, forsikring, brændstof, CO₂-ejerafgift og overkørte kilometer. Positiv kreditgodkendelse, køb af kaskoforsikring og BS-betaling forudsættes. Stiftelsesomkostninger 5.495 kr. Afleveringsgebyr: 600 kr. Privatleasing via Volkswagen Semler Finans Danmark A/S.", "selected" : "radio1" },
+      { "label": "Køb", "value": "Vejledende kontantpris.", "selected" : "radio2" },
+      { "label": "Finansiering", "value": "Pris fra X kr. Finansiering fra X kr./md. Mdl. ydelse (inkl. moms og lev.) med en udbet: X kr. Saml. kreditbeløb: X kr. Løbetid: X mdr. Rente: X %. Debitorrente (variabel): X %. Saml. kreditomk.: X kr. Saml. tilbagebet.: X kr. ÅOP: X %. Finansiering via VWSF A/S. Fortrydelsesret på finansiering. Læs mere på <a href='www.vwsf.dk/finansiering'>www.vwsf.dk/finansiering</a>.", "selected" : "radio3" },
+      { "label": "Køb og finansiering", "value": "Vejledende kontantpris. Pris fra X kr. Finansiering fra X kr./md. Mdl. ydelse (inkl. moms og lev.) med en udbet: X kr. Saml. kreditbeløb: X kr. Løbetid: X mdr. Rente: X %. Debitorrente (variabel): X %. Saml. kreditomk.: X kr. Saml. tilbagebet.: X kr. ÅOP: X %. Finansiering via VWSF A/S. Fortrydelsesret på finansiering. Læs mere på <a href='www.vwsf.dk/finansiering'>www.vwsf.dk/finansiering</a>", "selected" : "radio4" }
+    ]
+  },
+
+  "carFormatSpecific": {
+    "label": "Vælg hvilket format 'cardet' skal anvendes til",
+    "checked": true,
+    "selectedRadio": "",
+    "radios": [
+      { "label": "Leasing", "value": "Mdl. ydelse X kr. Førstegangsydelse X kr. Km. pr. år X km. Leasingperiode: X mdr. Samlet pris i leasingperioden: X kr. Mindstepris i bindingsperioden (12 mdr.) X kr. Den viste pris er inkl. moms, service- og reparationsaftale og lånebil ved service, men ekskl. dæk, forsikring, brændstof, CO₂-ejerafgift og overkørte kilometer. Positiv kreditgodkendelse, køb af kaskoforsikring og BS-betaling forudsættes. Afleveringsgebyr: 600 kr. Privatleasing via Volkswagen Semler Finans Danmark A/S.", "selected" : "radio1" },
+      { "label": "Køb", "value": "Vejledende kontantpris.", "selected" : "radio2" },
+      { "label": "Finansiering", "value": "Pris X kr. Finansiering X kr./md. Mdl. ydelse (inkl. moms og lev.) med en udbet: X kr. Saml. kreditbeløb: X kr. Løbetid: X mdr. Rente: X %. Debitorrente (variabel): X %. Saml. kreditomk.: X kr. Saml. tilbagebet.: X kr. ÅOP: X %. Finansiering via VWSF A/S. Fortrydelsesret på finansiering. Læs mere på <a href='www.vwsf.dk/finansiering'>www.vwsf.dk/finansiering</a>.", "selected" : "radio3" },
+      { "label": "Køb og finansiering", "value": "Vejledende kontantpris. Pris X kr. Finansiering X kr./md. Mdl. ydelse (inkl. moms og lev.) med en udbet: X kr. Saml. kreditbeløb: X kr. Løbetid: X mdr. Rente: X %. Debitorrente (variabel): X %. Saml. kreditomk.: X kr. Saml. tilbagebet.: X kr. ÅOP: X %. Finansiering via VWSF A/S. Fortrydelsesret på finansiering. Læs mere på <a href='www.vwsf.dk/finansiering'>www.vwsf.dk/finansiering</a>", "selected" : "radio4" }
+    ]
+  },
+
+  "carFormatSpecificAudi": {
+    "label": "Vælg hvilket format 'cardet' skal anvendes til",
+    "checked": true,
+    "selectedRadio": "",
+    "radios": [
+      { "label": "Leasing", "value": "Mdl. ydelse X kr. Førstegangsydelse X kr. Km. pr. år X km. Leasingperiode: X mdr. Samlet pris i leasingperioden: X kr. Mindstepris i bindingsperioden (12 mdr.) X kr. Den viste pris er inkl. moms, service- og reparationsaftale og lånebil ved service, men ekskl. dæk, forsikring, brændstof, CO₂-ejerafgift og overkørte kilometer. Positiv kreditgodkendelse, køb af kaskoforsikring og BS-betaling forudsættes. Stiftelsesomkostninger 5.495 kr. Afleveringsgebyr: 600 kr. Privatleasing via Volkswagen Semler Finans Danmark A/S.", "selected" : "radio1" },
+      { "label": "Køb", "value": "Vejledende kontantpris.", "selected" : "radio2" },
+      { "label": "Finansiering", "value": "Pris X kr. Finansiering X kr./md. Mdl. ydelse (inkl. moms og lev.) med en udbet: X kr. Saml. kreditbeløb: X kr. Løbetid: X mdr. Rente: X %. Debitorrente (variabel): X %. Saml. kreditomk.: X kr. Saml. tilbagebet.: X kr. ÅOP: X %. Finansiering via VWSF A/S. Fortrydelsesret på finansiering. Læs mere på <a href='www.vwsf.dk/finansiering'>www.vwsf.dk/finansiering</a>.", "selected" : "radio3" },
+      { "label": "Køb og finansiering", "value": "Vejledende kontantpris. Pris X kr. Finansiering X kr./md. Mdl. ydelse (inkl. moms og lev.) med en udbet: X kr. Saml. kreditbeløb: X kr. Løbetid: X mdr. Rente: X %. Debitorrente (variabel): X %. Saml. kreditomk.: X kr. Saml. tilbagebet.: X kr. ÅOP: X %. Finansiering via VWSF A/S. Fortrydelsesret på finansiering. Læs mere på <a href='www.vwsf.dk/finansiering'>www.vwsf.dk/finansiering</a>", "selected" : "radio4" }
     ]
   },
 
@@ -69,8 +116,9 @@
     "checked": true,
     "selectedRadio": "",
     "radios": [
-      { "label": "Lagerbil", "value": "", "selected" : "radio1" },
-      { "label": "BTO", "value": "Forventet levering Q[1,2,3,4] [ÅR].", "selected" : "radio2" }
+      { "label": "Lagerbil med levering inden for 30 dage", "value": "", "selected" : "radio1" },
+      { "label": "Lagerbil med levering efter 30 dage", "value": "Forventet levering Q[1,2,3,4] [ÅR].", "selected" : "radio2" },
+      { "label": "BTO", "value": "Forventet levering Q[1,2,3,4] [ÅR].", "selected" : "radio3" }
     ]
   },
 
