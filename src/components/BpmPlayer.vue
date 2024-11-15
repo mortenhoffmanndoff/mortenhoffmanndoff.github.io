@@ -17,18 +17,26 @@ export default {
       currentBpm: this.bpm,
       isPlaying: false,
       intervalId: null,
-      clickSound: null // Vi initialiserer ikke lyden her
+      audioContext: new (window.AudioContext || window.webkitAudioContext)(),
+      audioBuffer: null
     };
   },
   mounted() {
-    // Vi opretter Audio-objektet og laster lyden når komponenten er monteret
-    this.clickSound = new Audio(clickSoundFile);
-    this.clickSound.load(); // Load lyden til bufferen
+    // Indlæs lydfilen ved hjælp af fetch API
+    fetch(clickSoundFile)
+      .then(response => response.arrayBuffer())
+      .then(data => {
+        this.audioContext.decodeAudioData(data, (buffer) => {
+          this.audioBuffer = buffer;
+        });
+      });
   },
   methods: {
     playClick() {
-      this.clickSound.currentTime = 0;
-      this.clickSound.play();
+      const source = this.audioContext.createBufferSource();
+      source.buffer = this.audioBuffer;
+      source.connect(this.audioContext.destination);
+      source.start(0);
     },
     togglePlay() {
       if (this.isPlaying) {
@@ -52,6 +60,7 @@ export default {
   },
   beforeUnmount() {
     clearInterval(this.intervalId);
+    this.audioContext.close(); // Luk AudioContext når komponenten unmountes
   }
 };
 </script>
