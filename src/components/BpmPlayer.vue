@@ -1,14 +1,14 @@
 <template>
-    <div>
-      <p>Current BPM: {{ currentBpm }}</p>
-      <!-- <button @click="togglePlay">
-        {{ isPlaying ? 'Stop' : 'Play' }}
-      </button> -->
-    </div>
-  </template>
-  
-  <script>
-import clickSoundFile from '../assets/MetronomeUp.wav'; // Importer som modul
+  <div>
+    <p>Current BPM: {{ currentBpm }}</p>
+    <button @click="togglePlay">
+      {{ isPlaying ? 'Stop' : 'Play' }}
+    </button>
+  </div>
+</template>
+
+<script>
+import clickSoundFile from '../assets/MetronomeUp.wav';
 
 export default {
   props: ['bpm'],
@@ -17,12 +17,17 @@ export default {
       currentBpm: this.bpm,
       isPlaying: false,
       intervalId: null,
-      clickSound: new Audio(clickSoundFile) // Brug den importerede lydfil
+      clickSound: null // Vi initialiserer ikke lyden her
     };
+  },
+  mounted() {
+    // Vi opretter Audio-objektet og laster lyden når komponenten er monteret
+    this.clickSound = new Audio(clickSoundFile);
+    this.clickSound.load(); // Load lyden til bufferen
   },
   methods: {
     playClick() {
-      this.clickSound.currentTime = 0; // Start ved begyndelsen af lydfilen
+      this.clickSound.currentTime = 0;
       this.clickSound.play();
     },
     togglePlay() {
