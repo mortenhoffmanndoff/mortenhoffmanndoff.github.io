@@ -31,7 +31,7 @@
     methods: {
       addSong() {
         if (this.newSong.name && this.newSong.bpm) {
-          this.songs.push({...this.newSong, isPlaying: false});
+          this.songs.unshift({...this.newSong, isPlaying: false}); //push
           this.newSong.name = '';
           this.newSong.bpm = null;
           this.saveSongs();
