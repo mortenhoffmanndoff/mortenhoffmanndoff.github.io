@@ -1,19 +1,20 @@
 <template>
-    <div>
+     <h2>Metronome</h2>
+     <p>Add some songs!</p>
+    <div class="songlist">
       <input v-model="newSong.name" placeholder="Song Name" />
       <input v-model.number="newSong.bpm" type="number" placeholder="BPM" />
       <button @click="addSong">+</button>
-  
-      <ul>
-        <li v-for="song in songs" :key="song.name">
-          {{ song.name }} - {{ song.bpm }} BPM
-          <button @click="toggleSong(song)">
-            {{ song.isPlaying ? 'Stop' : 'Play' }}
-          </button>
-          <button @click="deleteSong(song)">Delete</button>
-        </li>
-      </ul>
     </div>
+    <ul>
+      <li v-for="song in songs" :key="song.name" class="savedlist">
+        {{ song.name }} - {{ song.bpm }} BPM
+        <button @click="toggleSong(song)">
+          {{ song.isPlaying ? 'Stop' : 'Play' }}
+        </button>
+        <button @click="deleteSong(song)">Delete</button>
+      </li>
+    </ul>
   </template>
   
   <script>

@@ -1,8 +1,6 @@
 <template>
-  <div id="app">
-    <SongList @play="setCurrentBpm" @toggle-play="playBpm"/>
-    <BpmPlayer :bpm="currentBpm" ref="bpmPlayer"/>
-  </div>
+  <SongList @play="setCurrentBpm" @toggle-play="playBpm"/>
+  <BpmPlayer :bpm="currentBpm" ref="bpmPlayer"/>
 </template>
 
 <script>
