@@ -2,12 +2,19 @@
      <h2>Metronome</h2>
      <!-- <p>Add some songs!</p> -->
     <div class="songlist">
-      <input class="song" v-model="newSong.name" placeholder="Song Name" />
-      <input class="bpm" v-model.number="newSong.bpm" type="number" inputmode="tel" placeholder="BPM" />
+      <input v-if="openInput" class="song" v-model="newSong.name" placeholder="Song Name" />
+      <input v-if="openInput" class="bpm" v-model.number="newSong.bpm" type="number" inputmode="tel" placeholder="BPM" />
+      <div class="display-flex gap-16">
+      <button  class="add" @click="openInput = !openInput">
+        <svg v-if="!openInput" viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg>
+        <svg v-if="openInput" viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><polyline points="16 12 12 8 8 12"></polyline><line x1="12" y1="16" x2="12" y2="8"></line></svg>
+        Opret ny sang
+      </button>
       <button class="add" @click="addSong">
         <svg viewBox="0 0 24 24" width="32" height="32" stroke="white" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-        Tilføj
+        Tilføj sang til listen
       </button>
+    </div>
     </div>
     <ul>
       <li v-for="song in songs" :key="song.name" class="savedlist">
@@ -33,6 +40,7 @@
   export default {
     data() {
       return {
+        openInput: false,
         newSong: {
           name: '',
           bpm: null
