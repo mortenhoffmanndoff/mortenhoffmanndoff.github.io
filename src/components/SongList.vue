@@ -1,18 +1,30 @@
 <template>
      <h2>Metronome</h2>
-     <p>Add some songs!</p>
+     <!-- <p>Add some songs!</p> -->
     <div class="songlist">
-      <input v-model="newSong.name" placeholder="Song Name" />
-      <input v-model.number="newSong.bpm" type="number" placeholder="BPM" />
-      <button @click="addSong">+</button>
+      <input class="song" v-model="newSong.name" placeholder="Song Name" />
+      <input class="bpm" v-model.number="newSong.bpm" type="number" placeholder="BPM" />
+      <button class="add" @click="addSong">
+        <svg viewBox="0 0 24 24" width="32" height="32" stroke="white" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        Tilføj
+      </button>
     </div>
     <ul>
       <li v-for="song in songs" :key="song.name" class="savedlist">
-        {{ song.name }} - {{ song.bpm }} BPM
-        <button @click="toggleSong(song)">
-          {{ song.isPlaying ? 'Stop' : 'Play' }}
+        <button @click="toggleSong(song)" class="display-flex align-items-center gap-8">
+          <span v-if="song.isPlaying">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="white" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg>
+          </span>
+          <span v-else>
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="white" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+          </span>
+          {{ song.name }} <strong>({{ song.bpm }} BPM)</strong>
         </button>
-        <button @click="deleteSong(song)">Delete</button>
+        <div class="display-flex gap-8" style="margin-left: auto">
+          <button @click="deleteSong(song)">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="red" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+          </button>
+        </div>
       </li>
     </ul>
   </template>

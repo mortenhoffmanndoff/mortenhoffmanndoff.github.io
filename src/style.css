@@ -13,13 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  font-size: 16px;
 }
 
 body {
@@ -27,45 +22,66 @@ body {
   padding: 0;
 }
 
-h1 {
-  font-size: 3.2em;
+h2 {
+  font-size: 1.8em;
   line-height: 1.1;
+  margin-top: 0.25em;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  color: white;
+  border-radius: unset;
+  border: unset;
+  padding: unset;
+  background-color: transparent;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-.card {
-  padding: 2em;
+.display-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.add {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gap-8 {
+  gap: 8px;
+}
+
+.gap-16 {
+  gap: 16px;
 }
 
 #app {
-  padding: 2rem;
+  padding: 1rem;
+}
+
+input {
+  height: 32px;
+  background: white;
+}
+
+input:-webkit-autofill {
+  border: 1px solid #ccc;
+  -webkit-box-shadow: inset 0 0 0px 9999px white;
+}
+
+input:focus,
+input:-webkit-autofill:focus {
+  border-color: #66afe9;
+  -webkit-box-shadow: inset 0 0 0px 9999px white, 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
 .songlist {
-  display: flex;
-  gap: 8px;
-
-  & > input {
-    flex: 1 1 auto;
-  }
+  display: grid;
+  gap: 16px;
 }
 
 .savedlist {
@@ -79,15 +95,9 @@ ul {
   padding: 0;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+} */

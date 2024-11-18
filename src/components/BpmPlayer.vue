@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p>Current BPM: {{ currentBpm }}</p>
-    <button @click="togglePlay">
+    <!-- <p>Current BPM: {{ currentBpm }}</p> -->
+    <!-- <button @click="togglePlay">
       {{ isPlaying ? 'Stop' : 'Play' }}
-    </button>
+    </button> -->
   </div>
 </template>
 
