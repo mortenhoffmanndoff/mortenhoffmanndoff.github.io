@@ -7,21 +7,43 @@
                 <span>of <b>your</b> brand.</span>
             </h1>
 
-            <button class="play-btn" aria-label="Play audio" @click="toggleAudio">
-                <svg v-if="!isPlaying" width="60" height="60" viewBox="0 0 60 60" fill="none">
-                    <circle cx="30" cy="30" r="30" fill="#cabbb8" />
-                    <polygon points="24,20.5 42,30 24,39.5" fill="#fff" />
-                </svg>
-                <svg v-else width="60" height="60" viewBox="0 0 60 60" fill="none">
-                    <circle cx="30" cy="30" r="30" fill="#cabbb8" />
-                    <rect x="21" y="21" width="18" height="18" rx="3" fill="#fff" />
-                </svg>
-            </button>
+            <div style="display: flex; font-size: 32px; text-transform: uppercase; gap: 16px;">
+                
+                <button class="play-btn" aria-label="Play audio" @click="toggleAudio">
+                    <svg v-if="!isPlaying" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <circle cx="30" cy="30" r="30" fill="#cabbb8" />
+                        <polygon points="24,20.5 42,30 24,39.5" fill="#fff" />
+                    </svg>
+                    <svg v-else width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <circle cx="30" cy="30" r="30" fill="#cabbb8" />
+                        <rect x="21" y="21" width="18" height="18" rx="3" fill="#fff" />
+                    </svg>
+                </button>
+
+                <div style="display: flex; flex-direction: column; gap:8px">
+                    <p style="margin: 0;">Leading voice talent of Denmark</p>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <g transform="translate(0 .5)">
+                                <circle fill="#F0F0F0" class="st0" cx="12" cy="11.5" r="12"/>
+                                <path fill="#D80027" class="st1" d="M9.4,9.9h14.5C23.1,4,18.1-0.5,12-0.5c-0.9,0-1.8,0.1-2.6,0.3V9.9L9.4,9.9z M6.3,9.9V1C3,2.8,0.6,6.1,0.1,9.9
+                                    H6.3L6.3,9.9z M6.3,13.1H0.1c0.5,3.9,2.9,7.2,6.2,9V13.1L6.3,13.1z M9.4,13.1v10.1c0.8,0.2,1.7,0.3,2.6,0.3
+                                    c6.1,0,11.1-4.5,11.9-10.4H9.4L9.4,13.1z"/>
+                            </g>
+                        </svg>
+                        <span style="font-size: 16px;">| DK Audio</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle opacity="0.2" cx="500" cy="500" r="500" fill="#9A8C99" />
-        </svg>
+
+            <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle opacity="0.2" cx="500" cy="500" r="500" fill="#9A8C99" />
+            </svg>
+        
+        
         <img src="../assets/hero-image.png" alt="Hero Image" />
     </div>
 </template>

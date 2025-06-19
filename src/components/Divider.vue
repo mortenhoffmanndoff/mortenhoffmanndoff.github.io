@@ -22,7 +22,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 2vw;
-  padding: 120px 0;
+  padding: 10vh 0;
 }
 
 .divider-line {

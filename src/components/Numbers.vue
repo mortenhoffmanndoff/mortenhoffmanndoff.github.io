@@ -76,7 +76,7 @@ export default {
     },
     getNumberStyle(n) {
       const spread = 0.12;
-      const center = (n - 1) / 7;
+      const center = (n - 1) / 8;
       const proximity = Math.max(0, 1 - Math.abs(center - this.progress) / spread);
 
       if (!this.inSection) {

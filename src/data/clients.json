@@ -1,62 +1,12 @@
 [
-  [
-    "NOVO NORDISK.",
-    "LEGO.",
-    "CARLSBERG.",
-    "MAERSK.",
-    "VESTAS.",
-    "DANSKE BANK.",
-    "COLOPLAST.",
-    "PANDORA."
-  ],
-  [
-    "APPLE.",
-    "GOOGLE.",
-    "MICROSOFT.",
-    "AMAZON.",
-    "FACEBOOK.",
-    "IBM.",
-    "NETFLIX.",
-    "TV2."
-  ],
-  [
-    "ADIDAS.",
-    "NIKE.",
-    "BMW.",
-    "AUDI.",
-    "TESLA.",
-    "VOLVO.",
-    "TOYOTA.",
-    "HONDA."
-  ],
-  [
-    "COCA-COLA.",
-    "PEPSICO.",
-    "MCDONALD'S.",
-    "BURGER KING.",
-    "NESTLE.",
-    "UNILEVER.",
-    "HEINEKEN.",
-    "PHILIPS."
-  ],
-  [
-    "SPOTIFY.",
-    "SAMSUNG.",
-    "INTEL.",
-    "HP.",
-    "ORACLE.",
-    "SAP.",
-    "SONY.",
-    "CANON."
-  ],
-  [
-    "MAERSK.",
-    "SHELL.",
-    "BP.",
-    "CHEVRON.",
-    "GSK.",
-    "NOVARTIS.",
-    "PFIZER.",
-    "SIEMENS."
-  ]
+  ["Pixum", "KRÆFTENS BEKÆMPELSE", "Coca Cola", "Schwarzkopf", "Københavns Lufthavne", "Tryg"],
+  ["Sunweb", "ETORO", "Microsoft", "Statoil", "Wolt", "Energinet"],
+  ["Radio100", "New Balance", "Spotify", "Dataetisk Råd", "Home"],
+  ["HelloFresh", "Everstream", "Just Eat", "Formue", "Netflix"],
+  ["Jysk", "NKT", "Novo Nordisk", "Colorline", "McDonalds"],
+  ["Falck", "Dr. Oetker", "Toms", "Mini Cooper", "Thiele"],
+  ["Amager Lufthavne", "Lidl", "MobilePay", "Amazon Prime", "Interflora"],
+  ["Gabor", "Sydbank", "Starbucks", "Carlsberg", "Tivoli Hotel"],
+  ["HK", "Pfizer", "Danske Spil", "GYLDENDAL", "Royal Unibrew"],
+  ["Disney", "BMW", "the European Parliament", "YouTube Music", "Skipper’s Pipes"]
 ]

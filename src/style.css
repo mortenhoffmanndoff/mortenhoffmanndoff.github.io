@@ -69,6 +69,12 @@ img {
   height: auto;
 }
 
+.grid-container {
+  display: grid;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
 @keyframes rotate-infinite {
   0% {
     transform: rotate(0);
