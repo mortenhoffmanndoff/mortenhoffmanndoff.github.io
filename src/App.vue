@@ -1,6 +1,6 @@
 <template>
   <div class="cb">
-    <!-- <Header /> -->
+    <Header />
     <Hero />
     <Divider title="Work" dividerBackground="bg-almost-white" />
     <Work />

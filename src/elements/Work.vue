@@ -1,8 +1,8 @@
 <template>
 
 <div class="work">
-    <div class="work-track">
-      <div class="work-track-item" role="button" v-for="work in workItems" :key="work.id" @click="openModal(work)">
+    <div class="work-track" data-aos="zoom-in-up">
+      <div class="work-track-item" role="button" v-for="work in workItems" :key="work.id" @click="openModal(work)" >
         <h2>{{ work.title }}</h2>
         <span>{{ work.number }}</span>
       </div>
@@ -12,6 +12,8 @@
     <Modal :visible="!!selectedItem" :item="selectedItem" @close="selectedItem = null">
       <template #default="{ item }">
         <div :style="{ 'background-color': item.backgroundColor, 'min-height': '100dvh' }">
+          
+            <img :src="item.stage" class="img-responsive" :alt="'Christina Bjørn - ' + item.title" />
             <divider :title="item.title" />
             <Media v-for="media in item.media" :key="item.id"
                 :mediaType="media.mediaType"

@@ -71,9 +71,9 @@ export default {
 
 /* Close Button */
 .modal-close {
-  position: absolute;
-  top: 36px;
-  right: 54px;
+  position: fixed;
+  top: 8px;
+  right: 16px;
   background: transparent;
   border: none;
   font-size: 2rem;
@@ -82,6 +82,21 @@ export default {
   color: #333;
   transition: color 0.2s ease;
   /* animation: rotate 1s linear infinite; */
+  z-index: 1001;
+
+  @media (min-width: 800px) {
+    top: 36px;
+    right: 54px;
+  }
+
+  @media (max-width: 799px) {
+
+    > svg {
+      width: 56px;
+      height: 56px;
+    }
+  }
+
 }
 
 .modal-close:hover {
