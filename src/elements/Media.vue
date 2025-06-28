@@ -1,13 +1,13 @@
 <template>
     <div class="media" v-if="mediaUrl">
         <div class="media-type">
-            <video v-if="mediaType === 'video'" :src="mediaUrl" loop autoplay muted></video>
+            <video v-if="mediaType === 'video'" :src="mediaUrl" controls loop controlsList="nodownload noplaybackrate" disablePictureInPicture></video>
             <img v-else :src="mediaUrl" alt="">
         </div>
         <div class="media-content" v-if="mediaTitle || mediaText">
             <Flag :text="mediaFlagText" :DK="mediaDK" :UK="mediaUK"/>
-            <h3 v-html="mediaTitle"></h3>
-            <p>{{ mediaText }}</p>
+            <h3 class="media-title" v-html="mediaTitle"></h3>
+            <p class="media-text">{{ mediaText }}</p>
         </div>
     </div>
 </template>
@@ -60,52 +60,74 @@ export default {
 
 .media {
     display: flex;
+    flex-direction: column;
     align-items: center;
+
+    @media (min-width: 1440px) {
+        flex-direction: row;
+    }
+    
 }
 
 .media + .media {
-    margin-top: 120px;
-}
+    margin-top: 60px;
 
-.media:nth-child(even) {
-    flex-direction: row-reverse;
-
-    .media-content {
-        transform: translateX(100px);
+    @media (min-width: 1440px) {
+        margin-top: 120px;
     }
 }
 
+@media (min-width: 1440px) {
+    .media:nth-child(even) {
+        flex-direction: row-reverse;
+        
+        .media-content {
+            transform: translateX(100px);
+        }
+    }
+}
+
+
 .media-type {
-    width: 70%;
-}
-
-.media-type video {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    @media (min-width: 1440px) {
+        width: 70%;
+    }
 }
 
+.media-type video,
 .media-type img {
+    display: block;
     width: 100%;
     height: auto;
-    border-radius: 8px;
+
+    @media (min-width: 1440px) {
+        border-radius: 8px;
+    }
 }
 
 .media-content {
     display: flex;
-    width: 30%;
-    padding: 80px;
+    width: 100%;
+    padding: 40px 24px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 36px;
-    background: var(--color-gray-purple, #9A8C99);
-    transform: translateX(-100px);
+    gap: 18px;
+    background: #9a8c99f5;
+    
+    
+    @media (min-width: 1440px) {
+        width: 30%;
+        padding: 80px;
+        gap: 36px;
+        transform: translateX(-100px);
+    }
 }
 
-.media-content h3 {     
+.media-content .media-title {     
     margin: 0;
     color: var(--color-almost-white, #F6F6F6);
-    font-size: 48px;
+    font-size: clamp(32px, 5vw, 48px);
     font-weight: 400;
     line-height: 120%;
     letter-spacing: -1.44px;
@@ -115,10 +137,10 @@ export default {
         font-weight: 900;
     }
 }
-.media-content p {
+.media-content .media-text {
     margin: 0;
     color: var(--almost-white, #F6F6F6);
-    font-size: 24px;
+    font-size: clamp(18px, 1.5vw, 24px);
     font-weight: 400;
     line-height: 120%;
     letter-spacing: -0.72px;

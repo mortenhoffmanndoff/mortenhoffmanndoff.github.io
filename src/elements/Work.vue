@@ -13,7 +13,6 @@
       <template #default="{ item }">
         <div :style="{ 'background-color': item.backgroundColor, 'min-height': '100dvh' }">
             <divider :title="item.title" />
-
             <Media v-for="media in item.media" :key="item.id"
                 :mediaType="media.mediaType"
                 :mediaUrl="media.mediaUrl"
@@ -63,15 +62,26 @@ export default {
 .work {
     display: flex;
     background: var(--color-almost-white);
-    overflow: clip;
+    /* overflow: clip; */
     padding: 0 60px
 }
 
 .work-track {
     display: flex;
-    width: max-content;
-    min-width: 100%;
-    min-height: calc(100dvh - 318px);
+    flex-direction: column;
+    flex: 1 0 100%;
+    gap: 40px;
+    height: max-content;
+
+    @media (min-width: 800px) {  
+      flex-direction: row;
+      width: max-content;
+      height: unset;
+      min-width: 100%;
+      min-height: calc(100dvh - var(--divider-height));
+      flex: unset;
+    gap: unset;
+    }
 }
 
 .work-track-item {
@@ -99,24 +109,26 @@ export default {
         color: var(--color-gray-orange, #FFFFFF);
     }
 
-    &::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        width: 1px;
-        height: 100%;
-        background: var(--dark-blue, #22223A);
-        opacity: 0.1;
-    }
+    @media (min-width: 800px) {
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          width: 1px;
+          height: 100%;
+          background: var(--dark-blue, #22223A);
+          opacity: 0.1;
+      }
 
-    &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 1px;
-        height: 100%;
-        background: var(--dark-blue, #22223A);
-        opacity: 0.1;
+      &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 1px;
+          height: 100%;
+          background: var(--dark-blue, #22223A);
+          opacity: 0.1;
+      }   
     }
 }
 
@@ -136,7 +148,7 @@ export default {
     color: var(--dark-blue, #22223A);
     text-align: center;
     font-family: "Bodoni Moda";
-    font-size: 375px;
+    font-size: clamp(200px, 22.5vw, 375px);
     font-style: normal;
     font-weight: 700;
     line-height: 100%;

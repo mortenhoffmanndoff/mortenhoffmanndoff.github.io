@@ -16,8 +16,8 @@
 
             },
             {   
-                "mediaType": "video",
-                "mediaUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                "mediaType": "image",
+                "mediaUrl": "https://placehold.co/1300x776",
                 "mediaDK": true,
                 "mediaUK": false,
                 "mediaFlagText": "DK | Audio",
@@ -26,8 +26,8 @@
 
             },
             {   
-                "mediaType": "image",
-                "mediaUrl": "https://placehold.co/1300x776",
+                "mediaType": "video",
+                "mediaUrl": "/src/assets/video/commercials/lidl-plus-campaign-202.mp4",
                 "mediaDK": true,
                 "mediaUK": false,
                 "mediaFlagText": "DK | Audio",
@@ -53,13 +53,5 @@
     {
         "title": "Audiobooks & Docs",
         "number": "5"
-    },
-    {
-        "title": "On air & Live",
-        "number": "6"
-    },
-    {
-        "title": "Copyright",
-        "number": "7"
     }
 ]

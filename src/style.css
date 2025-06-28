@@ -9,7 +9,13 @@
   --color-light-orange: #F2E9E4;
   --color-almost-white: #F6F6F6;
 
-  --divider-height: 250px;
+  --divider-height: 180px;
+  --spacer-height: 80px;
+  
+  @media (min-width: 800px) {
+    --spacer-height: 120px;
+    --divider-height: 250px;
+  }
 }
 
 .bg-almost-black{ background: var(--color-almost-black); }
@@ -28,7 +34,11 @@
 .color-light-orange{ color: var(--color-light-orange); }
 .color-almost-white{ color: var(--color-almost-white); }
 
-
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   font-family: "Bodoni Moda", serif;
@@ -56,10 +66,41 @@ body:has(.modal) {
   height: 100%;
 }
 
+b, strong {
+  font-weight: 900;
+}
+
 [role="button"] {
   cursor: pointer;
 }
 
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+article {
+    display: grid;
+    margin: 0 auto;
+    padding: 0 60px;
+    
+    @media (min-width: 768px) {
+      padding: 0 120px;
+    }
+}
+
+
+.paragraph-md {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 32px);
+  line-height: 1.5;
+  color: #2a2a2a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
 
 h1 > span,
 h2 > span,
@@ -72,6 +113,10 @@ h6 > span {
 
 button {
   all: unset;
+}
+
+p {
+  margin: 0;
 }
 
 img {
@@ -109,10 +154,12 @@ img {
 
 
 .headline-xl {
-  font-size: clamp(64px, 7.5vw, 120px);
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -3.6px;
+  font-size: clamp(60px, 7.5vw, 120px);
+
+  /* font-size: clamp(64px, 7.5vw, 120px); */
 }
 
 .text-transform-uppercase {

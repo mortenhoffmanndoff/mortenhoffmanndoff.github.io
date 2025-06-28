@@ -42,8 +42,8 @@ export default {
 
 .marquee-text-track {
   display: flex;
-  padding-left: 4.8rem;
-  gap: 4.8rem;
+  padding-left: clamp(3rem, 1vw, 4.8rem);
+  gap: clamp(3rem, 1vw, 4.8rem);
   width: max-content; 
   animation: marquee-move-text 60s linear infinite;
 
@@ -54,7 +54,7 @@ export default {
 
 .marquee-text-track-item {
   color: var(--color-dark-blue);
-  font-size: 120px;
+  font-size: clamp(72px, 7.5vw,120px);
   font-weight: 900;
   letter-spacing: -3.6px;
   line-height: 1.2;

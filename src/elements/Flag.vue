@@ -85,6 +85,7 @@ export default {
     line-height: 120%; /* 19.2px */
     letter-spacing: -0.48px;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 </style>

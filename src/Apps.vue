@@ -82,12 +82,12 @@
 <script>
 
 import Clients from './components/Clients.vue';
-import Hero from './components/Hero.vue';
+import Hero from './elements/Hero.vue';
 import Numbers from './components/Numbers.vue';
 import Header from './components/Header.vue'
 import Divider from './elements/Divider.vue';
 import Spacer from './elements/Spacer.vue';
-import FullBackground from './components/FullBackground.vue';
+import FullBackground from './elements/FullBackground.vue';
 
 export default {
   components: { Hero, Numbers, Clients, Header, Divider, Spacer, FullBackground },
@@ -146,7 +146,7 @@ blockquote::before {
 }
 
 /* Responsiv */
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .testimonial {
     grid-template-columns: 1fr;
   }

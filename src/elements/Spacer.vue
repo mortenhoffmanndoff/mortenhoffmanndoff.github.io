@@ -16,6 +16,6 @@ export default {
 <style scoped>
 .spacer {
   display: flex;
-  height: 120px;
+  height: var(--spacer-height);
 }
 </style>
