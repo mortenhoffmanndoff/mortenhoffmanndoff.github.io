@@ -101,16 +101,6 @@ article {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
-
-h1 > span,
-h2 > span,
-h3 > span,
-h4 > span,
-h5 > span,
-h6 > span {
-  display: block
-}
-
 button {
   all: unset;
 }
@@ -176,4 +166,19 @@ img {
 
 .flex-direction-column {
   flex-direction: column;
+}
+
+@media (min-width: 800px) {
+  .hidden-md-up {
+    display: none;
+  }
+}
+@media (max-width: 799px) {
+  .hidden-md-down {
+    display: none;
+  }
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
 }

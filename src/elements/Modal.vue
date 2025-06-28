@@ -91,7 +91,7 @@ export default {
 /* Modal zoom animation */
 .modal-zoom-enter-active,
 .modal-zoom-leave-active {
-  transition: transform .75s ease, opacity .75s ease;
+  transition: all .75s ease;
 }
 
 .modal-zoom-enter-from,

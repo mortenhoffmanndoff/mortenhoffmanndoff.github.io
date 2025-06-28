@@ -7,7 +7,7 @@
         "media": [
             {   
                 "mediaType": "video",
-                "mediaUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                "mediaUrl": "/video/commercials/IF-forsikring.mp4",
                 "mediaDK": true,
                 "mediaUK": false,
                 "mediaFlagText": "DK | Audio",
@@ -16,8 +16,58 @@
 
             },
             {   
-                "mediaType": "image",
-                "mediaUrl": "https://placehold.co/1300x776",
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/danish-crown.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/bedst-billigst.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/hello-fresh.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/biotherm-BlueTherapyUplift-2022.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/JET-5-sek.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/JET-10-sek.mp4",
                 "mediaDK": true,
                 "mediaUK": false,
                 "mediaFlagText": "DK | Audio",
@@ -34,8 +84,57 @@
                 "mediaTitle": "My voice <strong>your choice</strong>",
                 "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
 
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/notino.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/Oersted_kampagne.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/Oersted-2018.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/RPReplay.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/Skippers_Pipes_Vende_Piken_Forkert.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
             }
-            
         ]
     },
     {
