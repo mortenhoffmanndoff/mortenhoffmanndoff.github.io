@@ -21,9 +21,9 @@
                 </button>
                 
                 <div class="play-btn-text">
-                    <!-- <p>Leading voice talent of Denmark</p> -->
-                     <p>Listen to sample</p>
-                    <Flag DK text="DK | Audio" :width="24" :height="24" />
+                    <p class="hidden-md-down">Leading voice talent of Denmark</p>
+                    <p class="hidden-md-up">Listen to sample</p>
+                    <Flag DK text="DK | Audio" />
                 </div>
 
             </div>
@@ -136,7 +136,12 @@ export default {
     }
 }
 
+.hero-title {
+    text-transform: uppercase;
+}
+
 .hero > .hero-content > h1 > span {
+    display: block;
     color: var(--color-dark-blue);
 }
 
@@ -190,12 +195,16 @@ export default {
     flex-direction: column;
     gap: 4px;
     justify-content: center;
+    /* white-space: nowrap; */
 
     @media (min-width: 800px) {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 16px;
+        justify-content: flex-start;
+        column-gap: 16px;
+        row-gap: 0px;
+        flex-wrap: wrap;
     }
 
 }

@@ -78,7 +78,7 @@ export default {
 }
 
 @media (min-width: 1440px) {
-    .media:nth-child(even) {
+    .media:nth-child(odd) {
         flex-direction: row-reverse;
         
         .media-content {
@@ -100,6 +100,8 @@ export default {
     display: block;
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
+    background: #000000;
 
     @media (min-width: 1440px) {
         border-radius: 8px;
