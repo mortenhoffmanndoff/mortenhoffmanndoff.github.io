@@ -2,12 +2,12 @@
     <div class="hero">
         <div class="hero-content">
             <h1 class="hero-title headline-xl text-transform-uppercase">
-                <span>My <b>voice</b></span>
-                <span>is the sound </span>
-                <span>of <b>your</b> brand.</span>
+                <span data-aos="fade-right">My <b>voice</b></span>
+                <span data-aos="fade-right" data-aos-delay="500">is the sound </span>
+                <span data-aos="fade-right" data-aos-delay="1000">of <b>your</b> brand.</span>
             </h1>
 
-            <div class="hero-player">
+            <div class="hero-player" data-aos="fade-up">
                 
                 <button class="play-btn" aria-label="Play audio" @click="toggleAudio">
                     <svg v-if="!isPlaying" width="60" height="60" viewBox="0 0 60 60" fill="none">
@@ -140,12 +140,12 @@ export default {
     text-transform: uppercase;
 }
 
-.hero > .hero-content > h1 > span {
+.hero-title span {
     display: block;
     color: var(--color-dark-blue);
 }
 
-.hero>.hero-content>h1>span>b {
+.hero-title span > b {
     font-weight: 900;
 }
 
@@ -208,5 +208,7 @@ export default {
     }
 
 }
+
+
 
 </style>

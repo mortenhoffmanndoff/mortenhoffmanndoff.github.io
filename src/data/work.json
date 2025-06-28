@@ -1,5 +1,6 @@
 [
     {   
+        "stage": "/commercials.svg",
         "backgroundColor": "var(--color-light-orange)",
         "title": "Commercials",
         "number": "1",
@@ -138,18 +139,26 @@
         ]
     },
     {
+        "stage": "/corporate.svg",
+        "backgroundColor": "var(--color-light-orange)",
         "title": "Corporate",
         "number": "2"
     },
     {
+        "stage": "/imaging.svg",
+        "backgroundColor": "var(--color-light-orange)",
         "title": "Imaging",
         "number": "3"
     },
     {
+        "stage": "/dubbing-and-acting.svg",
+        "backgroundColor": "var(--color-light-orange)",
         "title": "Dubbing & Acting",
         "number": "4"
     },
     {
+        "stage": "/audiobooks-and-docs.svg",
+        "backgroundColor": "var(--color-light-orange)",
         "title": "Audiobooks & Docs",
         "number": "5"
     }
