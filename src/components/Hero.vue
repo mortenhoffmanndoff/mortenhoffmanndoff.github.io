@@ -1,7 +1,7 @@
 <template>
     <div class="hero">
         <div class="hero-content">
-            <h1>
+            <h1 class="hero-title headline-xl text-transform-uppercase">
                 <span>My <b>voice</b></span>
                 <span>is the sound </span>
                 <span>of <b>your</b> brand.</span>
@@ -20,36 +20,39 @@
                     </svg>
                 </button>
 
-                <div style="display: flex; flex-direction: column; gap:8px">
-                    <p style="margin: 0;">Leading voice talent of Denmark</p>
-                    <div style="display: flex; gap: 8px; align-items: center;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <g transform="translate(0 .5)">
-                                <circle fill="#F0F0F0" class="st0" cx="12" cy="11.5" r="12"/>
-                                <path fill="#D80027" class="st1" d="M9.4,9.9h14.5C23.1,4,18.1-0.5,12-0.5c-0.9,0-1.8,0.1-2.6,0.3V9.9L9.4,9.9z M6.3,9.9V1C3,2.8,0.6,6.1,0.1,9.9
-                                    H6.3L6.3,9.9z M6.3,13.1H0.1c0.5,3.9,2.9,7.2,6.2,9V13.1L6.3,13.1z M9.4,13.1v10.1c0.8,0.2,1.7,0.3,2.6,0.3
-                                    c6.1,0,11.1-4.5,11.9-10.4H9.4L9.4,13.1z"/>
-                            </g>
-                        </svg>
-                        <span style="font-size: 16px;">| DK Audio</span>
+                <div class="display-flex flex-direction-column">
+                    <p style="margin:0;">Leading voice talent of Denmark</p>
+
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <Flag :DK="true" :width="24" :height="24" />
                     </div>
                 </div>
 
+            
+                
             </div>
         </div>
 
 
-            <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle opacity="0.2" cx="500" cy="500" r="500" fill="#9A8C99" />
-            </svg>
+        <svg class="pointer-events-none" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle opacity="0.2" cx="500" cy="500" r="500" fill="#9A8C99" />
+        </svg>
         
-        
-        <img src="../assets/hero-image.png" alt="Hero Image" />
+        <img class="pointer-events-none" src="../assets/hero-image.png" alt="Hero Image" />
     </div>
 </template>
 
 <script>
+import LanguageSwitch from './LanguageSwitch.vue';
+import Flag from '../elements/Flag.vue';
+
 export default {
+    name: 'Hero',
+    components: {  
+        LanguageSwitch,
+        Flag,        
+    },
+
     data() {
         return {
             isPlaying: false,
@@ -82,6 +85,8 @@ export default {
         this.audio.addEventListener('ended', this.onEnded);
         this.audio.addEventListener('pause', this.onPause);
     },
+    
+
     beforeUnmount() {
         if (this.audio) {
             this.audio.pause();
@@ -95,19 +100,19 @@ export default {
 
 
 
-<style scoped>
+<style>
 .hero {
     position: relative;
     display: flex;
-    height: 100vh;
+    height: 100dvh;
     align-items: center;
     justify-content: space-between;
-    padding: 0 15vw;
+    padding: 0 10vw;
     background-color: var(--color-light-orange);
     overflow: hidden;
 }
 
-.hero>img {
+.hero > img {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -117,27 +122,22 @@ export default {
     max-width: 100%;
 }
 
-.hero>.hero-content {
+.hero > .hero-content {
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 1016px;
 }
 
-.hero>.hero-content>h1>span {
+.hero > .hero-content > h1 > span {
     color: var(--color-dark-blue);
-    font-size: clamp(40px, 7.5vw, 120px);
-    font-weight: 400;
-    line-height: 120%;
-    letter-spacing: -3.6px;
-    text-transform: uppercase;
 }
 
 .hero>.hero-content>h1>span>b {
     font-weight: 900;
 }
 
-.hero>svg {
+.hero > svg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -166,4 +166,5 @@ export default {
 .play-btn:active {
     transform: scale(0.98);
 }
+
 </style>

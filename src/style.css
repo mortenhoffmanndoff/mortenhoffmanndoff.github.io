@@ -8,6 +8,8 @@
   --color-gray-orange: #C9AEA7;
   --color-light-orange: #F2E9E4;
   --color-almost-white: #F6F6F6;
+
+  --divider-height: 250px;
 }
 
 .bg-almost-black{ background: var(--color-almost-black); }
@@ -25,6 +27,8 @@
 .color-gray-orange{ color: var(--color-gray-orange); }
 .color-light-orange{ color: var(--color-light-orange); }
 .color-almost-white{ color: var(--color-almost-white); }
+
+
 
 html {
   font-family: "Bodoni Moda", serif;
@@ -46,6 +50,16 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
+
+body:has(.modal) {
+  overflow: hidden;
+  height: 100%;
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+
 
 h1 > span,
 h2 > span,
@@ -91,4 +105,28 @@ img {
   100% {
     opacity: 1;
   }
+}
+
+
+.headline-xl {
+  font-size: clamp(64px, 7.5vw, 120px);
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -3.6px;
+}
+
+.text-transform-uppercase {
+  text-transform: uppercase;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.flex-direction-column {
+  flex-direction: column;
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="spacer" :class="dividerBackground"></div>
+    <div class="spacer" :class="spacerBackground"></div>
 </template>
 
 <script>
@@ -7,7 +7,7 @@
 export default {
     props: {
         title: String,
-        dividerBackground: String,
+        spacerBackground: String,
     }
 }
 

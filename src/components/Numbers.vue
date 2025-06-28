@@ -158,7 +158,8 @@ export default {
 }
 .number {
   flex: 0 0 auto;
-  font-size: 20vw;
+  /* font-size: 20vw; */
+  font-size: 28vw;
   font-weight: bold;
   background: var(--color-light-orange);
   border-radius: 1rem;

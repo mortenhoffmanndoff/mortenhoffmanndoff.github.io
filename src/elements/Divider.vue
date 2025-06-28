@@ -22,14 +22,15 @@ export default {
   display: flex;
   align-items: center;
   gap: 2vw;
-  padding: 10vh 0;
+  /* padding: 120px 0; */
+  height: var(--divider-height);
 }
 
 .divider-line {
   flex: 1;
-  height: 2px;
-  background: #22223A;
-  opacity: 0.18;
+  height: 1px;
+  background: #000000;
+  opacity: .5;
 }
 
 .divider-title {

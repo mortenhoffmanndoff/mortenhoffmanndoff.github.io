@@ -1,0 +1,65 @@
+[
+    {   
+        "backgroundColor": "var(--color-light-orange)",
+        "title": "Commercials",
+        "number": "1",
+        "description": "High-quality commercials that capture attention and drive engagement. From concept to execution, we ensure your brand message is delivered effectively.",
+        "media": [
+            {   
+                "mediaType": "video",
+                "mediaUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "image",
+                "mediaUrl": "https://placehold.co/1300x776",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            }
+            
+        ]
+    },
+    {
+        "title": "Corporate",
+        "number": "2"
+    },
+    {
+        "title": "Imaging",
+        "number": "3"
+    },
+    {
+        "title": "Dubbing & Acting",
+        "number": "4"
+    },
+    {
+        "title": "Audiobooks & Docs",
+        "number": "5"
+    },
+    {
+        "title": "On air & Live",
+        "number": "6"
+    },
+    {
+        "title": "Copyright",
+        "number": "7"
+    }
+]

@@ -1,12 +1,10 @@
 [
-  ["Pixum", "KRÆFTENS BEKÆMPELSE", "Coca Cola", "Schwarzkopf", "Københavns Lufthavne", "Tryg"],
-  ["Sunweb", "ETORO", "Microsoft", "Statoil", "Wolt", "Energinet"],
-  ["Radio100", "New Balance", "Spotify", "Dataetisk Råd", "Home"],
-  ["HelloFresh", "Everstream", "Just Eat", "Formue", "Netflix"],
-  ["Jysk", "NKT", "Novo Nordisk", "Colorline", "McDonalds"],
-  ["Falck", "Dr. Oetker", "Toms", "Mini Cooper", "Thiele"],
-  ["Amager Lufthavne", "Lidl", "MobilePay", "Amazon Prime", "Interflora"],
-  ["Gabor", "Sydbank", "Starbucks", "Carlsberg", "Tivoli Hotel"],
-  ["HK", "Pfizer", "Danske Spil", "GYLDENDAL", "Royal Unibrew"],
-  ["Disney", "BMW", "the European Parliament", "YouTube Music", "Skipper’s Pipes"]
+  ["Coca Cola", "HBO", "Microsoft", "Spotify", "Disney", "Netflix", "Scandlines", "Just Eat"],
+  ["Novo Nordisk", "ETORO", "Mærsk", "Toms", "MobilePay", "Statoil", "Kia", "Sunweb"],
+  ["Starbucks", "Lidl", "TV2", "Sunweb", "Netflix", "Danske Spil", "Formue", "Energinet"],
+  ["Metro Service", "Carlsberg", "Dataetisk Råd", "EventyrCykler", "Radio100", "KRÆFTENS BEKÆMPELSE", "HK", "GYLDENDAL"],
+  ["Jysk", "Meta", "Biotex", "McDonalds", "Mini Cooper", "Home", "Skipper’s Pipes", "Gabor"],
+  ["Pixum", "NKT", "the European Parliament", "Tivoli Hotel", "Falck", "Sydbank", "Københavns Lufthavne", "Everstream"],
+  ["Thiele", "New Balance", "BMW", "Colorline", "Interflora", "Eoyal Unibrew", "Pfizer", "Tryg"],
+  ["YouTube Music", "Dr. Oetker", "Schwarzkopf", "UEFA", "Wolt", "HelloFresh", "Amazon Prime", "Formue"]
 ]
