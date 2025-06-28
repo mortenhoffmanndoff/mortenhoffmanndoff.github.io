@@ -34,7 +34,7 @@
             <circle opacity="0.2" cx="500" cy="500" r="500" fill="#9A8C99" />
         </svg>
         
-        <img class="pointer-events-none" src="/hero-image.png" alt="Hero Image" />
+        <img class="pointer-events-none" src="/image/hero-image.png" alt="Hero Image" />
     </div>
 </template>
 
