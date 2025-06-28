@@ -2,7 +2,7 @@
     <header>
     <!-- Ingen direkte relevans for klient eller talrækken -->
     <div class="logo">
-      <img src="/src/assets/logo.svg" alt="" />
+      <img src="/logo.svg" alt="" />
     </div>
     
     <div role="button">
