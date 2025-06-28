@@ -8,11 +8,11 @@
     <Divider title="Clients" dividerBackground="bg-light-orange" />
     <Marquee />
     <Spacer spacerBackground="bg-light-orange" />
-    <Image src="/src/assets/i-am.png" />
+    <Image src="/i-am.png" />
     <Divider title="i am Christina Bjørn" dividerBackground="" />
     <Article />
     <Spacer />
-    <Image src="/src/assets/me.jpg" />
+    <Image src="/me.jpg" />
     <Divider title="Recommandations" dividerBackground="" />
     <Recommendations />
     <Spacer />
