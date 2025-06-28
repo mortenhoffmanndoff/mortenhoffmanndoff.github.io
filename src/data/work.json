@@ -27,7 +27,7 @@
             },
             {   
                 "mediaType": "video",
-                "mediaUrl": "/src/assets/video/commercials/lidl-plus-campaign-202.mp4",
+                "mediaUrl": "/video/commercials/lidl-plus-campaign-202.mp4",
                 "mediaDK": true,
                 "mediaUK": false,
                 "mediaFlagText": "DK | Audio",

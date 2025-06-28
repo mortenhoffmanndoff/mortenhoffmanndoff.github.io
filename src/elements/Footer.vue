@@ -44,7 +44,7 @@
         </div>
 
         <div class="footer-bottom">
-            <img height="58" src="/src/assets/logo.svg" alt="">
+            <img height="58" src="/logo.svg" alt="">
         </div>
     </footer>
 </template>
