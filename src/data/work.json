@@ -386,5 +386,11 @@
                 "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
             }
         ]
+    },
+    {
+        "stage": "",
+        "backgroundColor": "var(--color-light-orange)",
+        "title": "Copyright",
+        "number": 6
     }
 ]

@@ -174,7 +174,7 @@ export default {
 }
 
 .work-sticky {
-  flex: 0 0 25%;
+  flex: 0 0 20%;
   border-radius: 16px;
   padding: 16px;
   display: flex;
