@@ -3,7 +3,7 @@
         "stage": "/commercials.svg",
         "backgroundColor": "var(--color-light-orange)",
         "title": "Commercials",
-        "number": "1",
+        "number": 1,
         "description": "High-quality commercials that capture attention and drive engagement. From concept to execution, we ensure your brand message is delivered effectively.",
         "media": [
             {   
@@ -29,6 +29,16 @@
             {   
                 "mediaType": "video",
                 "mediaUrl": "/video/commercials/bedst-billigst.mp4",
+                "mediaDK": true,
+                "mediaUK": false,
+                "mediaFlagText": "DK | Audio",
+                "mediaTitle": "My voice <strong>your choice</strong>",
+                "mediaText": "A short video showcasing the versatility of voiceover work in commercials, with a focus on Danish audio."
+
+            },
+            {   
+                "mediaType": "video",
+                "mediaUrl": "/video/commercials/kvik.mp4",
                 "mediaDK": true,
                 "mediaUK": false,
                 "mediaFlagText": "DK | Audio",
@@ -142,24 +152,36 @@
         "stage": "/corporate.svg",
         "backgroundColor": "var(--color-light-orange)",
         "title": "Corporate",
-        "number": "2"
+        "number": 2
     },
     {
         "stage": "/imaging.svg",
         "backgroundColor": "var(--color-light-orange)",
         "title": "Imaging",
-        "number": "3"
+        "number": 3
     },
     {
         "stage": "/dubbing-and-acting.svg",
         "backgroundColor": "var(--color-light-orange)",
         "title": "Dubbing & Acting",
-        "number": "4"
+        "number": 4
     },
     {
         "stage": "/audiobooks-and-docs.svg",
         "backgroundColor": "var(--color-light-orange)",
         "title": "Audiobooks & Docs",
-        "number": "5"
+        "number": 5
+    },
+    {
+        "stage": "/audiobooks-and-docs.svg",
+        "backgroundColor": "var(--color-light-orange)",
+        "title": "on air & live",
+        "number": 6
+    },
+    {
+        "stage": "/audiobooks-and-docs.svg",
+        "backgroundColor": "var(--color-light-orange)",
+        "title": "copyright",
+        "number": 7
     }
 ]

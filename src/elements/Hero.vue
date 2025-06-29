@@ -3,11 +3,11 @@
         <div class="hero-content">
             <h1 class="hero-title headline-xl text-transform-uppercase">
                 <span data-aos="fade-right">My <b>voice</b></span>
-                <span data-aos="fade-right" data-aos-delay="500">is the sound </span>
-                <span data-aos="fade-right" data-aos-delay="1000">of <b>your</b> brand.</span>
+                <span data-aos="fade-right" data-aos-delay="100">is the sound </span>
+                <span data-aos="fade-right" data-aos-delay="200">of <b>your</b> brand.</span>
             </h1>
 
-            <div class="hero-player" data-aos="fade-up">
+            <div class="hero-player" data-aos="fade-up" data-aos-offset="-500">
                 
                 <button class="play-btn" aria-label="Play audio" @click="toggleAudio">
                     <svg v-if="!isPlaying" width="60" height="60" viewBox="0 0 60 60" fill="none">
