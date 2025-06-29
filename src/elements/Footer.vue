@@ -2,7 +2,7 @@
     <footer>
         <div class="footer-top">
             <div class="footer-content">
-                <h3 class="footer-title headline-xl text-transform-uppercase" data-aos="fade-right" data-aos-delay="500">
+                <h3 class="footer-title headline-xl text-transform-uppercase" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="500">
                     <span>Want to get</span>
                     <span><b>in touch?</b></span>
                 </h3>
