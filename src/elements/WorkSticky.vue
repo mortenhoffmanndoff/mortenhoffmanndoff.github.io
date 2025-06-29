@@ -89,7 +89,7 @@ export default {
       const spread = 0.1;
     //   const spread = 0.12;
     //   const spread = 0.14;
-      const center = (n - 1) / 8;
+      const center = (n - 1) / 7;
       const proximity = Math.max(0, 1 - Math.abs(center - this.progress) / spread);
 
       if (!this.inSection) {
@@ -153,15 +153,15 @@ export default {
 }
 
 .horizontal-sticky {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  background: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: white;
   z-index: 2;
 }
 

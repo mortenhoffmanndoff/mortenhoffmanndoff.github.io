@@ -1,11 +1,10 @@
 <template>
   <div class="cb">
+
     <Header />
     <Hero />
     <Divider title="Work" />
-    <!-- <Work /> -->
     <WorkSticky />
-    
     <Spacer />
     <Divider title="Clients" dividerBackground="bg-light-orange" />
     <Marquee />
@@ -20,19 +19,12 @@
     <Spacer />
     <Footer />
 
-
-
-
-
-
-
   </div>
 </template>
 
 <script>
 
 import Header from './elements/Header.vue';
-// import Work from './elements/Work.vue';
 import WorkSticky from './elements/WorkSticky.vue';
 import Marquee from './elements/Marquee.vue';
 import Divider from './elements/Divider.vue';
@@ -47,7 +39,6 @@ import Footer from './elements/Footer.vue';
 export default {
   components: { 
     Header,
-    // Work, 
     WorkSticky,
     Marquee, 
     Divider, 
