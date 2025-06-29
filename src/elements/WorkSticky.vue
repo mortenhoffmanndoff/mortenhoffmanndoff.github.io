@@ -120,7 +120,7 @@ export default {
       const section = this.$refs.scrollSection;
       const horizontalInner = this.$refs.horizontalInner;
       const horizontalScrollLength = horizontalInner.scrollWidth - window.innerWidth;
-      const scrollAreaHeight = window.innerHeight + horizontalScrollLength * 2;
+      const scrollAreaHeight = window.innerHeight + horizontalScrollLength * 2 - 100; // Adjusted for better visibility
       const sectionTop = section.offsetTop;
       const scrollY = window.scrollY;
       const startScroll = sectionTop;
