@@ -2,11 +2,11 @@
     <footer>
         <div class="footer-top">
             <div class="footer-content">
-                <h3 class="footer-title headline-xl text-transform-uppercase" data-aos="fade-right" data-aos-delay="1000">
+                <h3 class="footer-title headline-xl text-transform-uppercase" data-aos="fade-right" data-aos-delay="500">
                     <span>Want to get</span>
                     <span><b>in touch?</b></span>
                 </h3>
-                <div class="footer-action" data-aos="fade-right" data-aos-delay="1500">
+                <div class="footer-action" data-aos="fade-right" data-aos-delay="500">
                     <div class="footer-action-group">
                         <a href="#">cb
                             <svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,5 +114,9 @@ footer svg.pointer-events-none {
     width: 100%;
     height: 100%;
     z-index: 1;
+}
+
+.footer-title > span {
+    display: block;
 }
 </style>

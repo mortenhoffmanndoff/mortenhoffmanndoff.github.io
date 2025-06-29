@@ -1,18 +1,18 @@
 <template>
     <article class="recommendations">
-      <blockquote data-aos="fade-right" data-aos-delay="500">
+      <blockquote data-aos="fade-right" data-aos-delay="100" data-aos-offset="0" data-aos-duration="500">
         Christina er en super professionel og fleksibel speaker, som altid leverer! Let at arbejde med og med rigtig god indlevelse i teksten og opgaven.<br>
         <span class="cite">- Rasmus Schwenger, Producer hos Bauer Media</span>
       </blockquote>
-      <blockquote data-aos="fade-right" data-aos-delay="500">
+      <blockquote data-aos="fade-right" data-aos-delay="100" data-aos-offset="0" data-aos-duration="500">
         Bjørnen’ er en meget professionel og rutineret speaker, er god til at fornemme ’stilart’ i opgaven og leverer altid hurtigt og i topkvalitet.<br>
         <span class="cite">- Torben Johansen, ejer af “Lyd er Godt”</span>
       </blockquote>
-      <blockquote data-aos="fade-right" data-aos-delay="500">
+      <blockquote data-aos="fade-right" data-aos-delay="100" data-aos-offset="0" data-aos-duration="500">
         Christina selv og hendes smukke stemme med klar diktion og let til smil er altid en fornøjelse at arbejde med! Grundlyden på hendes speaks, optaget i eget studie, er super velegnede til videre forarbejdning i et mix.<br>
         <span class="cite">- Peter Krabbe Aagaard fra KRABBE sound&music</span>
       </blockquote>
-      <blockquote data-aos="fade-right" data-aos-delay="500">
+      <blockquote data-aos="fade-right" data-aos-delay="100" data-aos-offset="0" data-aos-duration="500">
         It was amazing working with Christina. Not only does she have an incredible voice but is a pleasure to work with. She is easygoing and super flexible which was what we needed when working on a lengthy and demanding project.<br>
         <span class="cite">- Sebastian Giraldo, Account Manager hos Voices.com Inc.</span>
       </blockquote>
