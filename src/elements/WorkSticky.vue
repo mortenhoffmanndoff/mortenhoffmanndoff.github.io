@@ -89,7 +89,7 @@ export default {
       const spread = 0.1;
     //   const spread = 0.12;
     //   const spread = 0.14;
-      const center = (n - 1) / 8;
+      const center = (n - 1) / 7;
       const proximity = Math.max(0, 1 - Math.abs(center - this.progress) / spread);
 
       if (!this.inSection) {
