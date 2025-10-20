@@ -1,5 +1,5 @@
 {
-  "name": "tracker",
+  "name": "vue-router-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,11 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "aos": "^2.3.4",
-    "vue": "^3.5.12"
+    "motion": "^12.23.22",
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.1.4",
-    "vite": "^5.4.10"
+    "@vitejs/plugin-vue": "^5.0.5",
+    "vite": "^7.1.9"
   }
 }

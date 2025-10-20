@@ -1,5 +1,34 @@
-# Vue 3 + Vite
+# Vue 3 Options API Project with Router
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A Vue 3 project using the Options API, Vite, and Vue Router with Home and About pages.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Project Structure
+
+- `src/App.vue` - Main application component with navigation
+- `src/components/Home.vue` - Home page component
+- `src/components/About.vue` - About page component
+- `src/main.js` - Application entry point with router setup
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+
+## Features
+
+- Vue 3 with Options API
+- Vue Router for navigation
+- Basic Home and About pages
+- Simple navigation structure
+
+## Getting Started
+
+1. Install dependencies: `npm install`
+2. Start development server: `npm run dev`
+3. Open http://localhost:5173 in your browser
+
+## Navigation
+
+- `/` - Home page
+- `/about` - About page
