@@ -3,28 +3,28 @@
     
     <Hero
       :textItems="['Leading <strong>voice</strong>', 'talent of <strong>Denmark</strong>']"
-      imageSrc="/public/images/image-2.png"
+      imageSrc="/images/image-2.png"
       height="large"
       :largeText="false"
     />
 
     
     <Soundwave 
-        audioSrc="/public/audio/intro-dansk.wav"
+        audioSrc="/audio/intro-dansk.wav"
         :size="120"
       />
     <Work />  
       
-    <ParallaxImage :parallaxText="'I am Christina Bjørn'" :imageSrc="'/public/images/image-6.png'" />
+    <ParallaxImage :parallaxText="'I am Christina Bjørn'" :imageSrc="'/images/image-6.png'" />
     <Hero 
       :textItems="['My <strong>voice</strong>', 'is the <strong>sound</strong>', 'of your <strong>brand</strong>']"
       height="large"
       :largeText="true"
     />
     <Article :articleContent="aboutText" />
-    <ParallaxImage :parallaxText="'Some of my clients'" :imageSrc="'/public/images/image-7.png'" />
+    <ParallaxImage :parallaxText="'Some of my clients'" :imageSrc="'/images/image-7.png'" />
     <Clients class="" />
-    <ParallaxImage :imageSrc="'/public/images/image-4.png'" />
+    <ParallaxImage :imageSrc="'/images/image-4.png'" />
     <Hero class=""
       :textItems="['Recommended by ','<strong>professionals</strong>', 'trusted by <strong>brands</strong>']"
       height="large"
