@@ -9,7 +9,7 @@
     <Media :mediaItems="[
       {
         type: 'video',
-        src: '/public/03-acting-narration/videos/Kia_Klip4_OzlemSpeak_v001.mp4',
+        src: '/03-acting-narration/videos/Kia_Klip4_OzlemSpeak_v001.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
@@ -19,7 +19,7 @@
       },
       {
         type: 'video',
-        src: '/public/03-acting-narration/videos/RF21_2min_ENG_SRT.mp4',
+        src: '/03-acting-narration/videos/RF21_2min_ENG_SRT.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
@@ -29,7 +29,7 @@
       },
       {
         type: 'video',
-        src: '/public/03-acting-narration/videos/Christina_imorgen_6757.mp4',
+        src: '/03-acting-narration/videos/Christina_imorgen_6757.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
@@ -39,7 +39,7 @@
       },
       {
         type: 'video',
-        src: '/public/03-acting-narration/videos/RPReplay_Final1747820204.mp4',
+        src: '/03-acting-narration/videos/RPReplay_Final1747820204.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
@@ -49,7 +49,7 @@
       },
       {
         type: 'video',
-        src: '/public/03-acting-narration/videos/RPReplay_Final1747820699-2.mp4',
+        src: '/03-acting-narration/videos/RPReplay_Final1747820699-2.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
@@ -69,7 +69,7 @@
       },
       {
         type: 'video',
-        src: '/public/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3.mp4',
+        src: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
