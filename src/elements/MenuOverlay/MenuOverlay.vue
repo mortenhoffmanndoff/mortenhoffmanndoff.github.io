@@ -46,7 +46,7 @@
                         </svg>
                     </a>
                 </div>
-                <p class="menu-credit">© 2025 Christina Bjørn</p>
+                <p class="menu-credit">© {{ currentYear }} Christina Bjørn</p>
             </div>
         </div>
     </div>
@@ -75,6 +75,12 @@ export default {
                 { label: 'CONTACT', href: '#contact', id: 'contact' }
             ]
         };
+    },
+
+    computed: {
+        currentYear() {
+            return new Date().getFullYear();
+        }
     },
 
     watch: {
