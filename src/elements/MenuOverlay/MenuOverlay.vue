@@ -155,6 +155,16 @@ export default {
             // Close the menu
             this.$emit('close');
             
+            // Check if we're on the home page
+            const isHomePage = this.$route.path === '/' || this.$route.name === 'home';
+            
+            if (!isHomePage) {
+                // Navigate to home page first
+                await this.$router.push('/');
+                // Wait for page transition animation (0.8s) + extra buffer for rendering
+                await new Promise(resolve => setTimeout(resolve, 1200));
+            }
+            
             // Scroll to section
             const element = document.querySelector(`#${item.id}`);
             if (element) {
