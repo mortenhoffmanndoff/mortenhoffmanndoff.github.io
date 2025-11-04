@@ -33,6 +33,10 @@ export default {
         toggleMenu() {
             this.isOpen = !this.isOpen;
             this.$emit('toggle', this.isOpen);
+        },
+
+        closeMenu() {
+            this.isOpen = false;
         }
     }
 }
@@ -48,6 +52,12 @@ export default {
     align-items: center;
     justify-content: center;
     overflow: visible;
+    color: #333;
+    transition: color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.burger-menu-container.text-white {
+    color: #F6F6F6;
 }
 
 .circles-wrapper {
