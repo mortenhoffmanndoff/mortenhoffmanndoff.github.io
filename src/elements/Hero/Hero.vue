@@ -7,7 +7,7 @@
                     v-for="(textItem, index) in textItems" 
                     :key="index"
                     class="hero-text-item"
-                    :class="{ 'large-text': largeText }"
+                    :class="textSize"
                 >
                     <div v-html="textItem"></div>
                 </div>
@@ -36,9 +36,10 @@ export default {
             default: 'auto',
             validator: (value) => ['auto', 'small', 'medium', 'large'].includes(value)
         },
-        largeText: {
-            type: Boolean,
-            default: false
+        textSize: {
+            type: String,
+            default: 'default',
+            validator: (value) => ['default', 'large', 'xlarge'].includes(value)
         },
         imageSrc: {
             type: String,
@@ -135,9 +136,12 @@ export default {
         font-weight: 200;
         overflow: hidden;
 
-        &.large-text {
-            /* font-size: clamp(40px, 10vw, 130px); */
-            font-size: clamp(40px, 10vw, 200px);
+        &.large {
+            font-size: clamp(40px, 9vw, 200px);
+        }
+
+        &.xlarge {
+            font-size: clamp(40px, 12vw, 200px);
         }
     }
 

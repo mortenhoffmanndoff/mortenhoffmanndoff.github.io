@@ -9,6 +9,56 @@
     <Media :mediaItems="[
       {
         type: 'video',
+        src: '/02-corporate-imaging/videos/Superb - GXM Explainer - Full - DanishV2.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'DEMO REEL\n2024',
+        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/02-corporate-imaging/videos/Gajol_Intern2.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'DEMO REEL\n2024',
+        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/02-corporate-imaging/videos/ArlaJord_V03.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'UK',
+        format: 'video',
+        title: 'DEMO REEL\n2024',
+        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/02-corporate-imaging/videos/Damixa - DNA_film_Final_ENG.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'UK',
+        format: 'video',
+        title: 'DEMO REEL\n2024',
+        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/02-corporate-imaging/videos/FIFA-Training-Centre.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'UK',
+        format: 'video',
+        title: 'DEMO REEL\n2024',
+        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        isPlaying: false
+      },
+      {
+        type: 'video',
         src: '/02-corporate-imaging/videos/30s_PodimoDK_Podcast_08.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',

@@ -3,9 +3,9 @@
     
     <Hero
       :textItems="['Leading <strong>voice</strong>', 'talent of <strong>Denmark</strong>']"
-      imageSrc="/images/image-2.png"
+      imageSrc="/images/Home.png"
       height="large"
-      :largeText="false"
+      textSize="large"
     />
 
     
@@ -19,7 +19,7 @@
     <Hero 
       :textItems="['My <strong>voice</strong>', 'is the <strong>sound</strong>', 'of your <strong>brand</strong>']"
       height="large"
-      :largeText="true"
+      textSize="xlarge"
     />
     <Article :articleContent="aboutText" />
     <ParallaxImage :parallaxText="'Some of my clients'" :imageSrc="'/images/image-7.png'" />
@@ -28,21 +28,11 @@
     <Hero class=""
       :textItems="['Recommended by ','<strong>professionals</strong>', 'trusted by <strong>brands</strong>']"
       height="large"
-      :largeText="true"
+      textSize="xlarge"
     />
     <Article :articleContent="recommendationText" />
-    <!-- <Hero class="bg-almost-white"
-    :textItems="['Want to get ','<strong>in touch?</strong>']"
-    height="small"
-    :largeText="true"
-    /> -->
-    <Hero class="bg-almost-white"
-    :textItems="['<strong>LET’S PLAY!</strong>']"
-    height="small"
-    :largeText="true"
-    />
-
-    <Article class="bg-almost-white" :articleContent="footerText" />
+    
+    <Footer />
 
 
   </div>
@@ -55,6 +45,7 @@ import Clients from '../elements/Clients/Clients.vue'
 import Article from '../elements/Article/Article.vue'
 import ParallaxImage from '../elements/ParallaxImage/ParallaxImage.vue'
 import Soundwave from '../elements/Soundwave/Soundwave.vue'
+import Footer from '../elements/Footer/Footer.vue'
 
 export default {
   name: 'HomePage',
@@ -65,6 +56,7 @@ export default {
     Article,
     ParallaxImage,
     Soundwave,
+    Footer,
   },
   data() {
     return {
