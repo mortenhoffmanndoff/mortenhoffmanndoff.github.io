@@ -1,16 +1,17 @@
 <template>
   <div>
-    <nav style="position:fixed; top:0; width:100%; z-index: 1000;">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <div>
+    <nav class="app-nav" :class="{ 'menu-open': isMenuOpen }">
+      <div class="nav-content">
+        <div class="logo-wrapper" :class="{ 'hidden': isMenuOpen }">
           <router-link to="/"><img src="/logo.svg" alt=""></router-link>
-          <!-- <router-link to="/">Home</router-link> |
-          <router-link to="/about">About</router-link> |
-          <router-link to="/work">Work</router-link> -->
         </div>
-        <BurgerMenu @toggle="handleMenuToggle" />
+        <BurgerMenu ref="burgerMenu" @toggle="handleMenuToggle" :class="{ 'text-white': isMenuOpen }" />
       </div>
     </nav>
+
+    <!-- Menu Overlay -->
+    <MenuOverlay :isOpen="isMenuOpen" @close="closeMenu" />
+
     <main>
       <router-view v-slot="{ Component, route }">
         <transition name="page" mode="out-in">
@@ -18,21 +19,48 @@
         </transition>
       </router-view>
     </main>
+    <Footer id="contact" />
   </div>
 </template>
 
 <script>
 import BurgerMenu from './elements/BurgerMenu/BurgerMenu.vue'
+import MenuOverlay from './elements/MenuOverlay/MenuOverlay.vue'
+import Footer from './elements/Footer/Footer.vue';
 
 export default {
   name: 'App',
   components: {
-    BurgerMenu
+    BurgerMenu,
+    MenuOverlay,
+    Footer
+  },
+  data() {
+    return {
+      isMenuOpen: false
+    };
+  },
+  watch: {
+    isMenuOpen(newVal) {
+      if (newVal) {
+        document.body.classList.add('menu-open');
+      } else {
+        document.body.classList.remove('menu-open');
+      }
+    }
+  },
+  provide() {
+    return {
+      isMenuOpen: this.isMenuOpen
+    };
   },
   methods: {
     handleMenuToggle(isOpen) {
-      console.log('Menu is', isOpen ? 'open' : 'closed');
-      // You can add logic here to show/hide a mobile menu
+      this.isMenuOpen = isOpen;
+    },
+    closeMenu() {
+      this.isMenuOpen = false;
+      this.$refs.burgerMenu.closeMenu();
     }
   }
 }
@@ -65,8 +93,38 @@ export default {
 /* Navigation styling */
 nav {
   padding: 40px;
-  /* background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px); */
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  width: 100%;
+  right: auto;
+}
+
+nav.menu-open {
+  color: #F6F6F6;
+  width: unset;
+  right: 0;
+}
+
+.app-nav {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-wrapper {
+  transition: opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              display 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  opacity: 1;
+}
+
+.logo-wrapper.hidden {
+  opacity: 0;
+  display: none;
 }
 
 nav a {
@@ -84,5 +142,9 @@ nav a.router-link-active {
 
 main {
   min-height: 100vh;
+}
+
+:global(body.menu-open) {
+  overflow: hidden;
 }
 </style>

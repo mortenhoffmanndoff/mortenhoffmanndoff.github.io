@@ -160,7 +160,7 @@ export default {
     }
 
     .work-container:hover {
-        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="28" fill="rgba(0,0,0,0.7)" stroke="white" stroke-width="2"/><path d="M20 30 L35 30 M35 30 L28 23 M35 30 L28 37" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>') 30 30, pointer;
+        /* cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="28" fill="rgba(0,0,0,0.7)" stroke="white" stroke-width="2"/><path d="M20 30 L35 30 M35 30 L28 23 M35 30 L28 37" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>') 30 30, pointer; */
     }
 
     .work-container h3 {

@@ -1,5 +1,5 @@
 <template>
-    <div class="soundwave-container">
+    <div class="soundwave-container" :class="{ 'menu-open': isMenuOpen }">
         <canvas 
             ref="soundwaveCanvas" 
             :width="size" 
@@ -14,6 +14,7 @@
 <script>
 export default {
     name: 'Soundwave',
+    inject: ['isMenuOpen'],
     
     props: {
         audioSrc: {
@@ -56,6 +57,11 @@ export default {
         draw() {
             const canvas = this.$refs.soundwaveCanvas;
             this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Get computed color from canvas element
+            const computedStyle = window.getComputedStyle(canvas);
+            const color = computedStyle.color || '#333';
+            this.ctx.strokeStyle = color;
             this.ctx.beginPath();
 
             // Smooth amplitude easing
@@ -120,7 +126,9 @@ export default {
     /* border: 1px solid black; */
     border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, stroke 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    color: #333;
+    stroke: currentColor;
 }
 
 .soundwave-canvas:hover {
@@ -129,5 +137,9 @@ export default {
 
 .soundwave-canvas:active {
     transform: scale(0.95);
+}
+
+.soundwave-container.menu-open .soundwave-canvas {
+    color: #F6F6F6;
 }
 </style>

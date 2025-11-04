@@ -4,9 +4,19 @@
     <Hero 
       :textItems="['<strong>Commercials</strong>']"
       height="small"
-      :largeText="true"
+      textSize="xlarge"
     />
     <Media :mediaItems="[
+      {
+        type: 'video',
+        src: '/01-commercial/videos/Colgate-Max-Whitening.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'DEMO REEL\n2024',
+        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        isPlaying: false
+      },
       {
         type: 'video',
         src: '/01-commercial/videos/bedst-billigst.mp4',
