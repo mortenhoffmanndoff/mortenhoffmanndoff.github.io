@@ -54,7 +54,7 @@
 
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <p class="footer-credit">© 2025 Christina Bjørn. All rights reserved.</p>
+            <p class="footer-credit">© {{ currentYear }} Christina Bjørn. All rights reserved.</p>
             <!-- <p class="footer-credit">Designed & developed with <span class="heart">♥</span></p> -->
         </div>
     </footer>
@@ -70,6 +70,12 @@ export default {
         return {
             ctaWords: ['LET\'S', 'PLAY!']
         };
+    },
+
+    computed: {
+        currentYear() {
+            return new Date().getFullYear();
+        }
     },
 
     mounted() {
