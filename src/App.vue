@@ -1,7 +1,7 @@
 <template>
   <div>
-    <nav style="position:fixed; top:0; width:100%; z-index: 9999;" :class="{ 'menu-open': isMenuOpen }">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
+    <nav class="app-nav" :class="{ 'menu-open': isMenuOpen }">
+      <div class="nav-content">
         <div class="logo-wrapper" :class="{ 'hidden': isMenuOpen }">
           <router-link to="/"><img src="/logo.svg" alt=""></router-link>
         </div>
@@ -19,7 +19,7 @@
         </transition>
       </router-view>
     </main>
-    <Footer />
+    <Footer id="contact" />
   </div>
 </template>
 
@@ -102,6 +102,18 @@ nav.menu-open {
   color: #F6F6F6;
   width: unset;
   right: 0;
+}
+
+.app-nav {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo-wrapper {

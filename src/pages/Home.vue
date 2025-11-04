@@ -13,7 +13,7 @@
         audioSrc="/audio/intro-dansk.wav"
         :size="120"
       />
-    <Work />  
+    <Work id="work" />  
       
     <ParallaxImage :parallaxText="'I am Christina Bjørn'" :imageSrc="'/images/image-6.png'" />
     <Hero 
@@ -22,16 +22,16 @@
       textSize="xlarge"
       class=""
     />
-    <Article :articleContent="aboutText" class="" />
+    <Article id="about" :articleContent="aboutText" class="" />
     <ParallaxImage :parallaxText="'Some of my clients'" :imageSrc="'/images/image-7.png'" />
-    <Clients class="" />
+    <Clients id="clients" class="" />
     <ParallaxImage :imageSrc="'/images/image-4.png'" />
     <Hero class="bg-almost-white"
       :textItems="['Recommended by ','<strong>professionals</strong>', 'trusted by <strong>brands</strong>']"
       height="large"
       textSize="xlarge"
     />
-    <Article :articleContent="recommendationText" class="bg-almost-white" />
+    <Article id="recommendations" :articleContent="recommendationText" class="bg-almost-white" />
 
   </div>
 </template>

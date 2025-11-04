@@ -106,6 +106,7 @@ export default {
         height: 100vh;
         width: 100vw;
         object-fit: cover;
+        object-position: right;
         /* z-index: 1;
         grid-area: overlay;
         width: 100%;
