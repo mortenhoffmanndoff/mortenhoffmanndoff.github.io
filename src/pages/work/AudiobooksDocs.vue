@@ -4,7 +4,7 @@
     <Hero 
       :textItems="['<strong>Audiobooks</strong>', '<strong>& Docs</strong>']"
       height="small"
-      :largeText="true"
+      textSize="xlarge"
     />
     <Media :mediaItems="[
       {
