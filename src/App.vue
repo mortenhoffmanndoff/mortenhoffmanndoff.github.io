@@ -18,16 +18,19 @@
         </transition>
       </router-view>
     </main>
+    <Footer />
   </div>
 </template>
 
 <script>
 import BurgerMenu from './elements/BurgerMenu/BurgerMenu.vue'
+import Footer from './elements/Footer/Footer.vue';
 
 export default {
   name: 'App',
   components: {
-    BurgerMenu
+    BurgerMenu,
+    Footer
   },
   methods: {
     handleMenuToggle(isOpen) {

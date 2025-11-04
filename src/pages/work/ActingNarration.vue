@@ -4,7 +4,7 @@
     <Hero 
       :textItems="['<strong>Acting &</strong>', '<strong>Narration</strong>']"
       height="small"
-      :largeText="true"
+      textSize="xlarge"
     />
     <Media :mediaItems="[
       {

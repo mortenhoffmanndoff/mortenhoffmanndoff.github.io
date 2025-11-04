@@ -4,7 +4,7 @@
     <Hero 
       :textItems="['<strong>Corporate</strong>', '<strong>& Imaging</strong>']"
       height="small"
-      :largeText="true"
+      textSize="xlarge"
     />
     <Media :mediaItems="[
       {

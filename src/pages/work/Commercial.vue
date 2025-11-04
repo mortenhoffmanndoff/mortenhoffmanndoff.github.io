@@ -4,7 +4,7 @@
     <Hero 
       :textItems="['<strong>Commercials</strong>']"
       height="small"
-      :largeText="true"
+      textSize="xlarge"
     />
     <Media :mediaItems="[
       {
