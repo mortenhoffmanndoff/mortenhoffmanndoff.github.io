@@ -5,29 +5,34 @@
                 <li>
                     <router-link to="/work/commercial" class="work-container">
                         <h3>1</h3>
+                        <svg class="connector-line" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path :d="linePaths[0]" stroke="currentColor" fill="none" stroke-width="0.5" />
+                        </svg>
                         <p>Commercial</p>
-                        <!-- <svg class="arrow" width="80" height="120" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.924 13.617A1 1 0 0 0 19 13h-3V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v10H5a1 1 0 0 0-.707 1.707l7 7a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 .217-1.09zM12 19.586 7.414 15H9a1 1 0 0 0 1-1V4h4v10a1 1 0 0 0 1 1h1.586z"/></svg> -->
                     </router-link>
                 </li>
                 <li>
                     <router-link to="/work/corporate-imaging" class="work-container">
                         <h3>2</h3>
+                        <svg class="connector-line" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path :d="linePaths[1]" stroke="currentColor" fill="none" stroke-width="0.5" />
+                        </svg>
                         <p>Corporate & Imaging</p>
-                        <!-- <svg class="arrow" width="80" height="120" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.924 13.617A1 1 0 0 0 19 13h-3V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v10H5a1 1 0 0 0-.707 1.707l7 7a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 .217-1.09zM12 19.586 7.414 15H9a1 1 0 0 0 1-1V4h4v10a1 1 0 0 0 1 1h1.586z"/></svg> -->
                     </router-link>
                 </li>
                 <li>
                     <router-link to="/work/acting-narration" class="work-container">
                         <h3>3</h3>
+                        <svg class="connector-line" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path :d="linePaths[2]" stroke="currentColor" fill="none" stroke-width="0.5" />
+                        </svg>
                         <p>Acting & Narration</p>
-                        <!-- <svg class="arrow" width="80" height="120" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.924 13.617A1 1 0 0 0 19 13h-3V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v10H5a1 1 0 0 0-.707 1.707l7 7a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 .217-1.09zM12 19.586 7.414 15H9a1 1 0 0 0 1-1V4h4v10a1 1 0 0 0 1 1h1.586z"/></svg> -->
                     </router-link>
                 </li>
                 <li>
                     <router-link to="/work/audiobooks-docs" class="work-container">
                         <h3>4</h3>
                         <p>Audiobooks & Docs</p>
-                        <!-- <svg class="arrow" width="80" height="120" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.924 13.617A1 1 0 0 0 19 13h-3V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v10H5a1 1 0 0 0-.707 1.707l7 7a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 .217-1.09zM12 19.586 7.414 15H9a1 1 0 0 0 1-1V4h4v10a1 1 0 0 0 1 1h1.586z"/></svg> -->
                     </router-link>
                 </li>
             </ul>
@@ -41,16 +46,15 @@ import { animate, scroll } from "motion";
 export default {
   name: "Work",
 
-
+  data() {
+    return {
+      linePaths: ['M 50 0 L 50 100', 'M 50 0 L 50 100', 'M 50 0 L 50 100'],
+      mousePositions: [null, null, null]
+    };
+  },
 
   mounted() {
     const items = document.querySelectorAll(".work-container")
-
-    // Horizontal scroll animation math:
-    // - Each item is 50vw wide, showing 2 items at a time (100vw total visible)
-    // - With 4 items: positions are [1,2] → [2,3] → [3,4]  
-    // - That's 2 movements of 50vw each = 100vw total movement
-    // - Formula: (total_items - items_shown) × item_width = (4 - 2) × 50vw = 100vw
 
     scroll(
         animate(".work-group", {
@@ -58,11 +62,71 @@ export default {
         }),
         { target: document.querySelector(".work-group-container") }
     )
+
+    // Add mouse tracking for each line
+    const containers = this.$el.querySelectorAll('.work-container');
+    containers.forEach((container, index) => {
+      if (index < 3) { // Only first 3 have lines
+        this.setupLineInteraction(container, index);
+      }
+    });
   },
+
+  methods: {
+    setupLineInteraction(container, index) {
+      const svg = container.querySelector('.connector-line');
+      if (!svg) return;
+
+      // Listen on the parent .work-group to capture mouse movement across both containers
+      const workGroup = this.$el.querySelector('.work-group');
+
+      const handleMouseMove = (e) => {
+        const rect = svg.getBoundingClientRect();
+        
+        // Check if mouse is within the visual bounds of the SVG (including transform)
+        if (e.clientX < rect.left || e.clientX > rect.right || 
+            e.clientY < rect.top || e.clientY > rect.bottom) {
+          this.animateLineBack(index);
+          return;
+        }
+
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        // Calculate distance from center vertical line
+        const distanceFromCenter = Math.abs(x - 50);
+        const maxInfluenceDistance = 60; // influence distance
+        
+        if (distanceFromCenter < maxInfluenceDistance) {
+          // Create curved path with smooth easing
+          const influence = 1 - (distanceFromCenter / maxInfluenceDistance);
+          const bendAmount = (x - 50) * influence * 0.8;
+          
+          // Quadratic bezier curve for smooth bend (vertical line)
+          this.linePaths[index] = `M 50 0 Q ${50 + bendAmount} ${y} 50 100`;
+        } else {
+          // Smoothly return to straight line
+          this.animateLineBack(index);
+        }
+      };
+
+      const handleMouseLeave = () => {
+        this.animateLineBack(index);
+      };
+
+      workGroup.addEventListener('mousemove', handleMouseMove);
+      workGroup.addEventListener('mouseleave', handleMouseLeave);
+    },
+
+    animateLineBack(index) {
+      // Smooth transition back to straight line
+      const currentPath = this.linePaths[index];
+      if (currentPath !== 'M 50 0 L 50 100') {
+        this.linePaths[index] = 'M 50 0 L 50 100';
+      }
+    }
+  }
 };
-
-
-
 </script>
 
 <style scoped>
@@ -89,7 +153,7 @@ export default {
             transition: all 0.3s ease;
         }
         > li:hover {
-            background: rgba(var(--color-almost-white));
+            /* background: rgba(var(--color-almost-white)); */
         }
     }
 
@@ -97,11 +161,29 @@ export default {
         transform: translateY(-30px);
     }
 
+    .connector-line {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        bottom: 0;
+        width: 25vw;
+        height: 100%;
+        pointer-events: none;
+        opacity: 0.3;
+        transition: opacity 0.3s ease;
+        transform: translateX(12.5vw);
+    }
+
+    .work-container:hover .connector-line {
+        opacity: 0.7;
+    }
+
     h3 {
-        font-family: 'Bodoni Moda', serif;
-        font-optical-sizing: auto;
+        font-family: 'Roslindale Display Condensed', serif;
+        /* font-optical-sizing: auto;
         font-variation-settings: 'opsz' 12;
-        font-weight: 600;
+        font-weight: 600; */
+        font-weight: normal;
         font-size: 25vw;
         line-height: 1;
         margin: 0;
@@ -155,12 +237,6 @@ export default {
 
     .work-container:hover::after {
         opacity: 1;
-        /* transform: translateX(-50%) translateY(-10px) */
-
-    }
-
-    .work-container:hover {
-        /* cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="28" fill="rgba(0,0,0,0.7)" stroke="white" stroke-width="2"/><path d="M20 30 L35 30 M35 30 L28 23 M35 30 L28 37" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>') 30 30, pointer; */
     }
 
     .work-container h3 {

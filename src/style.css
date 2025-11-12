@@ -2,6 +2,39 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,400;0,500;0,700;1,400;1,500;1,700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
+@font-face {
+  font-family: 'Roslindale Display Condensed';
+  src: url('https://uploads-ssl.webflow.com/5ea69b4027484b2df2b45806/5ea6a1f3a5a8d28e11e3b718_RoslindaleDisplayCondensed-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roslindale Display Condensed';
+  src: url('https://uploads-ssl.webflow.com/5ea69b4027484b2df2b45806/5eaaae1dfbbd8358eec5f26a_RoslindaleDisplayCondensed-Medium.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @font-face {
+  font-family: 'Ayer Medium';
+  src: url('https://uploads-ssl.webflow.com/5ea69b4027484b2df2b45806/5ea6a1f3dddc5fb9e294dbf3_Ayer-Medium.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Montreal Regular';
+  src: url('https://uploads-ssl.webflow.com/5ea69b4027484b2df2b45806/5ea6a1f3c07d784835420a30_NeueMontreal-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+} */
+
+
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -11,7 +44,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "Barlow Condensed", serif;
   /* font-family: 'Bodoni Moda', serif; */
   /* font-optical-sizing: auto;
   font-variation-settings: 'opsz' 12; */
@@ -44,7 +77,11 @@ body {
 
 strong {
     font-weight: 800 !important;
-    font-style: italic !important;
+    /* font-style: italic !important; */
+
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000000;
 }
 
 span.article-line > strong {

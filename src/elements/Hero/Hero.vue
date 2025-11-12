@@ -82,6 +82,8 @@ export default {
 .hero {
     display: grid;
     grid-template-areas: 'overlay';
+    font-family: 'Roslindale Display Condensed';
+    font-weight: normal;
     width: 100vw;
     overflow: hidden;
     height: 100vh;
