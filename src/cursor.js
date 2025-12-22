@@ -1,0 +1,62 @@
+// Custom cursor tracking
+document.addEventListener('mousemove', (e) => {
+  document.documentElement.style.setProperty('--cursor-x', `${e.clientX}px`);
+  document.documentElement.style.setProperty('--cursor-y', `${e.clientY}px`);
+});
+
+// Scale cursor on clickable elements
+const clickableElements = 'a, button, [role="button"], input, textarea, select';
+const videoElements = '.media-player';
+
+// Function to check video state
+function updateCursorForVideo(videoTarget) {
+  if (videoTarget.classList.contains('is-playing')) {
+    document.body.classList.add('cursor-video-playing');
+    document.body.classList.remove('cursor-video', 'cursor-hover');
+  } else {
+    document.body.classList.add('cursor-video');
+    document.body.classList.remove('cursor-video-playing', 'cursor-hover');
+  }
+}
+
+document.addEventListener('mouseover', (e) => {
+  const videoTarget = e.target.matches(videoElements) ? e.target : e.target.closest(videoElements);
+  
+  if (videoTarget) {
+    updateCursorForVideo(videoTarget);
+  } else if (e.target.matches(clickableElements) || e.target.closest(clickableElements)) {
+    document.body.classList.add('cursor-hover');
+    document.body.classList.remove('cursor-video', 'cursor-video-playing');
+  }
+});
+
+// Also update on mousemove to catch state changes while hovering
+document.addEventListener('mousemove', (e) => {
+  const videoTarget = e.target.matches(videoElements) ? e.target : e.target.closest(videoElements);
+  
+  if (videoTarget) {
+    updateCursorForVideo(videoTarget);
+  }
+});
+
+document.addEventListener('mouseout', (e) => {
+  if (e.target.matches(videoElements) || e.target.closest(videoElements)) {
+    document.body.classList.remove('cursor-video', 'cursor-video-playing');
+  } else if (e.target.matches(clickableElements) || e.target.closest(clickableElements)) {
+    document.body.classList.remove('cursor-hover');
+  }
+});
+
+// Listen for clicks on video to update cursor state
+document.addEventListener('click', (e) => {
+  const videoTarget = e.target.matches(videoElements) ? e.target : e.target.closest(videoElements);
+  
+  if (videoTarget) {
+    // Small delay to let Vue update the class
+    setTimeout(() => {
+      updateCursorForVideo(videoTarget);
+    }, 100);
+  }
+});
+
+
