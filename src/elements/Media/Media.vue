@@ -1,6 +1,6 @@
 <template>
     <div class="media-section">
-        <div v-for="(item, index) in mediaItems" :key="index" class="media-container"
+        <div v-for="(item, index) in mediaItems" :key="index" :ref="`container-${index}`" class="media-container"
             :class="{ 'reverse': index % 2 === 1 }">
             <!-- Media Player -->
             <div class="media-player" @click="togglePlay(index)">
@@ -30,7 +30,7 @@
             </div>
 
             <!-- Content Card -->
-            <div class="content-card">
+            <div class="content-card" :ref="`card-${index}`">
                 <div class="media-type">
                     <!-- Danish Flag -->
                     <svg v-if="item.language === 'DK'" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import { animate, inView } from "motion";
+import { animate, inView, scroll } from "motion";
 
 export default {
     name: 'Media',
@@ -154,23 +154,38 @@ export default {
             });
         });
 
-        // Animate each media container individually on scroll
+        // Animate each media container and content card with scroll
         this.$nextTick(() => {
-            const mediaContainers = document.querySelectorAll('.media-container');
-            mediaContainers.forEach((container) => {
-                inView(container, () => {
-                    animate(container, 
-                        {
-                            opacity: [0, 1],
-                            y: [50, 0]
-                        },
-                        {   
-                            delay: 0.2,
-                            duration: 0.8,
-                            ease: [0.25, 0.1, 0.25, 1]
-                        }
+            this.mediaItems.forEach((item, index) => {
+                const container = this.$refs[`container-${index}`][0];
+                const card = this.$refs[`card-${index}`][0];
+
+                if (container && card) {
+                    // Animate container fade in
+                    inView(container, () => {
+                        animate(container, 
+                            {
+                                opacity: [0, 1],
+                            },
+                            {   
+                                duration: 0.6,
+                                ease: [0.25, 0.1, 0.25, 1]
+                            }
+                        );
+                    });
+
+                    // Animate card moving from bottom to top on scroll
+                    const cardAnimation = animate(
+                        card,
+                        { y: ["40%", "-40%"] },
+                        { ease: "linear" }
                     );
-                });
+
+                    scroll(cardAnimation, {
+                        target: container,
+                        offset: ["start end", "end start"]
+                    });
+                }
             });
         });
     }
@@ -182,19 +197,23 @@ export default {
 .media-section {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 120px;
+    padding: 60px 0;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .media-container {
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 60% 40%;
+    gap: 40px;
     align-items: center;
     opacity: 0;
-    transform: translateY(50px);
+    position: relative;
 }
 
 .media-container.reverse {
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 40% 60%;
 
     .content-card {
         order: -1;
@@ -205,9 +224,10 @@ export default {
     position: relative;
     cursor: pointer;
     background: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
 
     > video {
-        /* aspect-ratio: 1920 / 1080; */
         display: block;
     }
 }
@@ -309,9 +329,14 @@ export default {
 .content-card {
     background: rgba(200, 180, 200, 0.9);
     padding: 40px;
-    height: 100%;
-    display: grid;
-    place-content: center;
+    height: auto;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    position: relative;
+    will-change: transform;
 }
 
 .media-type {
@@ -341,25 +366,27 @@ export default {
 }
 
 @media (max-width: 768px) {
+    .media-section {
+        gap: 80px;
+        padding: 40px 20px;
+    }
+
     .media-container {
-        min-height: 50vh;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding-bottom: 40px;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     
     .media-container.reverse {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
     
     .content-card {
         padding: 30px;
-        margin: 0 20px;
-        max-width: none;
+        min-height: auto;
     }
     
     .media-container.reverse .content-card {
-        margin: 0 20px;
+        order: 0;
     }
     
     .play-button {
