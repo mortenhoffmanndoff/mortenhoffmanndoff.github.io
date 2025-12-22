@@ -2,7 +2,7 @@
   <div>
     
     <Hero
-      :textItems="['Leading <strong>voice</strong>', 'talent of <strong>Denmark</strong>']"
+      :textItems="['<strong>Leading</strong> ', 'voice talent', '<strong>of</strong> Denmark']"
       imageSrc="/images/Home2.png"
       height="large"
       textSize="large"
@@ -15,7 +15,13 @@
       />
     <Work id="work" />  
       
-    <ParallaxImage :parallaxText="'I am Christina Bjørn'" :imageSrc="'/images/image-6.png'" />
+    <TextImageOverlay 
+      :line1="'Christina'"
+      :line2="'Bjørn'"
+      :imageSrc="'/images/image-6.png'" 
+    />
+
+
     <Hero 
       :textItems="['My <strong>voice</strong>', 'is the <strong>sound</strong>', 'of your <strong>brand</strong>']"
       height="large"
@@ -23,7 +29,7 @@
       class=""
     />
     <Article id="about" :articleContent="aboutText" class="" />
-    <ParallaxImage :parallaxText="'Some of my clients'" :imageSrc="'/images/image-7.png'" />
+    <ParallaxImage :parallaxText="''" :imageSrc="'/images/image-7.png'" />
     <Clients id="clients" class="" />
     <ParallaxImage :imageSrc="'/images/image-4.png'" />
     <Hero class="bg-almost-white"
@@ -43,6 +49,7 @@ import Clients from '../elements/Clients/Clients.vue'
 import Article from '../elements/Article/Article.vue'
 import ParallaxImage from '../elements/ParallaxImage/ParallaxImage.vue'
 import Soundwave from '../elements/Soundwave/Soundwave.vue'
+import TextImageOverlay from '../elements/TextImageOverlay/TextImageOverlay.vue'
 
 export default {
   name: 'HomePage',
@@ -53,6 +60,7 @@ export default {
     Article,
     ParallaxImage,
     Soundwave,
+    TextImageOverlay,
   },
   data() {
     return {
