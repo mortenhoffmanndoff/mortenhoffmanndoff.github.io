@@ -3,7 +3,7 @@
         <div v-for="(item, index) in mediaItems" :key="index" :ref="`container-${index}`" class="media-container"
             :class="{ 'reverse': index % 2 === 1 }">
             <!-- Media Player -->
-            <div class="media-player" @click="togglePlay(index)">
+            <div class="media-player" :class="{ 'is-playing': playingStates[index] }" @click="togglePlay(index)">
                 <!-- Video -->
                 <video v-if="item.type === 'video'" :ref="`media-${index}`" :src="item.src" :poster="item.poster"
                     class="media-element" />
@@ -198,22 +198,22 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 120px;
-    padding: 60px 0;
-    max-width: 1400px;
+    padding: 120px;
+    /* max-width: 1400px; */
     margin: 0 auto;
 }
 
 .media-container {
     display: grid;
-    grid-template-columns: 60% 40%;
-    gap: 40px;
+    grid-template-columns: 60% 1fr;
+    gap: 120px;
     align-items: center;
     opacity: 0;
     position: relative;
 }
 
 .media-container.reverse {
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 1fr 60%;
 
     .content-card {
         order: -1;
@@ -226,10 +226,21 @@ export default {
     background: #f5f5f5;
     border-radius: 8px;
     overflow: hidden;
+    aspect-ratio: 16 / 9;
+    transition: filter 0.4s ease;
 
     > video {
         display: block;
     }
+}
+
+.media-player:not(.is-playing) {
+    /* filter: grayscale(0.6) brightness(0.7); */
+    filter: brightness(0.6);
+}
+
+.media-player.is-playing {
+    filter: none;
 }
 
 .media-element {
