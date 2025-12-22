@@ -1,6 +1,6 @@
 <template>
   <div class="acting-narration">
-    <Hero class="acting-narration-hero" height="large" :textItems="['<strong>Character</strong> work', 'and on screen. My', 'Voice has many <strong>Faces</strong>']"></Hero>
+    <Hero class="acting-narration-hero" height="large" :textItems="['<strong>Character</strong> work off', 'and on screen. My', 'Voice has many <strong>Faces</strong>']"></Hero>
     <Hero 
       :textItems="['<strong>Acting &</strong>', '<strong>Narration</strong>']"
       height="small"

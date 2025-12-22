@@ -120,8 +120,8 @@ export default {
 .footer {
     position: relative;
     width: 100%;
-    background: linear-gradient(135deg, #22223A 0%, #3A3A3A 100%);
-    color: #F6F6F6;
+    background: linear-gradient(135deg, #6DBCC3 0%, #5BA8B0 50%, #4A95A0 100%);
+    color: #2A2A2A;
     overflow: hidden;
 }
 
@@ -131,11 +131,11 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.5;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(75, 79, 106, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(202, 187, 184, 0.05) 0%, transparent 50%);
+    opacity: 0.6;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     pointer-events: none;
+    mix-blend-mode: overlay;
 }
 
 .footer-content {
@@ -174,7 +174,7 @@ export default {
 
 .footer-title-word:last-child {
     margin-right: 0;
-    color: #F2E9E4;
+    color: #2A2A2A;
     font-weight: 400;
 }
 
@@ -184,8 +184,8 @@ export default {
     gap: 60px;
     align-items: center;
     padding: 60px 0;
-    border-top: 1px solid rgba(242, 233, 228, 0.2);
-    border-bottom: 1px solid rgba(242, 233, 228, 0.2);
+    border-top: 1px solid rgba(42, 42, 42, 0.15);
+    border-bottom: 1px solid rgba(42, 42, 42, 0.15);
     opacity: 0;
 }
 
@@ -207,14 +207,14 @@ export default {
     gap: 12px;
     font-size: clamp(16px, 2vw, 28px);
     font-weight: 300;
-    color: #F6F6F6;
+    color: #2A2A2A;
     text-decoration: none;
     transition: all 0.3s ease;
     width: fit-content;
 }
 
 .contact-link:hover {
-    color: #F2E9E4;
+    color: #1A1A1A;
     transform: translateX(8px);
 }
 
@@ -232,7 +232,7 @@ export default {
 .contact-label {
     font-size: 14px;
     text-transform: uppercase;
-    color: #9A8C99;
+    color: rgba(42, 42, 42, 0.6);
     letter-spacing: 1px;
     margin: 0;
 }
@@ -251,14 +251,14 @@ export default {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: rgba(242, 233, 228, 0.1);
-    color: #F2E9E4;
+    background: rgba(42, 42, 42, 0.1);
+    color: #2A2A2A;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    background: rgba(242, 233, 228, 0.2);
+    background: rgba(42, 42, 42, 0.2);
     transform: translateY(-4px);
 }
 
@@ -281,7 +281,7 @@ export default {
 
 .footer-credit {
     font-size: 12px;
-    color: #9A8C99;
+    color: rgba(42, 42, 42, 0.5);
     margin: 0;
     letter-spacing: 0.5px;
 }
