@@ -9,6 +9,11 @@
                             <path :d="linePaths[0]" stroke="currentColor" fill="none" stroke-width="0.5" />
                         </svg>
                         <p>Commercial</p>
+                        <svg viewBox="0 0 72 100" class="work-arrow">
+                            <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
+                                v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
+                                v0l0.5,0l2.4,0.1c0,0,0-0.6,0-1.5v-2.5C38.4,84.4,42.5,63.9,70.4,58.9z"></path>
+                        </svg>
                     </router-link>
                 </li>
                 <li>
@@ -178,6 +183,23 @@ export default {
         opacity: 0.7;
     }
 
+    .work-container:hover .work-arrow {
+        bottom: calc(0px + 7.5vh);
+    }
+
+    .work-arrow {
+        position: absolute;
+        width: 15vh;
+        bottom: calc(0px - 15vh);
+        margin-top: 15px;
+        fill: currentColor;
+        transition: 0.3s ease;
+
+        &:hover {
+            bottom: 0;
+        }
+    }
+
     h3 {
         font-family: 'Roslindale Display Condensed', serif;
         /* font-optical-sizing: auto;
@@ -216,7 +238,7 @@ export default {
         position: relative;
     }
 
-    .work-container::after {
+    /* .work-container::after {
         content: "i'll show you";
         position: absolute;
         bottom: 15%;
@@ -237,7 +259,7 @@ export default {
 
     .work-container:hover::after {
         opacity: 1;
-    }
+    } */
 
     .work-container h3 {
         transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);

@@ -19,14 +19,14 @@
                 </div>
 
                 <!-- Custom Play Button -->
-                <div class="play-button" :class="{ 'playing': playingStates[index] }">
+                <!-- <div class="play-button" :class="{ 'playing': playingStates[index] }">
                     <svg v-if="!playingStates[index]" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M8 5v14l11-7z" />
                     </svg>
                     <svg v-else viewBox="0 0 24 24" fill="currentColor">
                         <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
                     </svg>
-                </div>
+                </div> -->
             </div>
 
             <!-- Content Card -->
@@ -234,13 +234,17 @@ export default {
     }
 }
 
-.media-player:not(.is-playing) {
-    /* filter: grayscale(0.6) brightness(0.7); */
-    filter: brightness(0.6);
-}
-
-.media-player.is-playing {
-    filter: none;
+.media-player:not(.is-playing)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(120, 120, 120, 0.5);
+    z-index: 1;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .media-element {
@@ -298,6 +302,7 @@ export default {
 }
 
 .play-button {
+    display: none;
     /* visibility: hidden;
     opacity: 0; */
     position: absolute;
