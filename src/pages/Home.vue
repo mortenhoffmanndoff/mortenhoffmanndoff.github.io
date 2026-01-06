@@ -27,6 +27,7 @@
       height="large"
       textSize="xlarge"
       class=""
+      style="margin-top: -50vh"
     />
     <Article id="about" :articleContent="aboutText" class="" />
     <ParallaxImage :parallaxText="''" :imageSrc="'/images/image-7.png'" />
@@ -77,16 +78,16 @@ export default {
 
       recommendationText: `
         "Christina er en super professionel og fleksibel speaker, som altid leverer! Let at arbejde med og med rigtig god indlevelse i teksten og opgaven." <br>
-        <strong>Rasmus Schwenger, Producer hos Bauer Media</strong>
+        <b>Rasmus Schwenger, Producer hos Bauer Media</b>
         <br><br><br><br>
         "Bjørnen' er en meget professionel og rutineret speaker, er god til at fornemme 'stilart' i opgaven og leverer altid hurtigt og i topkvalitet." <br>
-        <strong>Torben Johansen, ejer af "Lyd er Godt"</strong>
+        <b>Torben Johansen, ejer af "Lyd er Godt"</b>
         <br><br><br><br>
         "Christina selv og hendes smukke stemme med klar diktion og let til smil er altid en fornøjelse at arbejde med! Grundlyden på hendes speaks, optaget i eget studie, er super velegnede til videre forarbejdning i et mix." <br>
-        <strong>Peter Krabbe Aagaard fra KRABBE sound&music</strong>
+        <b>Peter Krabbe Aagaard fra KRABBE sound&music</b>
         <br><br><br><br>
         "It was amazing working with Christina. Not only does she have an incredible voice but is a pleasure to work with. She is easygoing and super flexible which was what we needed when working on a lengthy and demanding project." <br>
-        <strong>Sebastian Giraldo, Account Manager hos Voices.com Inc.</strong>
+        <b>Sebastian Giraldo, Account Manager hos Voices.com Inc.</b>
       `,
     }
   }

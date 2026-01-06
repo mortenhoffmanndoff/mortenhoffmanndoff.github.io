@@ -23,6 +23,11 @@
                             <path :d="linePaths[1]" stroke="currentColor" fill="none" stroke-width="0.5" />
                         </svg>
                         <p>Corporate & Imaging</p>
+                        <svg viewBox="0 0 72 100" class="work-arrow">
+                            <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
+                                v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
+                                v0l0.5,0l2.4,0.1c0,0,0-0.6,0-1.5v-2.5C38.4,84.4,42.5,63.9,70.4,58.9z"></path>
+                        </svg>
                     </router-link>
                 </li>
                 <li>
@@ -32,12 +37,22 @@
                             <path :d="linePaths[2]" stroke="currentColor" fill="none" stroke-width="0.5" />
                         </svg>
                         <p>Acting & Narration</p>
+                        <svg viewBox="0 0 72 100" class="work-arrow">
+                            <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
+                                v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
+                                v0l0.5,0l2.4,0.1c0,0,0-0.6,0-1.5v-2.5C38.4,84.4,42.5,63.9,70.4,58.9z"></path>
+                        </svg>
                     </router-link>
                 </li>
                 <li>
                     <router-link to="/work/audiobooks-docs" class="work-container">
                         <h3>4</h3>
                         <p>Audiobooks & Docs</p>
+                        <svg viewBox="0 0 72 100" class="work-arrow">
+                            <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
+                                v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
+                                v0l0.5,0l2.4,0.1c0,0,0-0.6,0-1.5v-2.5C38.4,84.4,42.5,63.9,70.4,58.9z"></path>
+                        </svg>
                     </router-link>
                 </li>
             </ul>
@@ -183,9 +198,9 @@ export default {
         opacity: 0.7;
     }
 
-    .work-container:hover .work-arrow {
+    /* .work-container:hover .work-arrow {
         bottom: calc(0px + 7.5vh);
-    }
+    } */
 
     .work-arrow {
         position: absolute;
@@ -193,11 +208,11 @@ export default {
         bottom: calc(0px - 15vh);
         margin-top: 15px;
         fill: currentColor;
-        transition: 0.3s ease;
+        /* transition: 0.3s ease; */
 
-        &:hover {
+        /* &:hover {
             bottom: 0;
-        }
+        } */
     }
 
     h3 {
@@ -206,7 +221,7 @@ export default {
         font-variation-settings: 'opsz' 12;
         font-weight: 600; */
         font-weight: normal;
-        font-size: 25vw;
+        font-size: 35vw;
         line-height: 1;
         margin: 0;
     }
@@ -220,7 +235,7 @@ export default {
 
     .arrow {
         margin-top: 20px;
-        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        /* transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); */
     }
 
         .work-container {
@@ -261,19 +276,22 @@ export default {
         opacity: 1;
     } */
 
-    .work-container h3 {
-        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    .work-container h3,
+    .work-container p,
+    .work-container .work-arrow {
+        /* transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1); */
+        transition: all .5s ease;
     }
 
     .work-container:hover h3 {
-        transform: translateY(-15px);
+        transform: translateY(-15vh);
     }
 
     .work-container:hover p {
-        transform: translateY(-10px);
+        transform: translateY(-15vh);
     }
 
-    .work-container:hover .arrow {
-        transform: translateY(15px);
+    .work-container:hover .work-arrow {
+        transform: translateY(-15vh);
     }
 </style>
