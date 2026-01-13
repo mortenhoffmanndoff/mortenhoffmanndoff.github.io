@@ -270,7 +270,8 @@ export default {
     letter-spacing: -1px;
     line-height: 0.9;
     transition: all 0.3s ease;
-    font-family: "Barlow Condensed", serif;
+    /* font-family: "Barlow Condensed", serif; */
+    font-family: "Roslindale Display Condensed";
 }
 
 .menu-link:hover {
