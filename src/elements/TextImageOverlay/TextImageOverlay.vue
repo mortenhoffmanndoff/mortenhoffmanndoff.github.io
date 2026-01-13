@@ -58,7 +58,7 @@ export default {
 
 .text-section {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   padding: 10vh 5vw 5vh;
   display: flex;
   align-items: flex-start;
@@ -88,15 +88,20 @@ export default {
 
 .image-section {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   /* height: 80vh;
   margin-top: -10vh; */
   overflow: hidden;
+
+      display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 40px;  
 }
 
 .image-section img {
-  width: 100%;
+  width: 50vw;
   height: 100%;
   object-fit: cover;
   object-position: center;

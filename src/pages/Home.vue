@@ -18,7 +18,7 @@
     <TextImageOverlay 
       :line1="'Christina'"
       :line2="'Bjørn'"
-      :imageSrc="'/images/image-6.png'" 
+      :imageSrc="'/images/image-5.png'" 
     />
 
 
