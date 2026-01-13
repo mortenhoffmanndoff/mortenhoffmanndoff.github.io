@@ -3,7 +3,7 @@
         <div>
             <ul class="work-group">
                 <li>
-                    <router-link to="/work/commercial" class="work-container">
+                    <a href="/work/commercial" class="work-container" @click.prevent="navigateTo('/work/commercial')">
                         <h3>1</h3>
                         <canvas ref="canvas0" class="connector-line"></canvas>
                         <p>Commercial</p>
@@ -12,10 +12,10 @@
                                 v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
                                 v0l0.5,0l2.4,0.1c0,0,0-0.6,0-1.5v-2.5C38.4,84.4,42.5,63.9,70.4,58.9z"></path>
                         </svg>
-                    </router-link>
+                    </a>
                 </li>
                 <li>
-                    <router-link to="/work/corporate-imaging" class="work-container">
+                    <a href="/work/corporate-imaging" class="work-container" @click.prevent="navigateTo('/work/corporate-imaging')">
                         <h3>2</h3>
                         <canvas ref="canvas1" class="connector-line"></canvas>
                         <p>Corporate & Imaging</p>
@@ -24,10 +24,10 @@
                                 v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
                                 v0l0.5,0l2.4,0.1c0,0,0-0.6,0-1.5v-2.5C38.4,84.4,42.5,63.9,70.4,58.9z"></path>
                         </svg>
-                    </router-link>
+                    </a>
                 </li>
                 <li>
-                    <router-link to="/work/acting-narration" class="work-container">
+                    <a href="/work/acting-narration" class="work-container" @click.prevent="navigateTo('/work/acting-narration')">
                         <h3>3</h3>
                         <canvas ref="canvas2" class="connector-line"></canvas>
                         <p>Acting & Narration</p>
@@ -36,10 +36,10 @@
                                 v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
                                 v0l0.5,0l2.4,0.1c0,0,0-0.6,0-1.5v-2.5C38.4,84.4,42.5,63.9,70.4,58.9z"></path>
                         </svg>
-                    </router-link>
+                    </a>
                 </li>
                 <li>
-                    <router-link to="/work/audiobooks-docs" class="work-container">
+                    <a href="/work/audiobooks-docs" class="work-container" @click.prevent="navigateTo('/work/audiobooks-docs')">
                         <h3>4</h3>
                         <p>Audiobooks & Docs</p>
                         <svg viewBox="0 0 72 100" class="work-arrow">
@@ -47,7 +47,7 @@
                                 v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
                                 v0l0.5,0l2.4,0.1c0,0,0-0.6,0-1.5v-2.5C38.4,84.4,42.5,63.9,70.4,58.9z"></path>
                         </svg>
-                    </router-link>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -59,6 +59,8 @@ import { animate, scroll } from "motion";
 
 export default {
   name: "Work",
+
+  inject: ['navigateWithTransition'],
 
   data() {
     return {
@@ -96,6 +98,14 @@ export default {
   },
 
   methods: {
+    navigateTo(route) {
+      if (this.navigateWithTransition) {
+        this.navigateWithTransition(route);
+      } else {
+        this.$router.push(route);
+      }
+    },
+
     initCanvasLines() {
       for (let i = 0; i < 3; i++) {
         const canvas = this.$refs[`canvas${i}`];

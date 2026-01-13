@@ -4,7 +4,7 @@
     <h1>About Us</h1>
     <p>This is the about page content.</p>
     <p>Learn more about our application here.</p>
-    <router-link to="/">Go back to Home</router-link>
+    <a href="/" @click.prevent="navigateTo('/')">Go back to Home</a>
     <br>
     <br>
     <br>
@@ -16,7 +16,17 @@
 <script>
 export default {
   name: 'AboutPage',
+  inject: ['navigateWithTransition'],
   components: {
+  },
+  methods: {
+    navigateTo(route) {
+      if (this.navigateWithTransition) {
+        this.navigateWithTransition(route);
+      } else {
+        this.$router.push(route);
+      }
+    }
   }
 }
 </script>
