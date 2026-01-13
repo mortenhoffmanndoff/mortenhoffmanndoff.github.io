@@ -10,7 +10,7 @@
 
     
     <Soundwave 
-        audioSrc="/audio/intro-dansk.wav"
+        audioSrc="/audio/Praesentation-paa-dansk-med-musik-til-nyt-site .mp3"
         :size="120"
       />
     <Work id="work" />  
