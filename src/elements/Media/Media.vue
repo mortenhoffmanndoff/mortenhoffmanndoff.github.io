@@ -241,7 +241,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(120, 120, 120, 0.5);
+    background: rgba(35, 35, 35, 0.5);
     z-index: 1;
     transition: opacity 0.4s ease;
     pointer-events: none;
