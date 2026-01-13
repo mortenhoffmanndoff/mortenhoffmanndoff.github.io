@@ -206,7 +206,7 @@ export default {
         
         // All middle points bend toward mouse X, dampened by their edge position
         // Adjust 0.5 to control curviness (lower = less curvy, higher = more curvy)
-        const bendAmount = (line.mouseX - centerX) * edgeDampen * 0.5;
+        const bendAmount = (line.mouseX - centerX) * edgeDampen * 0.3;
         point.targetX = bendAmount;
       });
     },
@@ -263,7 +263,7 @@ export default {
       // Draw the line
       ctx.beginPath();
       ctx.strokeStyle = color;
-      ctx.lineWidth = 1.5;
+      ctx.lineWidth = 2.5;
       ctx.globalAlpha = line.isHovering ? 0.7 : 0.3;
       
       // Draw smooth curve through all points
@@ -303,6 +303,7 @@ export default {
         /* adjust this to make the scroll slower or faster*/ 
         /* the higher the value, the slower the scroll */
         height: 100vh; 
+        background: white;;
     }
 
     .work-group-container > div {
@@ -352,7 +353,7 @@ export default {
     .work-arrow {
         position: absolute;
         width: 15vh;
-        bottom: calc(0px - 15vh);
+        bottom: calc(0px - 28vh);
         margin-top: 15px;
         fill: currentColor;
         /* transition: 0.3s ease; */
@@ -367,6 +368,7 @@ export default {
         /* font-optical-sizing: auto;
         font-variation-settings: 'opsz' 12;
         font-weight: 600; */
+        pointer-events: none;
         font-weight: normal;
         font-size: 35vw;
         line-height: 1;
@@ -374,15 +376,18 @@ export default {
     }
 
     p {
+        font-family: 'Roslindale Display Condensed', serif;
         font-size: 2.5vw;
         line-height: 1;
         margin: 0;
         transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        pointer-events: none;
     }
 
-    .arrow {
-        margin-top: 20px;
+    .work-arrow {
+        /* margin-top: 20px; */
         /* transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); */
+        pointer-events: none;
     }
 
         .work-container {
@@ -440,6 +445,6 @@ export default {
     }
 
     .work-container:hover .work-arrow {
-        transform: translateY(-15vh);
+        transform: translateY(-30vh);
     }
 </style>
