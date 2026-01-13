@@ -5,9 +5,7 @@
                 <li>
                     <router-link to="/work/commercial" class="work-container">
                         <h3>1</h3>
-                        <svg class="connector-line" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            <path :d="linePaths[0]" stroke="currentColor" fill="none" stroke-width="0.5" />
-                        </svg>
+                        <canvas ref="canvas0" class="connector-line"></canvas>
                         <p>Commercial</p>
                         <svg viewBox="0 0 72 100" class="work-arrow">
                             <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
@@ -19,9 +17,7 @@
                 <li>
                     <router-link to="/work/corporate-imaging" class="work-container">
                         <h3>2</h3>
-                        <svg class="connector-line" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            <path :d="linePaths[1]" stroke="currentColor" fill="none" stroke-width="0.5" />
-                        </svg>
+                        <canvas ref="canvas1" class="connector-line"></canvas>
                         <p>Corporate & Imaging</p>
                         <svg viewBox="0 0 72 100" class="work-arrow">
                             <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
@@ -33,9 +29,7 @@
                 <li>
                     <router-link to="/work/acting-narration" class="work-container">
                         <h3>3</h3>
-                        <svg class="connector-line" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            <path :d="linePaths[2]" stroke="currentColor" fill="none" stroke-width="0.5" />
-                        </svg>
+                        <canvas ref="canvas2" class="connector-line"></canvas>
                         <p>Acting & Narration</p>
                         <svg viewBox="0 0 72 100" class="work-arrow">
                             <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
@@ -68,8 +62,9 @@ export default {
 
   data() {
     return {
-      linePaths: ['M 50 0 L 50 100', 'M 50 0 L 50 100', 'M 50 0 L 50 100'],
-      mousePositions: [null, null, null]
+      lines: [], // Will store line state for each canvas
+      animationFrame: null,
+      numPoints: 20, // Number of points along the line for smooth curves
     };
   },
 
@@ -83,67 +78,219 @@ export default {
         { target: document.querySelector(".work-group-container") }
     )
 
-    // Add mouse tracking for each line
-    const containers = this.$el.querySelectorAll('.work-container');
-    containers.forEach((container, index) => {
-      if (index < 3) { // Only first 3 have lines
-        this.setupLineInteraction(container, index);
-      }
-    });
+    // Initialize canvas lines
+    this.initCanvasLines();
+    
+    // Start animation loop
+    this.startAnimation();
+    
+    // Handle resize
+    window.addEventListener('resize', this.handleResize);
+  },
+
+  beforeUnmount() {
+    if (this.animationFrame) {
+      cancelAnimationFrame(this.animationFrame);
+    }
+    window.removeEventListener('resize', this.handleResize);
   },
 
   methods: {
-    setupLineInteraction(container, index) {
-      const svg = container.querySelector('.connector-line');
-      if (!svg) return;
-
-      // Listen on the parent .work-group to capture mouse movement across both containers
+    initCanvasLines() {
+      for (let i = 0; i < 3; i++) {
+        const canvas = this.$refs[`canvas${i}`];
+        if (!canvas) continue;
+        
+        const container = canvas.closest('.work-container');
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas size
+        this.resizeCanvas(canvas);
+        
+        // Initialize points with spring physics
+        const points = [];
+        for (let j = 0; j < this.numPoints; j++) {
+          points.push({
+            x: 0,           // Current x offset from center
+            targetX: 0,     // Target x position
+            velocity: 0,    // Current velocity for spring physics
+          });
+        }
+        
+        this.lines.push({
+          canvas,
+          ctx,
+          container,
+          points,
+          isHovering: false,
+          mouseY: 0,
+          mouseX: 0,
+        });
+        
+        // Set up event listeners
+        this.setupCanvasEvents(i);
+      }
+    },
+    
+    resizeCanvas(canvas) {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      const ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+    },
+    
+    handleResize() {
+      this.lines.forEach(line => {
+        this.resizeCanvas(line.canvas);
+      });
+    },
+    
+    setupCanvasEvents(index) {
+      const line = this.lines[index];
       const workGroup = this.$el.querySelector('.work-group');
-
+      
       const handleMouseMove = (e) => {
-        const rect = svg.getBoundingClientRect();
+        const rect = line.canvas.getBoundingClientRect();
         
-        // Check if mouse is within the visual bounds of the SVG (including transform)
-        if (e.clientX < rect.left || e.clientX > rect.right || 
-            e.clientY < rect.top || e.clientY > rect.bottom) {
-          this.animateLineBack(index);
-          return;
-        }
-
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        
-        // Calculate distance from center vertical line
-        const distanceFromCenter = Math.abs(x - 50);
-        const maxInfluenceDistance = 60; // influence distance
-        
-        if (distanceFromCenter < maxInfluenceDistance) {
-          // Create curved path with smooth easing
-          const influence = 1 - (distanceFromCenter / maxInfluenceDistance);
-          const bendAmount = (x - 50) * influence * 0.8;
+        // Check if mouse is within canvas bounds
+        if (e.clientX >= rect.left && e.clientX <= rect.right &&
+            e.clientY >= rect.top && e.clientY <= rect.bottom) {
           
-          // Quadratic bezier curve for smooth bend (vertical line)
-          this.linePaths[index] = `M 50 0 Q ${50 + bendAmount} ${y} 50 100`;
+          line.isHovering = true;
+          line.mouseX = e.clientX - rect.left;
+          line.mouseY = e.clientY - rect.top;
+          
+          // Update target positions based on mouse
+          this.updateTargets(index);
         } else {
-          // Smoothly return to straight line
-          this.animateLineBack(index);
+          line.isHovering = false;
+          // Reset targets to center (0 offset)
+          line.points.forEach(p => {
+            p.targetX = 0;
+          });
         }
       };
-
+      
       const handleMouseLeave = () => {
-        this.animateLineBack(index);
+        line.isHovering = false;
+        line.points.forEach(p => {
+          p.targetX = 0;
+        });
       };
-
+      
       workGroup.addEventListener('mousemove', handleMouseMove);
       workGroup.addEventListener('mouseleave', handleMouseLeave);
     },
-
-    animateLineBack(index) {
-      // Smooth transition back to straight line
-      const currentPath = this.linePaths[index];
-      if (currentPath !== 'M 50 0 L 50 100') {
-        this.linePaths[index] = 'M 50 0 L 50 100';
-      }
+    
+    updateTargets(index) {
+      const line = this.lines[index];
+      const rect = line.canvas.getBoundingClientRect();
+      const width = rect.width;
+      const centerX = width / 2;
+      const numPoints = this.numPoints;
+      
+      // Calculate mouse influence on each point
+      line.points.forEach((point, i) => {
+        // Keep first and last points frozen at center
+        if (i === 0 || i === numPoints - 1) {
+          point.targetX = 0;
+          return;
+        }
+        
+        // Calculate edge dampening (points near top/bottom move less)
+        // Using sine curve: 0 at edges, 1 in middle
+        const edgePosition = i / (numPoints - 1); // 0 to 1
+        const edgeDampen = Math.sin(edgePosition * Math.PI);
+        
+        // All middle points bend toward mouse X, dampened by their edge position
+        // Adjust 0.5 to control curviness (lower = less curvy, higher = more curvy)
+        const bendAmount = (line.mouseX - centerX) * edgeDampen * 0.5;
+        point.targetX = bendAmount;
+      });
+    },
+    
+    startAnimation() {
+      const animate = () => {
+        this.lines.forEach((line, index) => {
+          this.updatePhysics(index);
+          this.drawLine(index);
+        });
+        
+        this.animationFrame = requestAnimationFrame(animate);
+      };
+      
+      animate();
+    },
+    
+    updatePhysics(index) {
+      const line = this.lines[index];
+      
+      // Spring physics parameters
+      const stiffness = 0.08;  // How quickly it moves to target (lower = slower)
+      const damping = 0.75;    // How bouncy (lower = more bouncy, higher = less bouncy)
+      
+      line.points.forEach(point => {
+        // Calculate spring force
+        const displacement = point.targetX - point.x;
+        const springForce = displacement * stiffness;
+        
+        // Apply force and damping
+        point.velocity += springForce;
+        point.velocity *= damping;
+        
+        // Update position
+        point.x += point.velocity;
+      });
+    },
+    
+    drawLine(index) {
+      const line = this.lines[index];
+      const rect = line.canvas.getBoundingClientRect();
+      const ctx = line.ctx;
+      const width = rect.width;
+      const height = rect.height;
+      const centerX = width / 2;
+      
+      // Clear canvas
+      ctx.clearRect(0, 0, width, height);
+      
+      // Get computed style for color
+      const computedStyle = getComputedStyle(line.container);
+      const color = computedStyle.color;
+      
+      // Draw the line
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1.5;
+      ctx.globalAlpha = line.isHovering ? 0.7 : 0.3;
+      
+      // Draw smooth curve through all points
+      line.points.forEach((point, i) => {
+        const y = (i / (this.numPoints - 1)) * height;
+        const x = centerX + point.x;
+        
+        if (i === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          // Use quadratic curves for smoothness
+          const prevPoint = line.points[i - 1];
+          const prevY = ((i - 1) / (this.numPoints - 1)) * height;
+          const prevX = centerX + prevPoint.x;
+          
+          const cpX = (prevX + x) / 2;
+          const cpY = (prevY + y) / 2;
+          
+          ctx.quadraticCurveTo(prevX, prevY, cpX, cpY);
+        }
+      });
+      
+      // Draw to the last point
+      const lastPoint = line.points[line.points.length - 1];
+      ctx.lineTo(centerX + lastPoint.x, height);
+      
+      ctx.stroke();
     }
   }
 };
@@ -285,6 +432,7 @@ export default {
 
     .work-container:hover h3 {
         transform: translateY(-15vh);
+        color: rgb(107, 87, 106);
     }
 
     .work-container:hover p {
