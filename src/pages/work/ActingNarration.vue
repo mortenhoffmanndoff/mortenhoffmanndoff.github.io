@@ -20,7 +20,7 @@
       {
         type: 'video',
         src: '/03-acting-narration/videos/RF21_2min_ENG_SRT.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/03-acting-narration/videos/RF21_2min_ENG_SRT-poster.jpg',
         language: 'DK',
         format: 'video',
         title: 'DEMO REEL\n2024',
@@ -70,7 +70,7 @@
       {
         type: 'video',
         src: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3-poster.jpg',
         language: 'DK',
         format: 'video',
         title: 'DEMO REEL\n2024',
