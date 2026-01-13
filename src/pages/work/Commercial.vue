@@ -90,7 +90,7 @@
       {
         type: 'video',
         src: '/01-commercial/videos/kvik.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/01-commercial/videos/kvik-poster.jpg',
         language: 'DK',
         format: 'video',
         title: 'DEMO REEL\n2024',

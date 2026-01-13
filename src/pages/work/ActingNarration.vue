@@ -1,6 +1,6 @@
 <template>
   <div class="acting-narration">
-    <Hero class="acting-narration-hero" height="large" :textItems="['<strong>Character</strong> work', 'and on screen. My', 'Voice has many <strong>Faces</strong>']"></Hero>
+    <Hero class="acting-narration-hero" height="large" :textItems="['<strong>Character</strong> work off', 'and on screen. My', 'Voice has many <strong>Faces</strong>']"></Hero>
     <Hero 
       :textItems="['<strong>Acting &</strong>', '<strong>Narration</strong>']"
       height="small"
@@ -20,7 +20,7 @@
       {
         type: 'video',
         src: '/03-acting-narration/videos/RF21_2min_ENG_SRT.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/03-acting-narration/videos/RF21_2min_ENG_SRT-poster.jpg',
         language: 'DK',
         format: 'video',
         title: 'DEMO REEL\n2024',
@@ -70,7 +70,7 @@
       {
         type: 'video',
         src: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3-poster.jpg',
         language: 'DK',
         format: 'video',
         title: 'DEMO REEL\n2024',

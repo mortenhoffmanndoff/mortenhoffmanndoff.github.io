@@ -2,16 +2,125 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,400;0,500;0,700;1,400;1,500;1,700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
+@font-face {
+  font-family: 'Roslindale Display Condensed';
+  src: url('https://uploads-ssl.webflow.com/5ea69b4027484b2df2b45806/5ea6a1f3a5a8d28e11e3b718_RoslindaleDisplayCondensed-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roslindale Display Condensed';
+  src: url('https://uploads-ssl.webflow.com/5ea69b4027484b2df2b45806/5eaaae1dfbbd8358eec5f26a_RoslindaleDisplayCondensed-Medium.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @font-face {
+  font-family: 'Ayer Medium';
+  src: url('https://uploads-ssl.webflow.com/5ea69b4027484b2df2b45806/5ea6a1f3dddc5fb9e294dbf3_Ayer-Medium.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Montreal Regular';
+  src: url('https://uploads-ssl.webflow.com/5ea69b4027484b2df2b45806/5ea6a1f3c07d784835420a30_NeueMontreal-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+} */
+
+
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  cursor: none;
+}
+
+/* Custom circular cursor */
+body::before {
+  content: '';
+  position: fixed;
+  left: var(--cursor-x);
+  top: var(--cursor-y);
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease-out, width 0.2s ease, height 0.2s ease, background 0.2s ease;
+  transform: translate(-50%, -50%);
+  /* mix-blend-mode: difference; */
+  /* filter: invert(1); */
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  left: var(--cursor-x);
+  top: var(--cursor-y);
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+body.cursor-hover::before {
+  width: 40px;
+  height: 40px;
+  border-width: 1px;
+}
+
+body.cursor-video::before {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+body.cursor-video::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 20px solid #333;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  opacity: 1;
+  transform: translate(calc(-50% + 3px), -50%);
+}
+
+body.cursor-video-playing::before {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+body.cursor-video-playing::after {
+  content: '';
+  width: 18px;
+  height: 24px;
+  border: none;
+  border-left: 6px solid #333;
+  border-right: 6px solid #333;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "Barlow Condensed", serif;
   /* font-family: 'Bodoni Moda', serif; */
   /* font-optical-sizing: auto;
   font-variation-settings: 'opsz' 12; */
@@ -30,6 +139,7 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  background-color: #e5e3dc;
 }
 
 :root {
@@ -40,11 +150,17 @@ body {
     --color-gray-orange: 201, 174, 167;
     --color-light-orange: 242, 233, 228;
     --color-almost-white: 246, 246, 246;
+    --cursor-x: 0px;
+    --cursor-y: 0px;
 }
 
 strong {
     font-weight: 800 !important;
-    font-style: italic !important;
+    /* font-style: italic !important; */
+
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000000;
 }
 
 span.article-line > strong {

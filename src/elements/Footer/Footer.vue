@@ -14,22 +14,29 @@
 
             <!-- Contact Information -->
             <div class="footer-info">
-                <div class="info-section">
+                <div class="info-grid">
                     <div class="info-column">
-                        <a href="mailto:christina@bjorn.com" class="contact-link primary-link">
-                            <!-- <svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.1158 2.85202C25.0071 1.90217 28.6545 4.17444 34.5315 9.73809C34.9648 9.96271 35.3224 8.59137 34.5315 7.49521C32.7999 4.45362 28.9621 2.3562 26.7473 1.58836C24.3596 0.760618 18.9458 -0.230058 13.3326 1.29808C7.71952 2.82622 4.21171 6.41768 2.94709 8.08296C1.68248 9.74824 0.131856 11.3808 0.00295277 16.2474C-0.12595 21.1139 3.99881 25.2598 5.86217 26.8415C7.85123 28.2867 13.9274 29.9595 18.2281 29.3835C22.5287 28.8075 26.3547 26.2443 27.7493 25.0636C29.2696 23.8639 32.1847 20.8347 31.3527 16.4384C30.5207 12.0421 27.2464 11.1585 25.7132 11.2662C25.8167 10.5416 25.8606 10.134 25.7132 9.38544C25.4436 8.41988 24.2572 6.73471 21.3041 6.76998C18.3511 6.80524 15.7172 9.07267 14.9586 10.2135C14.5307 11.0416 14.0358 13.0236 14.7389 13.4703C15.442 13.917 16.3415 13.7295 16.4117 13.3087C16.4819 12.8878 16.9 11.3544 17.1441 10.9136C17.4664 10.2475 18.2193 8.93805 20.8794 8.99682C23.5394 9.0556 23.2525 11.0046 22.4437 11.9943C21.635 12.984 20.8617 13.8376 20.5688 14.3813C20.0707 15.7184 20.5877 15.8829 21.4916 15.7971C22.5756 15.6943 23.209 14.332 24.6556 13.7988C27.2893 12.828 28.7101 14.8616 29.1349 15.7971C30.6583 19.7056 27.6731 22.4359 25.8274 23.9151C23.3324 25.8987 16.0926 29.9754 8.83571 26.0827C1.24804 22.0125 0.874911 15.3987 2.4082 11.7C3.15525 9.89793 8.65509 3.64902 16.1158 2.85202Z" fill="currentColor"></path>
-                            </svg> -->
-                            <span>christina@bjorn.com</span>
+                        <a href="mailto:cb@christinabjorn.dk" class="contact-link primary-link">
+                            <span>cb@christinabjorn.dk</span>
                         </a>
                         <p class="contact-label">Get a price or free demo</p>
                     </div>
 
                     <div class="info-column">
-                        <a href="tel:+4531111806" class="contact-link">
+                        <a href="tel:+4531111806" class="contact-link primary-link">
                             <span>+45 31 11 18 06</span>
                         </a>
                         <p class="contact-label">Call me</p>
+                    </div>
+
+                    <div class="info-column info-column-details">
+                        <p class="contact-link">Hybenvej 83, 2830 Virum</p>
+                        <p class="contact-label">Address</p>
+                    </div>
+
+                    <div class="info-column info-column-details">
+                        <p class="contact-link">CVR 45715949</p>
+                        <p class="contact-label">Company registration</p>
                     </div>
                 </div>
 
@@ -120,8 +127,9 @@ export default {
 .footer {
     position: relative;
     width: 100%;
-    background: linear-gradient(135deg, #22223A 0%, #3A3A3A 100%);
-    color: #F6F6F6;
+    /* background: linear-gradient(135deg, #6DBCC3 0%, #5BA8B0 50%, #4A95A0 100%); */
+    background: #e5e3dc;
+    color: #2A2A2A;
     overflow: hidden;
 }
 
@@ -131,11 +139,11 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.5;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(75, 79, 106, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(202, 187, 184, 0.05) 0%, transparent 50%);
+    opacity: 0.6;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     pointer-events: none;
+    mix-blend-mode: overlay;
 }
 
 .footer-content {
@@ -153,6 +161,7 @@ export default {
 
 .footer-title {
     font-size: clamp(48px, 10vw, 200px);
+    font-family: 'Roslindale Display Condensed';
     font-weight: 200;
     text-transform: uppercase;
     line-height: 1.1;
@@ -174,25 +183,32 @@ export default {
 
 .footer-title-word:last-child {
     margin-right: 0;
-    color: #F2E9E4;
+    color: #2A2A2A;
     font-weight: 400;
 }
 
 .footer-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     padding: 60px 0;
-    border-top: 1px solid rgba(242, 233, 228, 0.2);
-    border-bottom: 1px solid rgba(242, 233, 228, 0.2);
+    border-top: 1px solid rgba(42, 42, 42, 0.15);
+    border-bottom: 1px solid rgba(42, 42, 42, 0.15);
     opacity: 0;
 }
 
-.info-section {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.info-column-details {
+    opacity: 0.7;
+}
+
+.info-column-details .contact-link {
+    font-size: clamp(14px, 1.5vw, 20px);
 }
 
 .info-column {
@@ -207,14 +223,14 @@ export default {
     gap: 12px;
     font-size: clamp(16px, 2vw, 28px);
     font-weight: 300;
-    color: #F6F6F6;
+    color: #2A2A2A;
     text-decoration: none;
     transition: all 0.3s ease;
     width: fit-content;
 }
 
 .contact-link:hover {
-    color: #F2E9E4;
+    color: #1A1A1A;
     transform: translateX(8px);
 }
 
@@ -232,7 +248,7 @@ export default {
 .contact-label {
     font-size: 14px;
     text-transform: uppercase;
-    color: #9A8C99;
+    color: rgba(42, 42, 42, 0.6);
     letter-spacing: 1px;
     margin: 0;
 }
@@ -241,7 +257,7 @@ export default {
     display: flex;
     gap: 20px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .social-icon {
@@ -251,14 +267,14 @@ export default {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: rgba(242, 233, 228, 0.1);
-    color: #F2E9E4;
+    background: rgba(42, 42, 42, 0.1);
+    color: #2A2A2A;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    background: rgba(242, 233, 228, 0.2);
+    background: rgba(42, 42, 42, 0.2);
     transform: translateY(-4px);
 }
 
@@ -281,7 +297,7 @@ export default {
 
 .footer-credit {
     font-size: 12px;
-    color: #9A8C99;
+    color: rgba(42, 42, 42, 0.5);
     margin: 0;
     letter-spacing: 0.5px;
 }
@@ -306,9 +322,13 @@ export default {
         padding: 80px 30px 60px;
     }
 
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
     .footer-info {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
         padding: 40px 0;
     }
 

@@ -3,20 +3,21 @@
     <nav class="app-nav" :class="{ 'menu-open': isMenuOpen }">
       <div class="nav-content">
         <div class="logo-wrapper" :class="{ 'hidden': isMenuOpen }">
-          <router-link to="/"><img src="/logo.svg" alt=""></router-link>
+          <a href="/" @click.prevent="navigateWithTransition('/')"><img src="/logo.svg" alt=""></a>
         </div>
         <BurgerMenu ref="burgerMenu" @toggle="handleMenuToggle" :class="{ 'text-white': isMenuOpen }" />
       </div>
     </nav>
 
     <!-- Menu Overlay -->
-    <MenuOverlay :isOpen="isMenuOpen" @close="closeMenu" />
+    <MenuOverlay :isOpen="isMenuOpen" @close="closeMenu" @navigate="handleMenuNavigation" />
+
+    <!-- Page Transition Overlay -->
+    <PageTransition ref="pageTransition" @midpoint="onTransitionMidpoint" />
 
     <main>
       <router-view v-slot="{ Component, route }">
-        <transition name="page" mode="out-in">
-          <component :is="Component" :key="route.fullPath" />
-        </transition>
+        <component :is="Component" :key="route.fullPath" />
       </router-view>
     </main>
     <Footer id="contact" />
@@ -27,17 +28,20 @@
 import BurgerMenu from './elements/BurgerMenu/BurgerMenu.vue'
 import MenuOverlay from './elements/MenuOverlay/MenuOverlay.vue'
 import Footer from './elements/Footer/Footer.vue';
+import PageTransition from './elements/PageTransition/PageTransition.vue';
 
 export default {
   name: 'App',
   components: {
     BurgerMenu,
     MenuOverlay,
-    Footer
+    Footer,
+    PageTransition
   },
   data() {
     return {
-      isMenuOpen: false
+      isMenuOpen: false,
+      pendingRoute: null
     };
   },
   watch: {
@@ -51,7 +55,8 @@ export default {
   },
   provide() {
     return {
-      isMenuOpen: this.isMenuOpen
+      isMenuOpen: this.isMenuOpen,
+      navigateWithTransition: this.navigateWithTransition
     };
   },
   methods: {
@@ -61,34 +66,37 @@ export default {
     closeMenu() {
       this.isMenuOpen = false;
       this.$refs.burgerMenu.closeMenu();
+    },
+    
+    // Handle navigation with curve transition
+    async navigateWithTransition(to) {
+      if (this.$route.fullPath === to) return;
+      if (this.$refs.pageTransition.isAnimating) return; // Prevent double animation
+      
+      this.pendingRoute = to;
+      await this.$refs.pageTransition.animate();
+    },
+    
+    // Called at the midpoint of the transition (full coverage)
+    onTransitionMidpoint() {
+      if (this.pendingRoute) {
+        // Scroll to top instantly (hidden by overlay)
+        window.scrollTo(0, 0);
+        this.$router.push(this.pendingRoute);
+        this.pendingRoute = null;
+      }
+    },
+    
+    // Handle navigation from menu
+    handleMenuNavigation(route) {
+      this.closeMenu();
+      this.navigateWithTransition(route);
     }
   }
 }
 </script>
 
 <style>
-
-/* Page transition animations */
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.page-enter-from {
-  opacity: 0;
-  /* transform: translateY(50px); */
-}
-
-.page-leave-to {
-  opacity: 0;
-  /* transform: translateY(-50px); */
-}
-
-.page-enter-to,
-.page-leave-from {
-  opacity: 1;
-  /* transform: translateY(0); */
-}
 
 /* Navigation styling */
 nav {

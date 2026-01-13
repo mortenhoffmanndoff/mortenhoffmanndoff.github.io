@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import './style.css'
+import './cursor.js'
 import App from './App.vue'
 import Home from './pages/Home.vue'
 import About from './pages/About.vue'
@@ -22,11 +23,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-  scrollBehavior(to, from, savedPosition) {
-    // Always scroll to top when navigating to a new page
-    return { top: 0 }
-  }
+  routes
 })
 
 const app = createApp(App)

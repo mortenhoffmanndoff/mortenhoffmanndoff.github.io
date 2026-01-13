@@ -165,10 +165,10 @@ export default {
             const isHomePage = this.$route.path === '/' || this.$route.name === 'home';
             
             if (!isHomePage) {
-                // Navigate to home page first
-                await this.$router.push('/');
-                // Wait for page transition animation (0.8s) + extra buffer for rendering
-                await new Promise(resolve => setTimeout(resolve, 1200));
+                // Navigate to home page with transition
+                this.$emit('navigate', '/');
+                // Wait for page transition animation
+                await new Promise(resolve => setTimeout(resolve, 1400));
             }
             
             // Scroll to section
@@ -270,7 +270,8 @@ export default {
     letter-spacing: -1px;
     line-height: 0.9;
     transition: all 0.3s ease;
-    font-family: "Barlow Condensed", serif;
+    /* font-family: "Barlow Condensed", serif; */
+    font-family: "Roslindale Display Condensed";
 }
 
 .menu-link:hover {

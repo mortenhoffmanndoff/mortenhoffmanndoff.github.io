@@ -62,7 +62,7 @@ export default {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 40px;
 }
 
 .clients {
@@ -70,7 +70,8 @@ export default {
     gap: 20px;
     white-space: nowrap;
     font-size: clamp(72px, 7.5vw, 120px);
-    font-weight: 600;
+    font-weight: bold;
+    font-family: 'Roslindale Display Condensed';
     /* letter-spacing: -3.6px; */
     /* line-height: 1.2; */
     text-transform: uppercase;
@@ -82,16 +83,15 @@ export default {
 }
 
 .client {
-    color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #000000;
-    font-size: clamp(72px, 17.5vw, 200px);
-    font-weight: 500;
-    /* letter-spacing: -3.6px; */
-    line-height: .85;
-    transition: all .5s ease-in-out;
-    text-transform: uppercase;
-    /* padding: 10px 20px; */
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000000;
+        font-size: 10vw;
+        font-weight: bold;
+        letter-spacing: -.03em;
+        line-height: 9vw;
+        /* transition: all .5s ease-in-out; */
+        text-transform: uppercase;
 
     &:hover {
         color: #000000;

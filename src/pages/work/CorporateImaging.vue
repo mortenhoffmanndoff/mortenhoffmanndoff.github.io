@@ -50,7 +50,7 @@
       {
         type: 'video',
         src: '/02-corporate-imaging/videos/FIFA-Training-Centre.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/02-corporate-imaging/videos/FIFA-Training-Centre-poster.jpg',
         language: 'UK',
         format: 'video',
         title: 'DEMO REEL\n2024',
@@ -70,7 +70,7 @@
       {
         type: 'video',
         src: '/02-corporate-imaging/videos/Imaging-Spotify-1.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/02-corporate-imaging/videos/Imaging-Spotify-1-poster.jpg',
         language: 'DK',
         format: 'video',
         title: 'DEMO REEL\n2024',
@@ -80,7 +80,7 @@
       {
         type: 'video',
         src: '/02-corporate-imaging/videos/Imaging-Spotify-2.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/02-corporate-imaging/videos/Imaging-Spotify-2-poster.jpg',
         language: 'DK',
         format: 'video',
         title: 'DEMO REEL\n2024',
@@ -90,7 +90,7 @@
       {
         type: 'video',
         src: '/02-corporate-imaging/videos/Summmit-Stockholm.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/02-corporate-imaging/videos/Summmit-Stockholm-poster.jpg',
         language: 'DK',
         format: 'video',
         title: 'DEMO REEL\n2024',
@@ -100,7 +100,7 @@
       {
         type: 'video',
         src: '/02-corporate-imaging/videos/todaysfeature-miggrate-denmark.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/02-corporate-imaging/videos/todaysfeature-miggrate-denmark-poster.jpg',
         language: 'DK',
         format: 'video',
         title: 'DEMO REEL\n2024',
