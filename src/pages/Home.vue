@@ -2,7 +2,7 @@
   <div>
     
     <Hero
-      :textItems="['<strong>Leading</strong> ', 'voice talent', '<strong>of</strong> Denmark']"
+      :textItems="['<strong>Leading</strong> ', 'voice talent', '<strong>of Denmark</strong>']"
       imageSrc="/images/Home2.png"
       height="large"
       textSize="large"
@@ -14,14 +14,9 @@
         :size="120"
       />
     <Work id="work" />  
-      
-    <TextImageOverlay 
-      :line1="'Christina'"
-      :line2="'Bjørn'"
-      :imageSrc="'/images/image-5.png'" 
-    />
 
-
+    <ParallaxImage :parallaxText="''" :imageSrc="'/images/image-7.png'" />
+        
     <Hero 
       :textItems="['My <strong>voice</strong>', 'is the <strong>sound</strong>', 'of your <strong>brand</strong>']"
       height="large"
@@ -29,9 +24,17 @@
       class=""
       style="margin-top: -50vh"
     />
-    <Article id="about" :articleContent="aboutText" class="" />
-    <ParallaxImage :parallaxText="''" :imageSrc="'/images/image-7.png'" />
     <Clients id="clients" class="" />
+
+      
+    <TextImageOverlay 
+      :line1="'Christina'"
+      :line2="'Bjørn'"
+      :imageSrc="'/images/image-5.png'" 
+    />
+
+    <Article id="about" :articleContent="aboutText" class="" />
+    
     <ParallaxImage :imageSrc="'/images/image-4.png'" />
     <Hero class="bg-almost-white"
       :textItems="['Recommended by ','<strong>professionals</strong>', 'trusted by <strong>brands</strong>']"
