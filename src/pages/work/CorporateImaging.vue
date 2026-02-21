@@ -1,10 +1,11 @@
 <template>
   <div class="corporate-imaging">
-    <Hero class="corporate-imaging-hero" height="large" :textItems="['Authorative and', 'Generic Yet full of', '<strong>Identity</strong> and personality']"></Hero>
+    <!-- <Hero class="corporate-imaging-hero" height="large" :textItems="['Authorative and', 'Generic Yet full of', '<strong>Identity</strong> and personality']"></Hero> -->
+    <Hero class="corporate-imaging-hero" :textSize="'xlarge'" height="large" :textItems="['Corporate', '&amp; Imaging']"></Hero>
     <Hero 
-      :textItems="['<strong>Corporate</strong>', '<strong>& Imaging</strong>']"
+      :textItems="['<strong>Authorative and</strong>', '<strong>Generic Yet full of</strong>', 'Identity and personality']"
       height="small"
-      textSize="xlarge"
+      textSize="small"
     />
     <Media :mediaItems="[
       {

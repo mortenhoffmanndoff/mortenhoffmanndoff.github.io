@@ -20,7 +20,7 @@
         
     <Hero 
       :textItems="['<strong>My</strong> voice', '<strong>is the</strong> sound', '<strong>of your</strong> brand']"
-      height="medium"
+      height="small"
       textSize="large"
       class="bg-almost-white"
     />
@@ -35,7 +35,6 @@
     <section class="recommendations-section bg-almost-white" style="margin-top: -25vh">
       <Hero
         :textItems="['Recommended by ','<strong>professionals</strong>', 'trusted by <strong>brands</strong>']"
-        height="large"
         textSize="xlarge"
       />
       <Article id="recommendations" :articleContent="recommendationText" />
@@ -77,17 +76,17 @@ export default {
       `,
 
       recommendationText: `
-        "Christina er en super professionel og fleksibel speaker, som altid leverer! Let at arbejde med og med rigtig god indlevelse i teksten og opgaven." <br>
-        <b>Rasmus Schwenger, Producer hos Bauer Media</b>
+        "Christina is a super professional and flexible speaker who always delivers! Easy to work with and with really good empathy for the text and the task." <br>
+        <b>Rasmus Schwenger, Producer at Bauer Media</b>
         <br><br><br><br>
-        "Bjørnen' er en meget professionel og rutineret speaker, er god til at fornemme 'stilart' i opgaven og leverer altid hurtigt og i topkvalitet." <br>
-        <b>Torben Johansen, ejer af "Lyd er Godt"</b>
+        "Bjørnen' is a very professional and experienced speaker, is good at sensing 'style' in the assignment and always delivers quickly and in top quality." <br>
+        <b>Torben Johansen, owner of "Lyd er Godt"</b>
         <br><br><br><br>
-        "Christina selv og hendes smukke stemme med klar diktion og let til smil er altid en fornøjelse at arbejde med! Grundlyden på hendes speaks, optaget i eget studie, er super velegnede til videre forarbejdning i et mix." <br>
-        <b>Peter Krabbe Aagaard fra KRABBE sound&music</b>
+        "Christina herself and her beautiful voice with clear diction and easy smile are always a pleasure to work with! The basic sound of her speaks, recorded in her own studio, is super suitable for further processing in a mix." <br>
+        <b>Peter Krabbe Aagaard from KRABBE sound&music</b>
         <br><br><br><br>
         "It was amazing working with Christina. Not only does she have an incredible voice but is a pleasure to work with. She is easygoing and super flexible which was what we needed when working on a lengthy and demanding project." <br>
-        <b>Sebastian Giraldo, Account Manager hos Voices.com Inc.</b>
+        <b>Sebastian Giraldo, Account Manager at Voices.com Inc.</b>
       `,
     }
   }
@@ -104,8 +103,9 @@ export default {
   .recommendations-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 100vh;
-    align-items: stretch;
+    padding: 60px 0;
+    /* min-height: 100vh;
+    align-items: stretch; */
   }
 
   .recommendations-section :deep(.hero) {

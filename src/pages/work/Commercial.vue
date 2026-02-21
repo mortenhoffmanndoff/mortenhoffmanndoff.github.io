@@ -1,10 +1,11 @@
 <template>
   <div class="commercial">
-    <Hero :mediumText="true" class="commercial-hero" height="large" :textItems="['Make each <strong>word</strong> count', 'Loud and clear with a', '<strong>Pleasant delivery.</strong>']"></Hero>
+    <!-- <Hero :mediumText="true" class="commercial-hero" height="large" :textItems="['Make each <strong>word</strong> count', 'Loud and clear with a', '<strong>Pleasant delivery.</strong>']"></Hero> -->
+    <Hero :textSize="'xlarge'" class="commercial-hero" height="large" :textItems="['Commercials']"></Hero>
     <Hero 
-      :textItems="['<strong>Commercials</strong>']"
+      :textItems="['<strong>Make each</strong> word <strong>count</strong>', '<strong>Loud and clear with a</strong>', 'Pleasant delivery.']"
       height="small"
-      textSize="xlarge"
+      textSize="small"
     />
     <Media :mediaItems="[
       {

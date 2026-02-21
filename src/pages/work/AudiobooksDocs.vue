@@ -1,10 +1,11 @@
 <template>
   <div class="audiobooks-docs">
-    <Hero class="audiobooks-docs-hero" height="large" :textItems="['Bring <strong>Stories</strong>', 'to life and make', 'them shine']"></Hero>
-    <Hero 
-      :textItems="['<strong>Audiobooks</strong>', '<strong>& Docs</strong>']"
+    <!-- <Hero class="audiobooks-docs-hero" height="large" :textItems="['Bring <strong>Stories</strong>', 'to life and make', 'them shine']"></Hero> -->
+    <Hero class="audiobooks-docs-hero" :textSize="'xlarge'" height="large" :textItems="['Audiobooks', '& Docs']"></Hero>
+    <Hero
+      :textItems="['<strong>Bring</strong> Stories', '<strong>to life and make</strong>', '<strong>them shine</strong>']"
       height="small"
-      textSize="xlarge"
+      textSize="small"
     />
     <Media :mediaItems="[
       {

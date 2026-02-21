@@ -1,10 +1,11 @@
 <template>
   <div class="acting-narration">
-    <Hero class="acting-narration-hero" height="large" :textItems="['<strong>Character</strong> work off', 'and on screen. My', 'Voice has many <strong>Faces</strong>']"></Hero>
+    <!-- <Hero class="acting-narration-hero" height="large" :textItems="['<strong>Character</strong> work off', 'and on screen. My', 'Voice has many <strong>Faces</strong>']"></Hero> -->
+    <Hero class="acting-narration-hero" height="large" :textSize="'xlarge'" :textItems="['Acting &amp;', 'Narration']"></Hero>
     <Hero 
-      :textItems="['<strong>Acting &</strong>', '<strong>Narration</strong>']"
+      :textItems="['Character <strong>work off</strong>', '<strong>and on screen. My</strong>', 'Voice <strong>has many</strong> Faces']"
       height="small"
-      textSize="xlarge"
+      textSize="small"
     />
     <Media :mediaItems="[
       {

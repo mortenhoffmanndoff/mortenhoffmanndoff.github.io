@@ -212,7 +212,8 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 120px;
-    padding: 120px;
+    /* padding: 120px; */
+    padding: 0 120px 120px;
     /* max-width: 1400px; */
     margin: 0 auto;
 }

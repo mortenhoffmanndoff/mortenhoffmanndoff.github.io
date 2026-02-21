@@ -276,7 +276,7 @@ export default {
 .soundwave-container.is-initial {
     left: 50%;
     /* top: 75vh; */
-    bottom: 10vh;
+    bottom: 100px;
     transform: translateX(-50%);
 }
 

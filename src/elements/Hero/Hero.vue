@@ -126,7 +126,7 @@ export default {
     }
 
     &.small-height {
-        height: 50vh;
+        height: 60vh;
     }
 
     .hero-image {
@@ -176,7 +176,7 @@ export default {
         
         }
         &.large {
-            font-size: clamp(40px, 9vw, 200px);
+            font-size: clamp(40px, 8vw, 200px);
         }
 
         &.xlarge {

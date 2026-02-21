@@ -71,4 +71,24 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// Listen for play/pause events on videos to update cursor immediately
+document.addEventListener('play', (e) => {
+  if (e.target.tagName === 'VIDEO') {
+    const videoTarget = e.target.closest(videoElements);
+    if (videoTarget) {
+      // Wait a tick for Vue to sync is-playing class
+      requestAnimationFrame(() => updateCursorForVideo(videoTarget));
+    }
+  }
+}, true);
+
+document.addEventListener('pause', (e) => {
+  if (e.target.tagName === 'VIDEO') {
+    const videoTarget = e.target.closest(videoElements);
+    if (videoTarget) {
+      requestAnimationFrame(() => updateCursorForVideo(videoTarget));
+    }
+  }
+}, true);
+
 
