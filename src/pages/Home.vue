@@ -11,6 +11,7 @@
 
     <Soundwave 
         audioSrc="/audio/Praesentation-paa-dansk-med-musik-til-nyt-site .mp3"
+        audioSrcEn="/audio/english-intro.mp3"
         :size="120"
       />
     <Work id="work" />  
