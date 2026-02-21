@@ -8,7 +8,6 @@
       textSize="large"
     />
 
-    
     <Soundwave 
         audioSrc="/audio/Praesentation-paa-dansk-med-musik-til-nyt-site .mp3"
         :size="120"
@@ -18,11 +17,10 @@
     <ParallaxImage :parallaxText="''" :imageSrc="'/images/image-7.png'" />
         
     <Hero 
-      :textItems="['My <strong>voice</strong>', 'is the <strong>sound</strong>', 'of your <strong>brand</strong>']"
+      :textItems="['<strong>My</strong> voice', '<strong>is the</strong> sound', '<strong>of your</strong> brand']"
       height="large"
-      textSize="xlarge"
+      textSize="large"
       class=""
-      style="margin-top: -50vh"
     />
     <Clients id="clients" class="" />
 
@@ -33,7 +31,7 @@
       :imageSrc="'/images/image-5.png'" 
     />
 
-    <Article id="about" :articleContent="aboutText" class="" />
+    <Article id="about" :articleContent="aboutText" class="" style="margin-top: -25vh" />
     
     <ParallaxImage :imageSrc="'/images/image-4.png'" />
     <Hero class="bg-almost-white"
@@ -69,14 +67,13 @@ export default {
   data() {
     return {
       aboutText: `
-        Siden jeg var seks år gammel, har jeg interesseret mig for lyd. Allerede dengang opdagede 'man', at jeg havde absolut gehør. Hvis jeg spillede en af Beethovens store værker på det sorte flygel, så brugte jeg noderne en enkelt gang, for derefter at kunne det udenad. Jeg syntes ikke, det var noget særligt dengang, men lyd skulle vise sig at blive min levevej. <br>
-        Da jeg flyttede hjemmefra som 19-årig begyndte jeg at formidle budskaber foran en mikrofon eller et kamera - som speaker, radiovært, konferencier, TV-vært, skuespiller og dubber. På både dansk og engelsk. Derudover færdiggjorde jeg i 2006 uddannelsen som tekstforfatter, og har derfor også en masse ´knowledge´ fra bureauverdenen. <br>
-        Gennem årene har jeg lagt stemme til nogle af verdens største brands og været vært for shows på landets største live-scener, såsom Plænen i Tivoli, Rådhuspladsen i København og Studie 5 i DR Byen. Den erfaring, det overblik og den ro får du med i pakken hos mig, hvad end du booker mig som stemme og/eller ansigt. <br>
-        I dag er jeg i begyndelsen af 40'erne og fokuserer primært på stemmen. Hos mig får dit projekt den opmærksomhed, det fortjener med min professionelle lyd og autenticitet. <br>
-        Med 200+ årlige speak-opgaver - og i øvrigt en baggrund som tekstforfatter - ved jeg præcist, hvad der skal til, for at få dit budskab ud over rampen. <br>
-        Overlad produktionen til mig - eller vær med i processen online eller i et lydstudie nær dig.<br>
-        Lad os sammen give dit budskab en lyd i særklasse!</br>
-        Få en pris eller en gratis demo her (LINK til kontakt-siden)
+        I’ve been in love with sound since the age of six.
+        The black piano quickly became my closest friend, and it soon revealed that I have “absolute pitch”. When learning a Beethoven piece, I only needed to run through the notes once - after that, the music stayed with me.
+        At that moment sound became my profession.
+        At 19, I began working professionally with voice and communication - as a voice talent, radio host, presenter, TV host, actor and dubbing artist. In both Danish and English.
+        In 2006, I completed my education as a copywriter, gaining a strong foundation in branding and audience impact. This knowledge shapes each project, ensuring every voice performance hits the mark without adding extra costs..
+        Over the years, I’ve collaborated with a wide range of brands and hosted major live shows on some of the largest stages of Denmark. That experience and authenticity is part of the package - whether I’m your voice, your face or both.
+        Today, my primary focus is voice work. With more than 200 projects each year, I know exactly what it takes to connect, resonate and leave a mark. You can choose a full-service production - or stay closely involved throughout the process.
       `,
 
       recommendationText: `
