@@ -1,10 +1,11 @@
 <template>
   <div class="audiobooks-docs">
-    <Hero class="audiobooks-docs-hero" height="large" :textItems="['Bring <strong>Stories</strong>', 'to life and make', 'them shine']"></Hero>
-    <Hero 
-      :textItems="['<strong>Audiobooks</strong>', '<strong>& Docs</strong>']"
+    <!-- <Hero class="audiobooks-docs-hero" height="large" :textItems="['Bring <strong>Stories</strong>', 'to life and make', 'them shine']"></Hero> -->
+    <Hero class="audiobooks-docs-hero" :textSize="'xlarge'" height="large" :textItems="['Audiobooks', '& Docs']"></Hero>
+    <Hero
+      :textItems="['<strong>Bring</strong> Stories', '<strong>to life and make</strong>', '<strong>them shine</strong>']"
       height="small"
-      textSize="xlarge"
+      textSize="small"
     />
     <Media :mediaItems="[
       {
@@ -13,8 +14,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Lydbog',
+        description: 'Product: Dating for begyndere, Year: 2024',
         isPlaying: false
       },      
       {
@@ -23,8 +24,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Lydbog',
+        description: 'Product: Jeg vælger at leve, Year: 2024',
         isPlaying: false
       },      
       {
@@ -33,8 +34,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Lydbog',
+        description: 'Product: Hvordan man er ..., Year: 2024',
         isPlaying: false
       },      
       {
@@ -43,8 +44,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Lydbog',
+        description: 'Product: Hel som de andre, Year: 2024',
         isPlaying: false
       },      
       {
@@ -53,8 +54,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Lydbog',
+        description: 'Product: Huden kan selv, Year: 2024',
         isPlaying: false
       },      
     ]" />
@@ -67,7 +68,7 @@ import Hero from '../../elements/Hero/Hero.vue';
 import Media from '../../elements/Media/Media.vue';
 import Work from '../../elements/Work/Work.vue';
 export default {
-  name: 'Commercial',
+  name: 'AudiobooksDocs',
   components: {
     Media,
     Hero,

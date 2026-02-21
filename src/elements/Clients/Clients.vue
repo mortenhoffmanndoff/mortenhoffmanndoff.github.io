@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 .clients-wrapper {
-    padding: 50px 0;
+    padding: 100px 0 80px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -93,10 +93,11 @@ export default {
         /* transition: all .5s ease-in-out; */
         text-transform: uppercase;
 
-    &:hover {
-        color: #000000;
-        -webkit-text-stroke: none;
-        /* scale: 1.05; */
-    }
+        &:nth-child(even) {
+            color: #000000;
+            -webkit-text-stroke: none;
+        }
+
+
 }
 </style>

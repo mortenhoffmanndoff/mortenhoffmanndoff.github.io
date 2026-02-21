@@ -3,10 +3,10 @@
         <div v-for="(item, index) in mediaItems" :key="index" :ref="`container-${index}`" class="media-container"
             :class="{ 'reverse': index % 2 === 1 }">
             <!-- Media Player -->
-            <div class="media-player" :class="{ 'is-playing': playingStates[index] }" @click="togglePlay(index)">
+            <div class="media-player" :class="{ 'is-playing': playingStates[index] }" @click="item.type !== 'video' && togglePlay(index)">
                 <!-- Video -->
                 <video v-if="item.type === 'video'" :ref="`media-${index}`" :src="item.src" :poster="item.poster"
-                    class="media-element" />
+                    class="media-element" controls />
 
                 <!-- Audio Visualizer -->
                 <div v-if="item.type === 'audio'" class="audio-visualizer" :class="{ 'playing': playingStates[index] }">
@@ -142,12 +142,26 @@ export default {
             this.playingStates[index] = false;
         });
 
-        // Add event listeners for media end
+        // Add event listeners for media state sync
         this.mediaItems.forEach((item, index) => {
             this.$nextTick(() => {
                 const mediaElement = this.$refs[`media-${index}`]?.[0];
                 if (mediaElement) {
                     mediaElement.addEventListener('ended', () => {
+                        this.playingStates[index] = false;
+                    });
+                    mediaElement.addEventListener('play', () => {
+                        // Pause all other media when this one starts
+                        Object.keys(this.playingStates).forEach(i => {
+                            if (parseInt(i) !== index && this.playingStates[i]) {
+                                const otherMedia = this.$refs[`media-${i}`]?.[0];
+                                if (otherMedia) otherMedia.pause();
+                                this.playingStates[i] = false;
+                            }
+                        });
+                        this.playingStates[index] = true;
+                    });
+                    mediaElement.addEventListener('pause', () => {
                         this.playingStates[index] = false;
                     });
                 }
@@ -198,7 +212,8 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 120px;
-    padding: 120px;
+    /* padding: 120px; */
+    padding: 0 120px 120px;
     /* max-width: 1400px; */
     margin: 0 auto;
 }

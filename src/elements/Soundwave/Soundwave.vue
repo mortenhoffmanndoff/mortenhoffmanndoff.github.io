@@ -15,12 +15,31 @@
                 class="soundwave-canvas"
                 @click="handleClick"
             ></canvas>
+            <!-- Language Flags -->
+            <div class="language-flags">
+                <button 
+                    class="flag-button" 
+                    :class="{ active: selectedLanguage === 'DK' }"
+                    @click.stop="selectLanguage('DK')"
+                    title="Dansk"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g transform="translate(0 .5)"><circle fill="#F0F0F0" cx="12" cy="11.5" r="12"/><path fill="#D80027" d="M9.4,9.9h14.5C23.1,4,18.1-0.5,12-0.5c-0.9,0-1.8,0.1-2.6,0.3V9.9L9.4,9.9z M6.3,9.9V1C3,2.8,0.6,6.1,0.1,9.9H6.3L6.3,9.9z M6.3,13.1H0.1c0.5,3.9,2.9,7.2,6.2,9V13.1L6.3,13.1z M9.4,13.1v10.1c0.8,0.2,1.7,0.3,2.6,0.3c6.1,0,11.1-4.5,11.9-10.4H9.4L9.4,13.1z"/></g></svg>
+                </button>
+                <button 
+                    class="flag-button" 
+                    :class="{ active: selectedLanguage === 'UK' }"
+                    @click.stop="selectLanguage('UK')"
+                    title="English"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g transform="translate(0 .5)"><circle fill="#F0F0F0" cx="12" cy="11.5" r="12"/><path fill="#0052B4" d="M2.5,4.2C1.5,5.4,0.8,6.8,0.4,8.4h6.2L2.5,4.2z M23.6,8.4c-0.4-1.5-1.1-2.9-2.1-4.2l-4.2,4.2H23.6z M0.4,14.6c0.4,1.5,1.1,2.9,2.1,4.2l4.2-4.2H0.4L0.4,14.6z M19.3,2c-1.2-0.9-2.6-1.7-4.2-2.1v6.2L19.3,2z M4.7,21c1.2,0.9,2.6,1.7,4.2,2.1v-6.2L4.7,21z M8.9-0.1C7.3,0.3,5.9,1,4.7,2l4.2,4.2V-0.1z M15.1,23.1c1.5-0.4,2.9-1.1,4.2-2.1l-4.2-4.2V23.1z M17.3,14.6l4.2,4.2c0.9-1.2,1.7-2.6,2.1-4.2H17.3z"/><g><path fill="#D80027" d="M23.9,9.9H13.6h0V-0.4c-0.5-0.1-1-0.1-1.6-0.1c-0.5,0-1.1,0-1.6,0.1V9.9v0H0.1C0,10.4,0,11,0,11.5c0,0.5,0,1.1,0.1,1.6h10.3h0v10.3c0.5,0.1,1,0.1,1.6,0.1c0.5,0,1.1,0,1.6-0.1V13.1v0h10.3c0.1-0.5,0.1-1,0.1-1.6C24,11,24,10.4,23.9,9.9z"/><path fill="#D80027" d="M15.1,14.6L15.1,14.6l5.4,5.4c0.2-0.2,0.5-0.5,0.7-0.8l-4.6-4.6H15.1L15.1,14.6z M8.9,14.6L8.9,14.6L3.5,20c0.2,0.2,0.5,0.5,0.8,0.7l4.6-4.6V14.6z M8.9,8.4L8.9,8.4L3.5,3C3.3,3.3,3,3.5,2.8,3.8l4.6,4.6H8.9L8.9,8.4z M15.1,8.4L15.1,8.4L20.5,3c-0.2-0.2-0.5-0.5-0.8-0.7l-4.6,4.6V8.4L15.1,8.4z"/></g></g></svg>
+                </button>
+            </div>
             <div v-if="showPrompt && !hasInteracted" class="soundwave-prompt">
                 <span class="prompt-arrow">↑</span>
                 <span class="prompt-text">Click to hear my voice</span>
             </div>
         </div>
-        <audio ref="audioPlayer" :src="audioSrc"></audio>
+        <audio ref="audioPlayer" :src="currentAudioSrc"></audio>
     </div>
 </template>
 
@@ -33,6 +52,10 @@ export default {
         audioSrc: {
             type: String,
             required: true
+        },
+        audioSrcEn: {
+            type: String,
+            default: ''
         },
         size: {
             type: Number,
@@ -56,8 +79,15 @@ export default {
             animationId: null,
             ctx: null,
             hasInteracted: false,
-            isDocked: false
+            isDocked: false,
+            selectedLanguage: 'DK'
         };
+    },
+
+    computed: {
+        currentAudioSrc() {
+            return this.selectedLanguage === 'DK' ? this.audioSrc : this.audioSrcEn;
+        }
     },
 
     mounted() {
@@ -138,7 +168,7 @@ export default {
             
             // If not docked yet, animate to corner
             if (!this.isDocked) {
-                this.isDocked = true;
+                this.animateToDocked();
             }
             
             this.togglePlay();
@@ -158,7 +188,6 @@ export default {
                 }
             } else {
                 audio.pause();
-                audio.currentTime = 0;
             }
         },
 
@@ -166,6 +195,70 @@ export default {
             // Reset to mute animation when audio ends
             this.running = false;
             this.targetAmplitude = 0;
+        },
+
+        selectLanguage(lang) {
+            const switching = this.selectedLanguage !== lang;
+            const audio = this.$refs.audioPlayer;            
+            // Stop current playback
+            audio.pause();
+            audio.currentTime = 0;
+            this.running = false;
+            this.targetAmplitude = 0;
+            
+            if (switching) {
+                this.selectedLanguage = lang;
+            }
+
+            this.hasInteracted = true;
+            if (!this.isDocked) {
+                this.animateToDocked();
+            }
+            
+            // Start playback from beginning with the (new) source
+            this.$nextTick(() => {
+                this.$refs.audioPlayer.load();
+                this.play();
+            });
+        },
+
+        animateToDocked() {
+            const container = this.$el;
+            // Capture current position
+            const rect = container.getBoundingClientRect();
+            const startX = rect.left;
+            const startY = rect.top;
+            
+            // Calculate target docked position (right: 45px, bottom: 30px)
+            const targetX = window.innerWidth - 45 - rect.width;
+            const targetY = window.innerHeight - 30 - rect.height;
+            
+            // Fix position at current spot using left/top
+            container.style.transition = 'none';
+            container.style.left = startX + 'px';
+            container.style.top = startY + 'px';
+            container.style.right = 'auto';
+            container.style.bottom = 'auto';
+            container.style.transform = 'none';
+            
+            // Force reflow
+            container.offsetHeight;
+            
+            // Animate to target
+            container.style.transition = 'left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), top 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            container.style.left = targetX + 'px';
+            container.style.top = targetY + 'px';
+            
+            // After animation, switch to docked class and remove inline styles
+            setTimeout(() => {
+                this.isDocked = true;
+                container.style.transition = '';
+                container.style.left = '';
+                container.style.top = '';
+                container.style.right = '';
+                container.style.bottom = '';
+                container.style.transform = '';
+            }, 850);
         }
     }
 }
@@ -182,7 +275,8 @@ export default {
 /* Initial position - below hero text, centered */
 .soundwave-container.is-initial {
     left: 50%;
-    top: 75vh;
+    /* top: 75vh; */
+    bottom: 100px;
     transform: translateX(-50%);
 }
 
@@ -202,6 +296,7 @@ export default {
     align-items: center;
 }
 
+/* Pulse animation on worm - commented out, flags handle this now
 .soundwave-wrapper.has-prompt .soundwave-canvas {
     animation: pulse 2s ease-in-out infinite;
 }
@@ -216,14 +311,25 @@ export default {
         box-shadow: 0 0 0 15px rgba(42, 42, 42, 0);
     }
 }
+*/
 
 .soundwave-canvas {
     border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.2s ease, stroke 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.2s ease, stroke 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), top 0.6s ease;
     color: #333;
     stroke: currentColor;
 }
+
+/* Compact height when centered, full size when docked */
+/* .is-initial .soundwave-canvas {
+    position: relative;
+    top: 16px;
+}
+
+.is-docked .soundwave-canvas {
+    top: 0;
+} */
 
 .soundwave-canvas:hover {
     transform: scale(1.05);
@@ -312,5 +418,81 @@ export default {
 .soundwave-container.menu-open .prompt-text,
 .soundwave-container.menu-open .prompt-arrow {
     color: #F6F6F6;
+}
+
+/* Language flags */
+.language-flags {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    /* margin-top: 8px; */
+}
+
+.flag-button {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.flag-button:hover {
+    transform: scale(1.15);
+}
+
+.flag-button svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.flag-button.active svg {
+    opacity: 1;
+}
+
+/* Animated ring around active flag */
+.flag-button.active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid #333;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: flagRing 2s ease-in-out infinite;
+}
+
+@keyframes flagRing {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.6);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.menu-open .flag-button.active::after {
+    border-color: #F6F6F6;
+}
+
+.menu-open .flag-button svg {
+    filter: brightness(2);
 }
 </style>

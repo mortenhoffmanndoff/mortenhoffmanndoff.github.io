@@ -1,10 +1,11 @@
 <template>
   <div class="corporate-imaging">
-    <Hero class="corporate-imaging-hero" height="large" :textItems="['Authorative and', 'Generic Yet full of', '<strong>Identity</strong> and personality']"></Hero>
+    <!-- <Hero class="corporate-imaging-hero" height="large" :textItems="['Authorative and', 'Generic Yet full of', '<strong>Identity</strong> and personality']"></Hero> -->
+    <Hero class="corporate-imaging-hero" :textSize="'xlarge'" height="large" :textItems="['Corporate', '&amp; Imaging']"></Hero>
     <Hero 
-      :textItems="['<strong>Corporate</strong>', '<strong>& Imaging</strong>']"
+      :textItems="['<strong>Authorative and</strong>', '<strong>Generic Yet full of</strong>', 'Identity and personality']"
       height="small"
-      textSize="xlarge"
+      textSize="small"
     />
     <Media :mediaItems="[
       {
@@ -13,8 +14,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: Superb',
+        description: 'Product: GXM Explainer, Year: 2024',
         isPlaying: false
       },
       {
@@ -23,8 +24,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: Gajol',
+        description: 'Product: Lakridseri siden 1933, Year: 2024',
         isPlaying: false
       },
       {
@@ -33,8 +34,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'UK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: Arla',
+        description: 'Product: Jord, Year: 2024',
         isPlaying: false
       },
       {
@@ -43,8 +44,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'UK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: Damixa',
+        description: 'Product: DNA Film, Year: 2024',
         isPlaying: false
       },
       {
@@ -53,8 +54,8 @@
         poster: '/02-corporate-imaging/videos/FIFA-Training-Centre-poster.jpg',
         language: 'UK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: FIFA',
+        description: 'Product: Training Centre, Year: 2024',
         isPlaying: false
       },
       {
@@ -63,8 +64,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: Podimo',
+        description: 'Product: Podcast, Year: 2024',
         isPlaying: false
       },
       {
@@ -73,8 +74,8 @@
         poster: '/02-corporate-imaging/videos/Imaging-Spotify-1-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: Spotify',
+        description: 'Product: Imaging, Year: 2024',
         isPlaying: false
       },
       {
@@ -83,8 +84,8 @@
         poster: '/02-corporate-imaging/videos/Imaging-Spotify-2-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: Spotify',
+        description: 'Product: Imaging, Year: 2024',
         isPlaying: false
       },
       {
@@ -93,8 +94,8 @@
         poster: '/02-corporate-imaging/videos/Summmit-Stockholm-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: Summmit',
+        description: 'Product: Stockholm, Year: 2024',
         isPlaying: false
       },
       {
@@ -103,8 +104,8 @@
         poster: '/02-corporate-imaging/videos/todaysfeature-miggrate-denmark-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: TodaysFeature',
+        description: 'Product: Migrate Denmark, Year: 2024',
         isPlaying: false
       },
       {
@@ -113,8 +114,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: YTM',
+        description: 'Product: Device Orchestra, Year: 2024',
         isPlaying: false
       },
       {
@@ -123,8 +124,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'DEMO REEL\n2024',
-        description: 'My latest voice acting demo reel showcasing various character voices and commercial reads.',
+        title: 'Client: YTM',
+        description: 'Product: Popcorn, Year: 2024',
         isPlaying: false
       },
     ]" />
@@ -137,7 +138,7 @@ import Hero from '../../elements/Hero/Hero.vue';
 import Media from '../../elements/Media/Media.vue';
 import Work from '../../elements/Work/Work.vue';
 export default {
-  name: 'Commercial',
+  name: 'CorporateImaging',
   components: {
     Media,
     Hero,

@@ -49,7 +49,7 @@ export default {
 
 .parallax-image {
   position: absolute;
-  top: -10%;
+  top: -18%;
   left: 0;
   width: 100%;
   height: 120%;
