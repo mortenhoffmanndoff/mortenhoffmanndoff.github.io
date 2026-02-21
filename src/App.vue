@@ -3,7 +3,7 @@
     <nav class="app-nav" :class="{ 'menu-open': isMenuOpen }">
       <div class="nav-content">
         <div class="logo-wrapper" :class="{ 'hidden': isMenuOpen }">
-          <a href="/" @click.prevent="navigateWithTransition('/')"><img src="/logo.svg" alt=""></a>
+          <a href="/" @click.prevent="navigateWithTransition('/')"><img src="/logo-mic.svg" alt=""></a>
         </div>
         <BurgerMenu ref="burgerMenu" @toggle="handleMenuToggle" :class="{ 'text-white': isMenuOpen }" />
       </div>
