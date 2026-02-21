@@ -12,6 +12,9 @@
                     <div v-html="textItem"></div>
                 </div>
             </div>
+            <div v-if="subheader" class="hero-subheader">
+                <span v-html="subheader"></span>
+            </div>
             <slot></slot>
         </div>
     </div>
@@ -43,6 +46,10 @@ export default {
         },
         imageSrc: {
             type: String,
+        },
+        subheader: {
+            type: String,
+            default: ''
         }
     },
 
@@ -58,6 +65,7 @@ export default {
         this.$nextTick(() => {
             const heroText = this.$el.querySelector('.hero-text');
             const heroTextItems = this.$el.querySelectorAll('.hero-text-item > *');
+            const heroSubheader = this.$el.querySelector('.hero-subheader');
             
             inView(heroText, () => {
                 animate(heroTextItems,          // Animate only this hero's text items
@@ -72,6 +80,20 @@ export default {
                         ease: [0.25, 0.1, 0.25, 1]
                     }
                 );
+
+                if (heroSubheader) {
+                    animate(heroSubheader,
+                        {
+                            opacity: 1,
+                            y: [30, 0]
+                        },
+                        {
+                            delay: 0.6,
+                            duration: 0.8,
+                            ease: [0.25, 0.1, 0.25, 1]
+                        }
+                    );
+                }
             });
         });
     }
@@ -120,9 +142,10 @@ export default {
     .hero-content {
         padding: 60px;
         z-index: 2;
-        display: grid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         grid-area: overlay;
-        align-items: center;
         
     }
 
@@ -139,6 +162,10 @@ export default {
         font-weight: 200;
         overflow: hidden;
 
+        &.medium {
+            font-size: clamp(32px, 7vw, 160px);
+        
+        }
         &.large {
             font-size: clamp(40px, 9vw, 200px);
         }
@@ -148,6 +175,17 @@ export default {
         }
     }
 
+}
+
+.hero-subheader {
+    opacity: 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(14px, 2vw, 28px);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 20px;
+    line-height: 1.4;
 }
 
 .hero-text-item > div {

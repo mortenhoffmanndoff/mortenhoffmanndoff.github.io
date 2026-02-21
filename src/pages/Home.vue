@@ -5,7 +5,8 @@
       :textItems="['<strong>Leading</strong> ', 'voice talent', '<strong>of Denmark</strong>']"
       imageSrc="/images/Home2.png"
       height="large"
-      textSize="large"
+      textSize="medium"
+      subheader="Native Danish &amp; international English in no time"
     />
 
     <Soundwave 
@@ -18,28 +19,26 @@
         
     <Hero 
       :textItems="['<strong>My</strong> voice', '<strong>is the</strong> sound', '<strong>of your</strong> brand']"
-      height="large"
+      height="medium"
       textSize="large"
-      class=""
+      class="bg-almost-white"
     />
     <Clients id="clients" class="" />
 
-      
-    <TextImageOverlay 
-      :line1="'Christina'"
-      :line2="'Bjørn'"
-      :imageSrc="'/images/image-5.png'" 
-    />
+    <Article id="about" :articleContent="aboutText" class="bg-almost-white"/>
 
-    <Article id="about" :articleContent="aboutText" class="" style="margin-top: -25vh" />
+    <TextImageOverlay :line1="'Christina'" :line2="'Bjørn'" :imageSrc="'/images/image-5.png'" />
     
-    <ParallaxImage :imageSrc="'/images/image-4.png'" />
-    <Hero class="bg-almost-white"
-      :textItems="['Recommended by ','<strong>professionals</strong>', 'trusted by <strong>brands</strong>']"
-      height="large"
-      textSize="xlarge"
-    />
-    <Article id="recommendations" :articleContent="recommendationText" class="bg-almost-white" />
+    <!-- <ParallaxImage :imageSrc="'/images/image-4.png'" /> -->
+
+    <section class="recommendations-section bg-almost-white" style="margin-top: -25vh">
+      <Hero
+        :textItems="['Recommended by ','<strong>professionals</strong>', 'trusted by <strong>brands</strong>']"
+        height="large"
+        textSize="xlarge"
+      />
+      <Article id="recommendations" :articleContent="recommendationText" />
+    </section>
 
   </div>
 </template>
@@ -67,12 +66,12 @@ export default {
   data() {
     return {
       aboutText: `
-        I’ve been in love with sound since the age of six.
+        I’ve been in love with sound since the age of six. <br>
         The black piano quickly became my closest friend, and it soon revealed that I have “absolute pitch”. When learning a Beethoven piece, I only needed to run through the notes once - after that, the music stayed with me.
-        At that moment sound became my profession.
-        At 19, I began working professionally with voice and communication - as a voice talent, radio host, presenter, TV host, actor and dubbing artist. In both Danish and English.
-        In 2006, I completed my education as a copywriter, gaining a strong foundation in branding and audience impact. This knowledge shapes each project, ensuring every voice performance hits the mark without adding extra costs..
-        Over the years, I’ve collaborated with a wide range of brands and hosted major live shows on some of the largest stages of Denmark. That experience and authenticity is part of the package - whether I’m your voice, your face or both.
+        At that moment sound became my profession.<br><br>
+        At 19, I began working professionally with voice and communication - as a voice talent, radio host, presenter, TV host, actor and dubbing artist. In both Danish and English.<br>
+        In 2006, I completed my education as a copywriter, gaining a strong foundation in branding and audience impact. This knowledge shapes each project, ensuring every voice performance hits the mark without adding extra costs..<br>
+        Over the years, I’ve collaborated with a wide range of brands and hosted major live shows on some of the largest stages of Denmark. That experience and authenticity is part of the package - whether I’m your voice, your face or both.<br>
         Today, my primary focus is voice work. With more than 200 projects each year, I know exactly what it takes to connect, resonate and leave a mark. You can choose a full-service production - or stay closely involved throughout the process.
       `,
 
@@ -93,3 +92,41 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.recommendations-section {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .recommendations-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    align-items: stretch;
+  }
+
+  .recommendations-section :deep(.hero) {
+    width: 100%;
+    height: 100%;
+    position: sticky;
+    top: 0;
+  }
+
+  .recommendations-section :deep(.hero .hero-text-item.xlarge) {
+    font-size: clamp(28px, 5vw, 100px);
+  }
+
+  .recommendations-section :deep(.article) {
+    padding: 60px 60px 60px 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .recommendations-section :deep(.article .article-content) {
+    font-size: clamp(14px, 1.3vw, 26px);
+    line-height: 1.5;
+  }
+}
+</style>

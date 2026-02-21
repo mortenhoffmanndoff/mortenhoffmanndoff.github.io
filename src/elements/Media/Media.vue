@@ -6,7 +6,7 @@
             <div class="media-player" :class="{ 'is-playing': playingStates[index] }" @click="togglePlay(index)">
                 <!-- Video -->
                 <video v-if="item.type === 'video'" :ref="`media-${index}`" :src="item.src" :poster="item.poster"
-                    class="media-element" />
+                    class="media-element" controls />
 
                 <!-- Audio Visualizer -->
                 <div v-if="item.type === 'audio'" class="audio-visualizer" :class="{ 'playing': playingStates[index] }">
