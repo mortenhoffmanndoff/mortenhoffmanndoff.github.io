@@ -1,7 +1,7 @@
 <template>
     <div class="hero" :class="heightClass">
         <img v-if="imageSrc" class="hero-image" :src="imageSrc" alt="Hero Image" />
-        <div class="hero-content">
+        <div class="hero-content" :class="textCenter && 'text-align-center'">
             <div class="hero-text">
                 <div 
                     v-for="(textItem, index) in textItems" 
@@ -50,6 +50,10 @@ export default {
         subheader: {
             type: String,
             default: ''
+        },
+        textCenter: {
+            type: Boolean,
+            default: false
         }
     },
 
@@ -146,6 +150,11 @@ export default {
         flex-direction: column;
         justify-content: center;
         grid-area: overlay;
+
+        &.text-align-center {
+            align-items: center;
+            text-align: center;
+        }
         
     }
 

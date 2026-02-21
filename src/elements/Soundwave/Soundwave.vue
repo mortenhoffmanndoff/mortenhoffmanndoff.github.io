@@ -182,7 +182,8 @@ export default {
 /* Initial position - below hero text, centered */
 .soundwave-container.is-initial {
     left: 50%;
-    top: 75vh;
+    /* top: 75vh; */
+    bottom: 8vh;
     transform: translateX(-50%);
 }
 

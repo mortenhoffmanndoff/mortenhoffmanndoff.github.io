@@ -118,6 +118,19 @@ body.cursor-video-playing::after {
   box-sizing: border-box;
 }
 
+body.cursor-controls {
+  cursor: default;
+}
+
+body.cursor-controls * {
+  cursor: default;
+}
+
+body.cursor-controls::before,
+body.cursor-controls::after {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: "Barlow Condensed", serif;

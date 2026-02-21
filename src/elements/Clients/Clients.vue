@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 .clients-wrapper {
-    padding: 60px 0;
+    padding: 100px 0 80px;
     overflow: hidden;
     display: flex;
     flex-direction: column;

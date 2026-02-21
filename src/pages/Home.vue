@@ -3,10 +3,10 @@
     
     <Hero
       :textItems="['<strong>Leading</strong> ', 'voice talent', '<strong>of Denmark</strong>']"
-      imageSrc="/images/Home2.png"
       height="large"
-      textSize="medium"
+      textSize="large"
       subheader="Native Danish &amp; international English in no time"
+      textCenter
     />
 
     <Soundwave 

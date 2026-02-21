@@ -36,12 +36,24 @@ document.addEventListener('mousemove', (e) => {
   
   if (videoTarget) {
     updateCursorForVideo(videoTarget);
+
+    // Detect if mouse is over the native controls area (bottom ~50px of video)
+    const video = videoTarget.querySelector('video');
+    if (video) {
+      const rect = video.getBoundingClientRect();
+      const isInControlsArea = e.clientY > rect.bottom - 75;
+      if (isInControlsArea) {
+        document.body.classList.add('cursor-controls');
+      } else {
+        document.body.classList.remove('cursor-controls');
+      }
+    }
   }
 });
 
 document.addEventListener('mouseout', (e) => {
   if (e.target.matches(videoElements) || e.target.closest(videoElements)) {
-    document.body.classList.remove('cursor-video', 'cursor-video-playing');
+    document.body.classList.remove('cursor-video', 'cursor-video-playing', 'cursor-controls');
   } else if (e.target.matches(clickableElements) || e.target.closest(clickableElements)) {
     document.body.classList.remove('cursor-hover');
   }
