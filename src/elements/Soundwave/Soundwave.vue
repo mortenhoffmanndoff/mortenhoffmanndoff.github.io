@@ -39,7 +39,8 @@
                 <span class="prompt-text">Click to hear my voice</span>
             </div>
         </div>
-        <audio ref="audioPlayer" :src="currentAudioSrc"></audio>
+        <audio ref="audioPlayerDK" :src="audioSrc" preload="auto"></audio>
+        <audio ref="audioPlayerEN" :src="audioSrcEn" preload="auto"></audio>
     </div>
 </template>
 
@@ -85,8 +86,11 @@ export default {
     },
 
     computed: {
-        currentAudioSrc() {
-            return this.selectedLanguage === 'DK' ? this.audioSrc : this.audioSrcEn;
+        activeAudio() {
+            return this.selectedLanguage === 'DK' ? this.$refs.audioPlayerDK : this.$refs.audioPlayerEN;
+        },
+        inactiveAudio() {
+            return this.selectedLanguage === 'DK' ? this.$refs.audioPlayerEN : this.$refs.audioPlayerDK;
         }
     },
 
@@ -94,8 +98,9 @@ export default {
         this.ctx = this.$refs.soundwaveCanvas.getContext('2d');
         this.draw();
         
-        // Listen for audio end event
-        this.$refs.audioPlayer.addEventListener('ended', this.onAudioEnded);
+        // Listen for audio end event on both players
+        this.$refs.audioPlayerDK.addEventListener('ended', this.onAudioEnded);
+        this.$refs.audioPlayerEN.addEventListener('ended', this.onAudioEnded);
         
         // Check if we should autoplay (only works if user has interacted with the page before)
         if (this.autoplay) {
@@ -108,8 +113,9 @@ export default {
         if (this.animationId) {
             cancelAnimationFrame(this.animationId);
         }
-        // Clean up event listener
-        this.$refs.audioPlayer.removeEventListener('ended', this.onAudioEnded);
+        // Clean up event listeners
+        this.$refs.audioPlayerDK.removeEventListener('ended', this.onAudioEnded);
+        this.$refs.audioPlayerEN.removeEventListener('ended', this.onAudioEnded);
     },
 
     methods: {
@@ -152,7 +158,7 @@ export default {
             this.targetAmplitude = 40;
             this.hasInteracted = true;
             
-            const audio = this.$refs.audioPlayer;
+            const audio = this.activeAudio;
             try {
                 await audio.play();
             } catch (err) {
@@ -178,7 +184,7 @@ export default {
             this.running = !this.running;
             this.targetAmplitude = this.running ? 40 : 0;
 
-            const audio = this.$refs.audioPlayer;
+            const audio = this.activeAudio;
 
             if (this.running) {
                 try {
@@ -198,26 +204,23 @@ export default {
         },
 
         selectLanguage(lang) {
-            const switching = this.selectedLanguage !== lang;
-            const audio = this.$refs.audioPlayer;            
-            // Stop current playback
-            audio.pause();
-            audio.currentTime = 0;
+            // Stop both players
+            this.$refs.audioPlayerDK.pause();
+            this.$refs.audioPlayerDK.currentTime = 0;
+            this.$refs.audioPlayerEN.pause();
+            this.$refs.audioPlayerEN.currentTime = 0;
             this.running = false;
             this.targetAmplitude = 0;
             
-            if (switching) {
-                this.selectedLanguage = lang;
-            }
+            this.selectedLanguage = lang;
 
             this.hasInteracted = true;
             if (!this.isDocked) {
                 this.animateToDocked();
             }
             
-            // Start playback from beginning with the (new) source
+            // Start playback immediately — both files are already preloaded
             this.$nextTick(() => {
-                this.$refs.audioPlayer.load();
                 this.play();
             });
         },
