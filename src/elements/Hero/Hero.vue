@@ -224,9 +224,11 @@ export default {
         }
 
         .hero-image {
-            height: 100%;
+            display: block;
+            width: 100%;
+            height: 50%;
+            transform: scaleX(-1) translateY(50vh) translateX(10vw);
             object-position: center;
-            display: none;
         }
 
         .hero-content {
@@ -268,9 +270,9 @@ export default {
             height: 40vh;
         }
 
-        .hero-image {
+        /* .hero-image {
             display: none;
-        }
+        } */
 
         .hero-content {
             padding: 30px 16px;
