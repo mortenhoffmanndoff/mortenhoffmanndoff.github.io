@@ -14,8 +14,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Superb',
-        description: 'Product: GXM Explainer, Year: 2024',
+        title: 'Superb',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -24,8 +24,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Gajol',
-        description: 'Product: Lakridseri siden 1933, Year: 2024',
+        title: 'Gajol',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -34,8 +34,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'UK',
         format: 'video',
-        title: 'Client: Arla',
-        description: 'Product: Jord, Year: 2024',
+        title: 'Arla',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -44,8 +44,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'UK',
         format: 'video',
-        title: 'Client: Damixa',
-        description: 'Product: DNA Film, Year: 2024',
+        title: 'Damixa',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -54,8 +54,8 @@
         poster: '/02-corporate-imaging/videos/FIFA-Training-Centre-poster.jpg',
         language: 'UK',
         format: 'video',
-        title: 'Client: FIFA',
-        description: 'Product: Training Centre, Year: 2024',
+        title: 'FIFA',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -64,8 +64,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Podimo',
-        description: 'Product: Podcast, Year: 2024',
+        title: 'Podimo',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -74,8 +74,8 @@
         poster: '/02-corporate-imaging/videos/Imaging-Spotify-1-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Spotify',
-        description: 'Product: Imaging, Year: 2024',
+        title: 'Spotify',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -84,8 +84,8 @@
         poster: '/02-corporate-imaging/videos/Imaging-Spotify-2-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Spotify',
-        description: 'Product: Imaging, Year: 2024',
+        title: 'Spotify',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -94,8 +94,8 @@
         poster: '/02-corporate-imaging/videos/Summmit-Stockholm-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Summmit',
-        description: 'Product: Stockholm, Year: 2024',
+        title: 'Summmit',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -104,8 +104,8 @@
         poster: '/02-corporate-imaging/videos/todaysfeature-miggrate-denmark-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: TodaysFeature',
-        description: 'Product: Migrate Denmark, Year: 2024',
+        title: 'TodaysFeature',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -114,8 +114,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: YTM',
-        description: 'Product: Device Orchestra, Year: 2024',
+        title: 'YTM',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -124,8 +124,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: YTM',
-        description: 'Product: Popcorn, Year: 2024',
+        title: 'YTM',
+        description: 'Client',
         isPlaying: false
       },
     ]" />

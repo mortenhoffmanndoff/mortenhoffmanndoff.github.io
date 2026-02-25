@@ -385,7 +385,7 @@ export default {
     font-size: clamp(28px, 4vw, 48px);
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     text-transform: uppercase;
     white-space: pre-line;
 }

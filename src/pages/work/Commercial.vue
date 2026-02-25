@@ -14,8 +14,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Colgate',
-        description: 'Product: Max Whitening, Year: 2024',
+        title: 'Colgate',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -24,8 +24,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Bedst & Billigst',
-        description: 'Product: Bedst & Billigst, Year: 2024',
+        title: 'Bedst & Billigst',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -34,8 +34,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Biotherm',
-        description: 'Product: Blue Therapy Uplift, Year: 2022',
+        title: 'Biotherm',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -44,8 +44,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Danish Crown',
-        description: 'Product: Danish Crown, Year: 2024',
+        title: 'Danish Crown',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -54,8 +54,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Hello Fresh',
-        description: 'Product: Hello Fresh, Year: 2024',
+        title: 'Hello Fresh',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -64,8 +64,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: IF Forsikring',
-        description: 'Product: IF Forsikring, Year: 2024',
+        title: 'IF Forsikring',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -74,8 +74,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Just Eat',
-        description: 'Product: App, Year: 2024',
+        title: 'Just Eat',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -84,8 +84,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Just Eat',
-        description: 'Product: App, Year: 2024',
+        title: 'Just Eat',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -94,8 +94,8 @@
         poster: '/01-commercial/videos/kvik-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Kvik',
-        description: 'Product: Samtalekøkkener, Year: 2024',
+        title: 'Kvik',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -104,8 +104,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Lidl',
-        description: 'Product: Skrab Plus, Year: 2024',
+        title: 'Lidl',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -114,8 +114,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Notino',
-        description: 'Product: Notino, Year: 2024',
+        title: 'Notino',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -124,8 +124,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Ørsted',
-        description: 'Product: Kampagne, Year: 2024',
+        title: 'Ørsted',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -134,8 +134,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Ørsted',
-        description: 'Product: Kampagne, Year: 2018',
+        title: 'Ørsted',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -144,8 +144,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: RPReplay',
-        description: 'Product: Demo Reel, Year: 2024',
+        title: 'RPReplay',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -154,8 +154,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Skippers Pipes',
-        description: 'Product: Vende Piken Forkert, Year: 2024',
+        title: 'Skippers Pipes',
+        description: 'Client',
         isPlaying: false
       },
 
