@@ -14,8 +14,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Kia',
-        description: 'Product: Den nye Niro EV, Year: 2024',
+        title: 'Kia',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -24,8 +24,8 @@
         poster: '/03-acting-narration/videos/RF21_2min_ENG_SRT-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: TrygFonden',
-        description: 'Product: Røgfri Fremtid, Year: 2024',
+        title: 'TrygFonden',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -34,8 +34,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Klasselotteriet',
-        description: 'Product: Klasselotteriet, Year: 2024',
+        title: 'Klasselotteriet',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -44,8 +44,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: RPReplay',
-        description: 'Product: Voice, Year: 2024',
+        title: 'RPReplay',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -54,8 +54,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: RPReplay',
-        description: 'Product: Voice, Year: 2024',
+        title: 'RPReplay',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -64,8 +64,8 @@
         // poster: '/images/demo-poster.jpg',
         language: 'DE',
         format: 'video',
-        title: 'Client: News?',
-        description: 'Product: Voice, Year: 2024',
+        title: 'News',
+        description: 'Client',
         isPlaying: false
       },
       {
@@ -74,8 +74,8 @@
         poster: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Client: Radio24syv',
-        description: 'Product: Drik med respekt, Year: 2024',
+        title: 'Radio24syv',
+        description: 'Client',
         isPlaying: false
       },
       
