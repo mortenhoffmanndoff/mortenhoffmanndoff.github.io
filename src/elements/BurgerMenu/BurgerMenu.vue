@@ -152,4 +152,43 @@ export default {
 .burger-icon.open .line:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
+
+/* Responsive BurgerMenu */
+@media (max-width: 1023px) {
+    .burger-menu-container {
+        width: 72px;
+        height: 68px;
+    }
+
+    .burger-icon {
+        width: 20px;
+        height: 14px;
+    }
+
+    .burger-icon.open .line:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+    .burger-icon.open .line:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .burger-menu-container {
+        width: 56px;
+        height: 54px;
+    }
+
+    .burger-icon {
+        width: 18px;
+        height: 12px;
+    }
+
+    .burger-icon.open .line:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+    }
+    .burger-icon.open .line:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg);
+    }
+}
 </style>

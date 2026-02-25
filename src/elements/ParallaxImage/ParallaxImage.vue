@@ -84,4 +84,31 @@ export default {
   font-size: 18px;
   margin: 0;
 }
+
+/* Responsive ParallaxImage */
+@media (max-width: 1023px) {
+  .parallax-container {
+    height: 75vh;
+    background-color: #fff;
+  }
+
+  .parallax-content {
+    padding: 24px;
+  }
+
+  .parallax-content h2 {
+    font-size: clamp(28px, 8vw, 50px);
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax-container {
+    height: 65vh;
+    background-color: #fff;
+  }
+
+  .parallax-content {
+    padding: 16px;
+  }
+}
 </style>

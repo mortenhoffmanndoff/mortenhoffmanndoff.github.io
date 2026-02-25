@@ -88,4 +88,29 @@ export default {
 
 }
 
+/* Responsive Article */
+@media (max-width: 1023px) {
+    .article {
+        padding: 40px 30px;
+    }
+
+    .article .article-content {
+        font-size: clamp(18px, 3.2vw, 26px);
+        line-height: 1.7;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article {
+        padding: 30px 20px;
+    }
+
+    .article .article-content {
+        font-size: clamp(17px, 4.5vw, 22px);
+        line-height: 1.7;
+        gap: 14px;
+    }
+}
+
 </style>

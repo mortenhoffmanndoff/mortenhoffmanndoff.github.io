@@ -100,4 +100,38 @@ export default {
 
 
 }
+
+/* Responsive Clients */
+@media (max-width: 1023px) {
+    .clients-wrapper {
+        padding: 60px 0 50px;
+        gap: 24px;
+    }
+
+    .clients {
+        gap: 14px;
+    }
+
+    .client {
+        font-size: 8vw;
+        line-height: 7.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .clients-wrapper {
+        padding: 40px 0 30px;
+        gap: 16px;
+    }
+
+    .clients {
+        gap: 10px;
+    }
+
+    .client {
+        font-size: 10vw;
+        line-height: 9.5vw;
+        -webkit-text-stroke-width: 0.5px;
+    }
+}
 </style>
