@@ -410,10 +410,6 @@ export default {
     .media-container.reverse {
         grid-template-columns: 1fr;
     }
-
-    .media-player:not(.is-playing)::before {
-        display: none;
-    }
     
     .content-card {
         padding: 30px;
