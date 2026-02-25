@@ -155,6 +155,10 @@ body {
   background-color: #e5e3dc;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
 :root {
     --color-almost-black: 58, 58, 58;
     --color-dark-blue: 34, 34, 58;
@@ -174,6 +178,12 @@ strong {
     color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000000;
+}
+
+@media (max-width: 480px) {
+    strong {
+        -webkit-text-stroke-width: 0.6px;
+    }
 }
 
 span.article-line > strong {
@@ -261,4 +271,26 @@ a {
 
 .padding-top-small {
     padding-top: 5vw !important 
+}
+
+/* ========== RESPONSIVE / MOBILE & TABLET ========== */
+
+/* Disable custom cursor on touch devices */
+@media (max-width: 1023px) {
+    *, *::before, *::after {
+        cursor: auto !important;
+    }
+
+    body::before,
+    body::after {
+        display: none !important;
+    }
+
+    body.cursor-video::before,
+    body.cursor-video::after,
+    body.cursor-video-playing::before,
+    body.cursor-video-playing::after,
+    body.cursor-hover::before {
+        display: none !important;
+    }
 }

@@ -232,9 +232,13 @@ export default {
             const startX = rect.left;
             const startY = rect.top;
             
-            // Calculate target docked position (right: 45px, bottom: 30px)
-            const targetX = window.innerWidth - 45 - rect.width;
-            const targetY = window.innerHeight - 30 - rect.height;
+            // Calculate target docked position — adjust for mobile
+            const isMobile = window.innerWidth <= 480;
+            const isTablet = window.innerWidth <= 1023;
+            const rightOffset = isMobile ? 12 : isTablet ? 20 : 45;
+            const bottomOffset = isMobile ? 12 : isTablet ? 20 : 30;
+            const targetX = window.innerWidth - rightOffset - rect.width;
+            const targetY = window.innerHeight - bottomOffset - rect.height;
             
             // Fix position at current spot using left/top
             container.style.transition = 'none';
@@ -273,6 +277,13 @@ export default {
     z-index: 9999;
     display: inline-block;
     transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.menu-open .soundwave-container {
+    z-index: 9997;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Initial position - below hero text, centered */
@@ -497,5 +508,70 @@ export default {
 
 .menu-open .flag-button svg {
     filter: brightness(2);
+}
+
+/* Responsive Soundwave */
+@media (max-width: 1023px) {
+    .soundwave-container.is-initial {
+        bottom: 140px;
+    }
+
+    .soundwave-container.is-docked {
+        right: 20px;
+        bottom: 30px;
+    }
+
+    .soundwave-canvas {
+        width: 90px !important;
+        height: 90px !important;
+    }
+
+    .flag-button {
+        width: 28px;
+        height: 28px;
+    }
+
+    .flag-button svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .prompt-text {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .soundwave-container.is-initial {
+        bottom: 120px;
+    }
+
+    .soundwave-container.is-docked {
+        right: 16px;
+        bottom: 24px;
+    }
+
+    .soundwave-canvas {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .language-flags {
+        gap: 6px;
+    }
+
+    .flag-button {
+        width: 24px;
+        height: 24px;
+    }
+
+    .flag-button svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .prompt-text {
+        font-size: 11px;
+    }
 }
 </style>

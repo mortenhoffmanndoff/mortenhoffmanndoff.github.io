@@ -109,11 +109,45 @@ export default {
 
 @media (max-width: 768px) {
   .text-section {
-    padding: 8vh 3vw 3vh;
+    padding: 6vh 5vw 3vh;
   }
   
   .image-section {
     height: 60vh;
+  }
+
+  .image-section img {
+    width: 85vw;
+  }
+}
+
+@media (max-width: 1023px) {
+  .text-image-overlay {
+    min-height: 100vh;
+  }
+
+  .line-1,
+  .line-2 {
+    font-size: clamp(50px, 18vw, 180px);
+  }
+}
+
+@media (max-width: 480px) {
+  .text-image-overlay {
+    min-height: 80vh;
+  }
+
+  .text-section {
+    padding: 5vh 4vw 2vh;
+  }
+
+  .line-1,
+  .line-2 {
+    font-size: clamp(40px, 16vw, 120px);
+  }
+
+  .image-section img {
+    width: 92vw;
   }
 }
 </style>

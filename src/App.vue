@@ -155,4 +155,21 @@ main {
 :global(body.menu-open) {
   overflow: hidden;
 }
+
+/* Responsive Nav */
+@media (max-width: 1023px) {
+  nav {
+    padding: 16px 20px;
+  }
+
+  .logo-wrapper a img {
+    height: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 12px 16px;
+  }
+}
 </style>

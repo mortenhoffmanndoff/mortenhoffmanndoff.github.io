@@ -54,4 +54,25 @@ export default {
   color: #333;
   font-weight: bold;
 }
+
+/* Responsive About */
+@media (max-width: 1023px) {
+  .about-page {
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    padding: 30px 16px;
+  }
+
+  .about-page h1 {
+    font-size: clamp(32px, 10vw, 60px);
+  }
+
+  .about-page p {
+    font-size: 16px;
+  }
+}
 </style>

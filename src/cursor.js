@@ -1,3 +1,8 @@
+// Skip custom cursor on touch/mobile devices
+const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || window.matchMedia('(max-width: 1023px)').matches;
+
+if (!isTouchDevice) {
+
 // Custom cursor tracking
 document.addEventListener('mousemove', (e) => {
   document.documentElement.style.setProperty('--cursor-x', `${e.clientX}px`);
@@ -91,4 +96,4 @@ document.addEventListener('pause', (e) => {
   }
 }, true);
 
-
+} // end if (!isTouchDevice)

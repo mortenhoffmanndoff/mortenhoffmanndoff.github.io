@@ -1,12 +1,13 @@
 <template>
   <div>
     
-    <Hero
+    <Hero 
+     :imageSrc="'/images/2.png'"
       :textItems="['<strong>Leading</strong> ', 'voice talent', '<strong>of Denmark</strong>']"
       height="large"
       textSize="large"
-      subheader="Native Danish &amp; international English in no time"
       textCenter
+      subheader="Native Danish &amp; international English in no time"
     />
 
     <Soundwave 
@@ -128,6 +129,46 @@ export default {
   .recommendations-section :deep(.article .article-content) {
     font-size: clamp(14px, 1.3vw, 26px);
     line-height: 1.5;
+  }
+}
+
+/* Responsive Home */
+@media (max-width: 1023px) {
+  .recommendations-section {
+    margin-top: -10vh;
+  }
+
+  .recommendations-section :deep(.hero) {
+    height: auto;
+    min-height: 30vh;
+  }
+
+  .recommendations-section :deep(.article) {
+    padding: 30px 24px;
+  }
+
+  .recommendations-section :deep(.article .article-content) {
+    font-size: clamp(18px, 3.2vw, 24px);
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommendations-section {
+    margin-top: -5vh;
+  }
+
+  .recommendations-section :deep(.hero) {
+    min-height: 25vh;
+  }
+
+  .recommendations-section :deep(.article) {
+    padding: 24px 20px;
+  }
+
+  .recommendations-section :deep(.article .article-content) {
+    font-size: clamp(17px, 4.5vw, 21px);
+    line-height: 1.6;
   }
 }
 </style>

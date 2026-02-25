@@ -322,6 +322,14 @@ export default {
         padding: 80px 30px 60px;
     }
 
+    .footer-cta {
+        margin-bottom: 60px;
+    }
+
+    .footer-title {
+        font-size: clamp(60px, 14vw, 160px);
+    }
+
     .info-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
@@ -343,7 +351,15 @@ export default {
 
     .contact-link {
         gap: 8px;
-        font-size: clamp(14px, 1.5vw, 20px);
+        font-size: clamp(18px, 4vw, 26px);
+    }
+
+    .contact-link.primary-link {
+        font-size: clamp(20px, 5vw, 30px);
+    }
+
+    .contact-label {
+        font-size: 15px;
     }
 
     .contact-link svg {
@@ -355,6 +371,10 @@ export default {
         width: 40px;
         height: 40px;
     }
+
+    .footer-credit {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -363,20 +383,37 @@ export default {
     }
 
     .footer-title {
-        font-size: clamp(36px, 8vw, 80px);
+        font-size: clamp(50px, 15vw, 120px);
     }
 
     .footer-title-word {
         margin: 0 5px;
     }
 
-    .info-section {
-        gap: 20px;
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .contact-link {
+        font-size: clamp(17px, 4.5vw, 24px);
+    }
+
+    .contact-link.primary-link {
+        font-size: clamp(19px, 5vw, 28px);
+    }
+
+    .contact-label {
+        font-size: 14px;
     }
 
     .footer-bottom {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .footer-credit {
+        font-size: 13px;
     }
 }
 </style>

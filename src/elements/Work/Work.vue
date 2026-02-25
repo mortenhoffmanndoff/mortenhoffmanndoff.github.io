@@ -7,6 +7,7 @@
                         <h3>1</h3>
                         <canvas ref="canvas0" class="connector-line"></canvas>
                         <p>Commercial</p>
+                        <span class="tap-hint">Tap to explore</span>
                         <svg viewBox="0 0 72 100" class="work-arrow">
                             <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
                                 v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
@@ -19,6 +20,7 @@
                         <h3>2</h3>
                         <canvas ref="canvas1" class="connector-line"></canvas>
                         <p>Corporate & Imaging</p>
+                        <span class="tap-hint">Tap to explore</span>
                         <svg viewBox="0 0 72 100" class="work-arrow">
                             <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
                                 v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
@@ -31,6 +33,7 @@
                         <h3>3</h3>
                         <canvas ref="canvas2" class="connector-line"></canvas>
                         <p>Acting & Narration</p>
+                        <span class="tap-hint">Tap to explore</span>
                         <svg viewBox="0 0 72 100" class="work-arrow">
                             <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
                                 v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
@@ -42,6 +45,7 @@
                     <a href="/work/audiobooks-docs" class="work-container" @click.prevent="navigateTo('/work/audiobooks-docs')">
                         <h3>4</h3>
                         <p>Audiobooks & Docs</p>
+                        <span class="tap-hint">Tap to explore</span>
                         <svg viewBox="0 0 72 100" class="work-arrow">
                             <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9
                                 v75.3c-4.2-9.7-13.2-20.2-31.9-23.2L1.9,57L1.7,58c0,0,0,0,0,0l-0.1,0.9c28.7,4.5,32.2,27.6,32.5,35.3c-0.1,1.7,0,2.7,0,2.8l0.9-0.1
@@ -73,11 +77,29 @@ export default {
   mounted() {
     const items = document.querySelectorAll(".work-container")
 
+    // Calculate scroll distance based on viewport width
+    const vw = window.innerWidth;
+    let itemWidthVw = 25; // desktop: 4 items visible
+    if (vw <= 480) {
+      itemWidthVw = 70; // mobile: ~1.4 items visible
+    } else if (vw <= 1023) {
+      itemWidthVw = 50; // tablet: 2 items visible
+    }
+    const visibleItems = Math.floor(100 / itemWidthVw);
+    const scrollDistance = Math.max(0, (items.length - visibleItems) * itemWidthVw);
+
+    // The container must be tall enough for the sticky pinning to work.
+    // More scroll distance = taller container needed.
+    // Each 100vw of horizontal travel needs ~100vh of vertical scroll room.
+    const containerHeight = 100 + scrollDistance; // in vh
+    const container = document.querySelector(".work-group-container");
+    container.style.height = containerHeight + 'vh';
+
     scroll(
         animate(".work-group", {
-            transform: ["none", `translateX(-${(items.length - 4) * 25}vw)`],
+            transform: ["none", `translateX(-${scrollDistance}vw)`],
         }),
-        { target: document.querySelector(".work-group-container") }
+        { target: container }
     )
 
     // Initialize canvas lines
@@ -456,5 +478,106 @@ export default {
 
     .work-container:hover .work-arrow {
         transform: translateY(-30vh);
+    }
+
+    /* Tap hint - hidden on desktop */
+    .tap-hint {
+        display: none;
+    }
+
+    /* Responsive Work */
+    @media (max-width: 1023px) {
+        .work-container {
+            width: 50vw;
+            transform: translateY(-50px);
+        }
+
+        h3 {
+            font-size: 40vw;
+        }
+
+        p {
+            font-size: 5vw;
+        }
+
+        .tap-hint {
+            display: block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(0, 0, 0, 0.8);
+            margin-top: 12px;
+            pointer-events: none;
+            animation: tapPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes tapPulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        .connector-line {
+            width: 50vw;
+            transform: translateX(25vw);
+        }
+
+        .work-arrow {
+            display: none;
+        }
+
+        .work-container:hover h3 {
+            transform: translateY(-10vh);
+        }
+
+        .work-container:hover p {
+            transform: translateY(-10vh);
+        }
+
+        .work-container:hover .work-arrow {
+            transform: translateY(-20vh);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .work-container {
+            width: 70vw;
+            transform: translateY(-70px);
+        }
+
+        h3 {
+            font-size: 55vw;
+        }
+
+        p {
+            font-size: 7vw;
+        }
+
+        .tap-hint {
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-top: 10px;
+        }
+
+        .connector-line {
+            display: none;
+        }
+
+        .work-arrow {
+            display: none;
+        }
+
+        .work-container:hover h3 {
+            transform: translateY(-6vh);
+        }
+
+        .work-container:hover p {
+            transform: translateY(-6vh);
+        }
+
+        .work-container:hover .work-arrow {
+            transform: translateY(-12vh);
+        }
     }
 </style>

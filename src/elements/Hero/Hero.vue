@@ -134,7 +134,7 @@ export default {
         height: 100vh;
         width: 100vw;
         object-fit: cover;
-        object-position: right;
+        object-position: 400px;
         /* z-index: 1;
         grid-area: overlay;
         width: 100%;
@@ -204,6 +204,95 @@ export default {
 
 .hero-text-item strong {
     font-weight: 700;
+}
+
+/* Responsive Hero */
+@media (max-width: 1023px) {
+    .hero {
+        height: auto;
+
+        &.large-height {
+            height: 100svh;
+        }
+
+        &.medium-height {
+            height: 60vh;
+        }
+
+        &.small-height {
+            height: 45vh;
+        }
+
+        .hero-image {
+            height: 100%;
+            object-position: center;
+            display: none;
+        }
+
+        .hero-content {
+            padding: 40px 24px;
+        }
+
+        .hero-text-item {
+            font-size: clamp(28px, 10vw, 64px);
+
+            &.large {
+                font-size: clamp(32px, 12vw, 72px);
+            }
+
+            &.xlarge {
+                font-size: clamp(32px, 12vw, 80px);
+            }
+        }
+    }
+
+    .hero-subheader {
+        font-size: clamp(12px, 3vw, 18px);
+        margin-top: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: auto;
+
+        &.large-height {
+            height: 100svh;
+        }
+
+        &.medium-height {
+            height: 50vh;
+        }
+
+        &.small-height {
+            height: 40vh;
+        }
+
+        .hero-image {
+            display: none;
+        }
+
+        .hero-content {
+            padding: 30px 16px;
+        }
+
+        .hero-text-item {
+            font-size: clamp(24px, 10vw, 48px);
+
+            &.large {
+                font-size: clamp(28px, 12vw, 56px);
+            }
+
+            &.xlarge {
+                font-size: clamp(28px, 12vw, 56px);
+            }
+        }
+    }
+
+    .hero-subheader {
+        font-size: clamp(11px, 3.5vw, 16px);
+        margin-top: 10px;
+    }
 }
 
 </style>
