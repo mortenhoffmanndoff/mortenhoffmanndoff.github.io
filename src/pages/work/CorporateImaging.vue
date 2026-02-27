@@ -31,7 +31,7 @@
       {
         type: 'video',
         src: '/02-corporate-imaging/videos/tampax.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/02-corporate-imaging/posters/tampax.jpg',
         language: 'DK',
         format: 'video',
         title: 'Tampax',
@@ -81,7 +81,7 @@
       {
         type: 'video',
         src: '/02-corporate-imaging/videos/obtinu.mp4',
-        // poster: '/02-corporate-imaging/videos/Imaging-Spotify-2-poster.jpg',
+        poster: '/02-corporate-imaging/posters/obtinu.jpg',
         language: 'UK',
         format: 'video',
         title: 'Obtinu',
@@ -101,7 +101,7 @@
       {
         type: 'video',
         src: '/02-corporate-imaging/videos/fifa.mp4',
-        // poster: '/02-corporate-imaging/videos/todaysfeature-miggrate-denmark-poster.jpg',
+        poster: '/02-corporate-imaging/posters/fifa.jpg',
         language: 'UK',
         format: 'video',
         title: 'FIFA',
@@ -131,7 +131,7 @@
       {
         type: 'video',
         src: '/02-corporate-imaging/videos/migrate.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/02-corporate-imaging/posters/migrate.jpg',
         language: 'DK',
         format: 'video',
         title: 'Migrate',

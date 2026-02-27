@@ -21,7 +21,7 @@
       {
         type: 'video',
         src: '/03-acting-narration/videos/rippaverse.mp4',
-        // poster: '/03-acting-narration/videos/RF21_2min_ENG_SRT-poster.jpg',
+        poster: '/03-acting-narration/posters/rippaverse.jpg',
         language: 'UK',
         format: 'video',
         title: 'Rippaverse Comics',
@@ -51,7 +51,7 @@
       {
         type: 'video',
         src: '/03-acting-narration/videos/trygfonden.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/03-acting-narration/posters/trygfonden.jpg',
         language: 'DK',
         format: 'video',
         title: 'TrygFonden',
@@ -81,7 +81,7 @@
       {
         type: 'video',
         src: '/03-acting-narration/videos/fredagsfesten.mp4',
-        // poster: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3-poster.jpg',
+        poster: '/03-acting-narration/posters/fredagsfesten.jpg',
         language: 'DK',
         format: 'video',
         title: 'Fredagsfesten',

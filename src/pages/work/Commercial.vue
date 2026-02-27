@@ -21,7 +21,7 @@
       {
         type: 'video',
         src: '/01-commercial/videos/hello-fresh.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/01-commercial/posters/hello-fresh.jpg',
         language: 'DK',
         format: 'video',
         title: 'Hello Fresh',
@@ -101,7 +101,7 @@
       {
         type: 'video',
         src: '/01-commercial/videos/kvik.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/01-commercial/posters/kvik.jpg',
         language: 'DK',
         format: 'video',
         title: 'Kvik',
@@ -121,7 +121,7 @@
       {
         type: 'video',
         src: '/01-commercial/videos/spotify.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/01-commercial/posters/spotify.jpg',
         language: 'DK',
         format: 'video',
         title: 'Spotify',
@@ -171,7 +171,7 @@
       {
         type: 'video',
         src: '/01-commercial/videos/marabou.mp4',
-        // poster: '/images/demo-poster.jpg',
+        poster: '/01-commercial/posters/marabou.jpg',
         language: 'DK',
         format: 'video',
         title: 'Marabou',
