@@ -22,7 +22,7 @@
         type: 'video',
         src: '/03-acting-narration/videos/rippaverse.mp4',
         // poster: '/03-acting-narration/videos/RF21_2min_ENG_SRT-poster.jpg',
-        language: 'DK',
+        language: 'UK',
         format: 'video',
         title: 'Rippaverse Comics',
         description: 'Client',
