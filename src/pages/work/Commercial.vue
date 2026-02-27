@@ -10,41 +10,11 @@
     <Media :mediaItems="[
       {
         type: 'video',
-        src: '/01-commercial/videos/Colgate-Max-Whitening.mp4',
+        src: '/01-commercial/videos/e-cards.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Colgate',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/01-commercial/videos/bedst-billigst.mp4',
-        // poster: '/images/demo-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'Bedst & Billigst',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/01-commercial/videos/biotherm-BlueTherapyUplift-2022.mp4',
-        // poster: '/images/demo-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'Biotherm',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/01-commercial/videos/danish-crown.mp4',
-        // poster: '/images/demo-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'Danish Crown',
+        title: 'E-cards',
         description: 'Client',
         isPlaying: false
       },
@@ -60,51 +30,11 @@
       },
       {
         type: 'video',
-        src: '/01-commercial/videos/IF-forsikring.mp4',
+        src: '/01-commercial/videos/skippers-pipes.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'IF Forsikring',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/01-commercial/videos/JET-5-sek.mp4',
-        // poster: '/images/demo-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'Just Eat',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/01-commercial/videos/JET-10-sek.mp4',
-        // poster: '/images/demo-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'Just Eat',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/01-commercial/videos/kvik.mp4',
-        poster: '/01-commercial/videos/kvik-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'Kvik',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/01-commercial/videos/lidl-plus-campaign-202.mp4',
-        // poster: '/images/demo-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'Lidl',
+        title: 'Skipper\'s Pipes',
         description: 'Client',
         isPlaying: false
       },
@@ -120,7 +50,17 @@
       },
       {
         type: 'video',
-        src: '/01-commercial/videos/Oersted_kampagne.mp4',
+        src: '/01-commercial/videos/corny-0.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Corny 0%',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/01-commercial/videos/oersted.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
@@ -130,31 +70,111 @@
       },
       {
         type: 'video',
-        src: '/01-commercial/videos/Oersted-2018.mp4',
+        src: '/01-commercial/videos/biotherm.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Ørsted',
+        title: 'Biotherm',
         description: 'Client',
         isPlaying: false
       },
       {
         type: 'video',
-        src: '/01-commercial/videos/RPReplay.mp4',
+        src: '/01-commercial/videos/if-forsikring.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'RPReplay',
+        title: 'IF Forsikring',
         description: 'Client',
         isPlaying: false
       },
       {
         type: 'video',
-        src: '/01-commercial/videos/Skippers_Pipes_Vende_Piken_Forkert.mp4',
+        src: '/01-commercial/videos/just-eat.mp4',
+        // poster: '/01-commercial/videos/just-eat-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Just Eat',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/01-commercial/videos/kvik.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Skippers Pipes',
+        title: 'Kvik',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/01-commercial/videos/lidl-plus.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Lidl',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/01-commercial/videos/spotify.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Spotify',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/01-commercial/videos/podimo.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Podimo',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/01-commercial/videos/somersby.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Somersby',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/01-commercial/videos/samlino.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Samlino',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/01-commercial/videos/bwt.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'BWT',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/01-commercial/videos/marabou.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Marabou',
         description: 'Client',
         isPlaying: false
       },

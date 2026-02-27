@@ -6,7 +6,7 @@
                     <a href="/work/commercial" class="work-container" @click.prevent="navigateTo('/work/commercial')">
                         <h3>1</h3>
                         <canvas ref="canvas0" class="connector-line"></canvas>
-                        <p>Commercial</p>
+                        <p>Commercials</p>
                         <span class="tap-hint">Tap to explore</span>
                         <svg viewBox="0 0 72 100" class="work-arrow">
                             <path d="M70.4,58.9L70.1,57l-0.2-0.9c0,0,0,0,0,0l-0.2-0.9c-18.7,3.4-27.6,13.4-31.9,22.7V3h-0.9H35h-0.9

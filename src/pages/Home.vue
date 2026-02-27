@@ -35,7 +35,7 @@
 
     <section class="recommendations-section bg-almost-white" style="margin-top: -25vh">
       <Hero
-        :textItems="['Recommended by ','<strong>professionals</strong>', 'trusted by <strong>brands</strong>']"
+        :textItems="['<strong>Recommended by</strong>','professionals', '<strong>trusted by</strong> brands']"
         textSize="xlarge"
       />
       <Article id="recommendations" :articleContent="recommendationText" />
@@ -71,7 +71,7 @@ export default {
         The black piano quickly became my closest friend, and it soon revealed that I have “absolute pitch”. When learning a Beethoven piece, I only needed to run through the notes once - after that, the music stayed with me.
         At that moment sound became my profession.<br><br>
         At 19, I began working professionally with voice and communication - as a voice talent, radio host, presenter, TV host, actor and dubbing artist. In both Danish and English.<br>
-        In 2006, I completed my education as a copywriter, gaining a strong foundation in branding and audience impact. This knowledge shapes each project, ensuring every voice performance hits the mark without adding extra costs..<br>
+        In 2006, I completed my education as a copywriter, gaining a strong foundation in branding and audience impact. This knowledge shapes each project, ensuring every voice performance hits the mark without adding extra costs.<br>
         Over the years, I’ve collaborated with a wide range of brands and hosted major live shows on some of the largest stages of Denmark. That experience and authenticity is part of the package - whether I’m your voice, your face or both.<br>
         Today, my primary focus is voice work. With more than 200 projects each year, I know exactly what it takes to connect, resonate and leave a mark. You can choose a full-service production - or stay closely involved throughout the process.
       `,

@@ -3,14 +3,14 @@
     <!-- <Hero class="corporate-imaging-hero" height="large" :textItems="['Authorative and', 'Generic Yet full of', '<strong>Identity</strong> and personality']"></Hero> -->
     <Hero class="corporate-imaging-hero" :textSize="'xlarge'" height="large" :textItems="['Corporate', '&amp; Imaging']"></Hero>
     <Hero 
-      :textItems="['<strong>Authorative and</strong>', '<strong>Generic Yet full of</strong>', 'Identity and personality']"
+      :textItems="['<strong>Authorative and</strong>', '<strong>Generic Yet full of</strong>', 'Identity <strong>and</strong> personality']"
       height="small"
       textSize="small"
     />
     <Media :mediaItems="[
       {
         type: 'video',
-        src: '/02-corporate-imaging/videos/Superb - GXM Explainer - Full - DanishV2.mp4',
+        src: '/02-corporate-imaging/videos/superb.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
@@ -20,19 +20,9 @@
       },
       {
         type: 'video',
-        src: '/02-corporate-imaging/videos/Gajol_Intern2.mp4',
+        src: '/02-corporate-imaging/videos/arla.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
-        format: 'video',
-        title: 'Gajol',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/02-corporate-imaging/videos/ArlaJord_V03.mp4',
-        // poster: '/images/demo-poster.jpg',
-        language: 'UK',
         format: 'video',
         title: 'Arla',
         description: 'Client',
@@ -40,9 +30,39 @@
       },
       {
         type: 'video',
-        src: '/02-corporate-imaging/videos/Damixa - DNA_film_Final_ENG.mp4',
+        src: '/02-corporate-imaging/videos/tampax.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'UK',
+        format: 'video',
+        title: 'Tampax',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/02-corporate-imaging/videos/gajol.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'UK',
+        format: 'video',
+        title: 'Gajol',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/02-corporate-imaging/videos/youtube-music-eyes.mp4',
+        // poster: '/02-corporate-imaging/videos/FIFA-Training-Centre-poster.jpg',
+        language: 'UK',
+        format: 'video',
+        title: 'Youtube Music',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/02-corporate-imaging/videos/damixa.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
         format: 'video',
         title: 'Damixa',
         description: 'Client',
@@ -50,9 +70,39 @@
       },
       {
         type: 'video',
-        src: '/02-corporate-imaging/videos/FIFA-Training-Centre.mp4',
-        poster: '/02-corporate-imaging/videos/FIFA-Training-Centre-poster.jpg',
-        language: 'UK',
+        src: '/02-corporate-imaging/videos/nyborg-strand.mp4',
+        // poster: '/02-corporate-imaging/videos/Imaging-Spotify-1-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Nyborg Strand',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/02-corporate-imaging/videos/obtinu.mp4',
+        // poster: '/02-corporate-imaging/videos/Imaging-Spotify-2-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Obtinu',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/02-corporate-imaging/videos/youtube-music-popcorn.mp4',
+        // poster: '/02-corporate-imaging/videos/Summmit-Stockholm-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Youtube Music',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/02-corporate-imaging/videos/fifa.mp4',
+        // poster: '/02-corporate-imaging/videos/todaysfeature-miggrate-denmark-poster.jpg',
+        language: 'DK',
         format: 'video',
         title: 'FIFA',
         description: 'Client',
@@ -60,71 +110,31 @@
       },
       {
         type: 'video',
-        src: '/02-corporate-imaging/videos/30s_PodimoDK_Podcast_08.mp4',
+        src: '/02-corporate-imaging/videos/colgate.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Podimo',
+        title: 'Colgate',
         description: 'Client',
         isPlaying: false
       },
       {
         type: 'video',
-        src: '/02-corporate-imaging/videos/Imaging-Spotify-1.mp4',
-        poster: '/02-corporate-imaging/videos/Imaging-Spotify-1-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'Spotify',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/02-corporate-imaging/videos/Imaging-Spotify-2.mp4',
-        poster: '/02-corporate-imaging/videos/Imaging-Spotify-2-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'Spotify',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/02-corporate-imaging/videos/Summmit-Stockholm.mp4',
-        poster: '/02-corporate-imaging/videos/Summmit-Stockholm-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'Summmit',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/02-corporate-imaging/videos/todaysfeature-miggrate-denmark.mp4',
-        poster: '/02-corporate-imaging/videos/todaysfeature-miggrate-denmark-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'TodaysFeature',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/02-corporate-imaging/videos/YTM_DeviceOrchestra_da_DK.mp4',
+        src: '/02-corporate-imaging/videos/sdu.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'YTM',
+        title: 'SDU',
         description: 'Client',
         isPlaying: false
       },
       {
         type: 'video',
-        src: '/02-corporate-imaging/videos/YTM_Popcorn_da_DK.mp4',
+        src: '/02-corporate-imaging/videos/migrate.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'YTM',
+        title: 'Migrate',
         description: 'Client',
         isPlaying: false
       },

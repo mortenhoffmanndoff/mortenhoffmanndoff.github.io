@@ -10,7 +10,7 @@
     <Media :mediaItems="[
       {
         type: 'video',
-        src: '/03-acting-narration/videos/Kia_Klip4_OzlemSpeak_v001.mp4',
+        src: '/03-acting-narration/videos/kia.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
@@ -20,8 +20,38 @@
       },
       {
         type: 'video',
-        src: '/03-acting-narration/videos/RF21_2min_ENG_SRT.mp4',
-        poster: '/03-acting-narration/videos/RF21_2min_ENG_SRT-poster.jpg',
+        src: '/03-acting-narration/videos/rippaverse.mp4',
+        // poster: '/03-acting-narration/videos/RF21_2min_ENG_SRT-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Rippaverse Comics',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/03-acting-narration/videos/tuborg-classic.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DK',
+        format: 'video',
+        title: 'Tuborg Classic',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/03-acting-narration/videos/heute-show.mp4',
+        // poster: '/images/demo-poster.jpg',
+        language: 'DE',
+        format: 'video',
+        title: 'Heute Show (RTL)',
+        description: 'Client',
+        isPlaying: false
+      },
+      {
+        type: 'video',
+        src: '/03-acting-narration/videos/trygfonden.mp4',
+        // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
         title: 'TrygFonden',
@@ -30,7 +60,7 @@
       },
       {
         type: 'video',
-        src: '/03-acting-narration/videos/Christina_imorgen_6757.mp4',
+        src: '/03-acting-narration/videos/klasselotteriet.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
@@ -40,41 +70,31 @@
       },
       {
         type: 'video',
-        src: '/03-acting-narration/videos/RPReplay_Final1747820204.mp4',
-        // poster: '/images/demo-poster.jpg',
+        src: '/03-acting-narration/videos/enchantimals.mp4',
+        // poster: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'RPReplay',
+        title: 'Enchantimals',
         description: 'Client',
         isPlaying: false
       },
       {
         type: 'video',
-        src: '/03-acting-narration/videos/RPReplay_Final1747820699-2.mp4',
-        // poster: '/images/demo-poster.jpg',
+        src: '/03-acting-narration/videos/fredagsfesten.mp4',
+        // poster: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'RPReplay',
+        title: 'Fredagsfesten',
         description: 'Client',
         isPlaying: false
       },
       {
         type: 'video',
-        src: '/03-acting-narration/videos/291F74E9-BBDD-4C5C-A750-36E30390F8FF.mp4',
-        // poster: '/images/demo-poster.jpg',
-        language: 'DE',
-        format: 'video',
-        title: 'News',
-        description: 'Client',
-        isPlaying: false
-      },
-      {
-        type: 'video',
-        src: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3.mp4',
-        poster: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3-poster.jpg',
+        src: '/03-acting-narration/videos/husk-lige-tandboersten.mp4',
+        // poster: '/03-acting-narration/videos/AF208745-7358-4BFA-8BD2-1FD9E683DBD3-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Radio24syv',
+        title: 'Husk Lige Tandbørsten',
         description: 'Client',
         isPlaying: false
       },

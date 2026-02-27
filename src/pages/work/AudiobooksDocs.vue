@@ -10,52 +10,42 @@
     <Media :mediaItems="[
       {
         type: 'video',
-        src: '/04-audiobooks-docs/videos/290EA4D3-8474-4E7F-8692-B36B50E9432D.mp4',
+        src: '/04-audiobooks-docs/videos/huden-kan-selv.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Lydbog',
-        description: 'Product: Dating for begyndere, Year: 2024',
+        title: 'Huden kan selv',
+        description: 'Client: Gyldendal',
         isPlaying: false
       },      
       {
         type: 'video',
-        src: '/04-audiobooks-docs/videos/A268EC2B-32AF-4DC6-94CB-09FC5C39D475.mp4',
+        src: '/04-audiobooks-docs/videos/hvordan-man-er-et-godt-menneske.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Lydbog',
-        description: 'Product: Jeg vælger at leve, Year: 2024',
+        title: 'Hvordan man er et godt menneske',
+        description: 'Client: Politiken',
         isPlaying: false
       },      
       {
         type: 'video',
-        src: '/04-audiobooks-docs/videos/F5E2D033-2BB4-429C-9323-5EB79BCAE774.mp4',
+        src: '/04-audiobooks-docs/videos/dating-for-begyndere.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Lydbog',
-        description: 'Product: Hvordan man er ..., Year: 2024',
+        title: 'Dating for begyndere',
+        description: 'Client: Flamingo',
         isPlaying: false
       },      
       {
         type: 'video',
-        src: '/04-audiobooks-docs/videos/FDEA27F0-0013-4B04-A65B-8DBB9B2631BC.mp4',
+        src: '/04-audiobooks-docs/videos/jeg-vaelger-at-leve.mp4',
         // poster: '/images/demo-poster.jpg',
         language: 'DK',
         format: 'video',
-        title: 'Lydbog',
-        description: 'Product: Hel som de andre, Year: 2024',
-        isPlaying: false
-      },      
-      {
-        type: 'video',
-        src: '/04-audiobooks-docs/videos//ScreenRecording_06-10-2025-15-50-33_1.mp4',
-        // poster: '/images/demo-poster.jpg',
-        language: 'DK',
-        format: 'video',
-        title: 'Lydbog',
-        description: 'Product: Huden kan selv, Year: 2024',
+        title: 'Jeg vælger at leve',
+        description: 'Client: Bazar',
         isPlaying: false
       },      
     ]" />
