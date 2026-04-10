@@ -1,0 +1,31 @@
+name: Update data daily
+
+on:
+  schedule:
+    # Run every day at 18:00 UTC (after European markets close)
+    - cron: '0 18 * * 1-5'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch latest data
+        run: node update-data.js
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --staged --quiet || git commit -m "chore: update data $(date +%Y-%m-%d)"
+          git push
