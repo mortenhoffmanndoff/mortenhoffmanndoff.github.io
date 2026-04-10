@@ -1,0 +1,179 @@
+{
+  "lastUpdated": "2026-04-10",
+  "months": [
+    {
+      "date": "2025-04",
+      "cita6": 2.2,
+      "ecb": 2.25,
+      "type": "historical"
+    },
+    {
+      "date": "2025-05",
+      "cita6": 2.15,
+      "ecb": 2.25,
+      "type": "historical"
+    },
+    {
+      "date": "2025-06",
+      "cita6": 2.02,
+      "ecb": 2,
+      "type": "historical"
+    },
+    {
+      "date": "2025-07",
+      "cita6": 1.98,
+      "ecb": 2,
+      "type": "historical"
+    },
+    {
+      "date": "2025-08",
+      "cita6": 1.95,
+      "ecb": 2,
+      "type": "historical"
+    },
+    {
+      "date": "2025-09",
+      "cita6": 1.92,
+      "ecb": 2,
+      "type": "historical"
+    },
+    {
+      "date": "2025-10",
+      "cita6": 1.88,
+      "ecb": 2,
+      "type": "historical"
+    },
+    {
+      "date": "2025-11",
+      "cita6": 1.85,
+      "ecb": 2,
+      "type": "historical"
+    },
+    {
+      "date": "2025-12",
+      "cita6": 1.82,
+      "ecb": 2,
+      "type": "historical"
+    },
+    {
+      "date": "2026-01",
+      "cita6": 1.86,
+      "ecb": 2,
+      "type": "historical"
+    },
+    {
+      "date": "2026-02",
+      "cita6": 1.9,
+      "ecb": 2,
+      "type": "historical"
+    },
+    {
+      "date": "2026-03",
+      "cita6": 1.92,
+      "ecb": 2,
+      "type": "historical"
+    },
+    {
+      "date": "2026-04",
+      "cita6": 1.94,
+      "ecb": 2,
+      "type": "historical"
+    },
+    {
+      "date": "2026-05",
+      "cita6": 1.92,
+      "ecb": 2,
+      "type": "forecast",
+      "low": 1.75,
+      "high": 2.1
+    },
+    {
+      "date": "2026-06",
+      "cita6": 1.88,
+      "ecb": 1.9,
+      "type": "forecast",
+      "low": 1.65,
+      "high": 2.15
+    },
+    {
+      "date": "2026-07",
+      "cita6": 1.84,
+      "ecb": 1.9,
+      "type": "forecast",
+      "low": 1.55,
+      "high": 2.2
+    },
+    {
+      "date": "2026-08",
+      "cita6": 1.8,
+      "ecb": 1.9,
+      "type": "forecast",
+      "low": 1.45,
+      "high": 2.25
+    },
+    {
+      "date": "2026-09",
+      "cita6": 1.78,
+      "ecb": 1.75,
+      "type": "forecast",
+      "low": 1.35,
+      "high": 2.3
+    },
+    {
+      "date": "2026-10",
+      "cita6": 1.75,
+      "ecb": 1.75,
+      "type": "forecast",
+      "low": 1.25,
+      "high": 2.35
+    },
+    {
+      "date": "2026-11",
+      "cita6": 1.73,
+      "ecb": 1.75,
+      "type": "forecast",
+      "low": 1.15,
+      "high": 2.4
+    },
+    {
+      "date": "2026-12",
+      "cita6": 1.72,
+      "ecb": 1.75,
+      "type": "forecast",
+      "low": 1.1,
+      "high": 2.45
+    },
+    {
+      "date": "2027-01",
+      "cita6": 1.7,
+      "ecb": 1.65,
+      "type": "forecast",
+      "low": 1,
+      "high": 2.5
+    },
+    {
+      "date": "2027-02",
+      "cita6": 1.68,
+      "ecb": 1.65,
+      "type": "forecast",
+      "low": 0.95,
+      "high": 2.55
+    },
+    {
+      "date": "2027-03",
+      "cita6": 1.65,
+      "ecb": 1.65,
+      "type": "forecast",
+      "low": 0.9,
+      "high": 2.55
+    },
+    {
+      "date": "2027-04",
+      "cita6": 1.62,
+      "ecb": 1.5,
+      "type": "forecast",
+      "low": 0.85,
+      "high": 2.6
+    }
+  ]
+}
