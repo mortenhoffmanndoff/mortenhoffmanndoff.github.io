@@ -334,12 +334,13 @@
     .strings-row {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .string-btn {
-      width: 52px;
+      flex: 1;
+      max-width: 56px;
+      min-width: 42px;
       height: 64px;
       border-radius: 14px;
       border: 1px solid var(--border);
@@ -348,7 +349,7 @@
       -webkit-backdrop-filter: blur(12px);
       color: var(--text-primary);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
       cursor: pointer;
       display: flex;
@@ -582,21 +583,36 @@
     function playTone(freq, stringIdx) {
       stopTone();
       const ctx = ensureAudioCtx();
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = 'sine';
-      osc.frequency.value = freq;
-      gain.gain.setValueAtTime(0, ctx.currentTime);
-      gain.gain.linearRampToValueAtTime(0.4, ctx.currentTime + 0.05);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 2.5);
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start();
-      osc.stop(ctx.currentTime + 2.5);
-      currentOsc = { osc, gain, ctx };
+
+      // Play original + 1 octave up + 2 octaves up for audibility on phone speakers
+      const masterGain = ctx.createGain();
+      masterGain.gain.setValueAtTime(0, ctx.currentTime);
+      masterGain.gain.linearRampToValueAtTime(0.5, ctx.currentTime + 0.05);
+      masterGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 2.5);
+      masterGain.connect(ctx.destination);
+
+      const oscs = [];
+      const freqs = [freq, freq * 2, freq * 4];
+      const gains = [0.5, 0.35, 0.15];
+
+      freqs.forEach((f, i) => {
+        if (f > 5000) return; // skip if too high
+        const osc = ctx.createOscillator();
+        const g = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = f;
+        g.gain.value = gains[i];
+        osc.connect(g);
+        g.connect(masterGain);
+        osc.start();
+        osc.stop(ctx.currentTime + 2.5);
+        oscs.push(osc);
+      });
+
+      currentOsc = { oscs, gain: masterGain, ctx };
       playingStringIdx = stringIdx;
       updateStringsUI();
-      osc.onended = () => {
+      oscs[0].onended = () => {
         if (playingStringIdx === stringIdx) {
           playingStringIdx = -1;
           updateStringsUI();
@@ -610,7 +626,7 @@
           currentOsc.gain.gain.cancelScheduledValues(currentOsc.ctx.currentTime);
           currentOsc.gain.gain.setValueAtTime(currentOsc.gain.gain.value, currentOsc.ctx.currentTime);
           currentOsc.gain.gain.exponentialRampToValueAtTime(0.001, currentOsc.ctx.currentTime + 0.05);
-          currentOsc.osc.stop(currentOsc.ctx.currentTime + 0.06);
+          currentOsc.oscs.forEach(o => { try { o.stop(currentOsc.ctx.currentTime + 0.06); } catch(e){} });
         } catch(e) {}
         currentOsc = null;
       }
@@ -777,7 +793,7 @@
     function buildTuningSelect() {
       const tunings = TUNINGS[currentInstrument];
       tuningSelect.innerHTML = tunings.map((t, i) =>
-        `<option value="${i}"${i === currentTuningIndex ? ' selected' : ''}>${t.name} (${t.notes.map(noteDisplayName).join(' ')})</option>`
+        `<option value="${i}"${i === currentTuningIndex ? ' selected' : ''}>${t.name}</option>`
       ).join('');
     }
 
